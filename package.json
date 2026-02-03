@@ -1,0 +1,32 @@
+{
+  "name": "post90",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garvthakre/Post90.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/garvthakre/Post90/issues"
+  },
+  "homepage": "https://github.com/garvthakre/Post90#readme",
+  "dependencies": {
+    "axios": "^1.13.4",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "fs-extra": "^11.3.3",
+    "nodemon": "^3.1.11",
+    "sqlite": "^5.1.1",
+    "yargs": "^18.0.0"
+  }
+}
