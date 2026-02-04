@@ -2,7 +2,7 @@ import { parsePatch } from '../utils/patchParser.js';
 import { classifyChange } from './classifier.js';
 import { summarizeChanges } from './summarizer.js';
 
-
+// Main function to extract signals from a commit
 export function extractCommitSignals(commit){
     const summaries = [];
 
