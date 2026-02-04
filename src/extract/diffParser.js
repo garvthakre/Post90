@@ -1,4 +1,4 @@
-async function parsPatch(patch) {
+export async function parsPatch(patch) {
     //this is used to extract added and removed lines from a git diff patch 
     // ,it will keep the lines starting with + or - and ignore the rest
     if(!patch) return [];
@@ -11,4 +11,4 @@ async function parsPatch(patch) {
     
 }
 
-export {parsPatch};
+ 

@@ -1,16 +1,29 @@
-import { parsePatch } from '../utils/patchParser.js';
-import { classifyChange } from './classifier.js';
+import {parsPatch} from './diffParser.js';
+import { classifyChange } from './changeClassifier.js';
 import { summarizeChanges } from './summarizer.js';
 
-// Main function to extract signals from a commit
-export function extractCommitSignals(commit){
-    const summaries = [];
+export async function extractCommitSignals(commit) {
+  const summaries = [];
 
-    for(const file of commit.files){
-        const lines = parsePatch(file.patch);
-        const signals = classifyChange(lines);
-        if(signals.length === 0) continue;
-        summaries.push(summarizeChanges(file,signals));
-    }
-    return summaries;
+  for (const file of commit.files) {
+         
+
+    console.log('FILE:', file.filename);
+    console.log('HAS PATCH?', Boolean(file.patch));
+
+    if (!file.patch) continue;
+
+    const lines =  await parsPatch(file.patch);
+    console.log('PARSED LINES:', lines.length);
+
+    const signals = classifyChange(lines);
+    console.log('CLASSIFIED SIGNALS:', signals);
+
+    if (signals.length === 0) continue;
+
+    const summary = summarizeChanges(file, signals);
+    summaries.push(summary);
+  }
+
+  return summaries;
 }

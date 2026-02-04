@@ -15,7 +15,9 @@ export function classifyChange(lines) {
         if(/console\.log\(|console\.error\(|console\.warn\(/.test(c)) signals.add('logging_change');
         if(/\/\/\s*TODO|\/\/\s*FIXME/.test(c)) signals.add('todo_fixme_change');
         if(/new\s+Promise\(|\.then\(|\.catch\(/.test(c)) signals.add('promise_change');
-
+ 
+        if(/<\w+.*>.*<\/\w+>/.test(c) || /<\w+.*\/>/.test(c)) signals.add('jsx_change');
+        if(/<template>/.test(c) || /<script>/.test(c) || /<style>/.test(c)) signals.add('vue_change');
     }
     return Array.from(signals);
 }

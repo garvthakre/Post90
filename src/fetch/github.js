@@ -20,6 +20,6 @@ async function fetchCommit(repo,sha) {
     const filepath = path.join(outputDir,`${repo.replace('/','_')}_${sha}.json`);
     await fs.writeJson(filepath,res.data,{spaces:2});
     console.log(`Commit data saved to ${filepath}`);
-    
+    return filepath;
 }
  export {fetchCommit};
