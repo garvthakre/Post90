@@ -1,5 +1,6 @@
 export function classifyChange(lines) {
-    
+    //take parsed diff lines and scans them using regex
+    //  to classify the type of code changes and divide them into categories
     let signals = new Set();
     for (const line of lines) {
         const c = line.content;
