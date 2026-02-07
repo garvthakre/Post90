@@ -18,6 +18,34 @@ export function analyzeCommit(fileSummaries) {
   };
 }
 
+export function analyzeMultipleCommits(commitAnalyses) {
+  // Aggregate all signals and metrics across commits
+  const aggregated = {
+    totalCommits: commitAnalyses.length,
+    totalFilesChanged: 0,
+    totalWeight: 0,
+    signals: {},
+    impacts: {
+      HIGH_RISK: 0,
+      MEDIUM_RISK: 0,
+      LOW_RISK: 0
+    },
+    commits: commitAnalyses
+  };
+
+  for (const analysis of commitAnalyses) {
+    aggregated.totalFilesChanged += analysis.totalFilesChanged;
+    aggregated.totalWeight += analysis.totalWeight;
+    aggregated.impacts[analysis.impact]++;
+
+    for (const [signal, count] of Object.entries(analysis.signals)) {
+      aggregated.signals[signal] = (aggregated.signals[signal] || 0) + count;
+    }
+  }
+
+  return aggregated;
+}
+
 function classifyImpact(signals, weight) {
   if (
     signals.networking_change ||
