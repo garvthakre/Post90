@@ -22,4 +22,61 @@ async function fetchCommit(repo,sha) {
     console.log(`Commit data saved to ${filepath}`);
     return filepath;
 }
- export {fetchCommit};
+
+async function fetchCommitsLast24Hours(repo, author = null) {
+    // Calculate timestamp for 24 hours ago
+    const since = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
+    
+    const url = `https://api.github.com/repos/${repo}/commits`;
+    const params = {
+        since: since,
+        per_page: 100
+    };
+    
+    if (author) {
+        params.author = author;
+    }
+    
+    console.log(`Fetching commits from ${repo} since ${since}${author ? ` by ${author}` : ''}`);
+    
+    const res = await axios.get(url, {
+        headers: {
+            'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
+            'Accept': 'application/vnd.github.v3+json'
+        },
+        params
+    });
+    
+    const commits = res.data;
+    console.log(`Found ${commits.length} commits in the last 24 hours`);
+    
+    // Fetch detailed info for each commit
+    const detailedCommits = [];
+    for (const commit of commits) {
+        const detailUrl = `https://api.github.com/repos/${repo}/commits/${commit.sha}`;
+        const detailRes = await axios.get(detailUrl, {
+            headers: {
+                'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
+                'Accept': 'application/vnd.github.v3+json'
+            }
+        });
+        detailedCommits.push(detailRes.data);
+        
+        // Save individual commit
+        const outputDir = path.join(__dirname,'../../data/raw');
+        await fs.ensureDir(outputDir);
+        const filepath = path.join(outputDir,`${repo.replace('/','_')}_${commit.sha}.json`);
+        await fs.writeJson(filepath, detailRes.data, {spaces:2});
+    }
+    
+    // Save aggregated commits
+    const outputDir = path.join(__dirname,'../../data/raw');
+    await fs.ensureDir(outputDir);
+    const aggregatedPath = path.join(outputDir, `${repo.replace('/','_')}_last24h.json`);
+    await fs.writeJson(aggregatedPath, detailedCommits, {spaces:2});
+    console.log(`Aggregated commits saved to ${aggregatedPath}`);
+    
+    return detailedCommits;
+}
+
+export { fetchCommit, fetchCommitsLast24Hours };
