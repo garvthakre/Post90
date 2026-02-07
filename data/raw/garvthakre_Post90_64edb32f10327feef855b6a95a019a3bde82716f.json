@@ -1,0 +1,101 @@
+{
+  "sha": "64edb32f10327feef855b6a95a019a3bde82716f",
+  "node_id": "C_kwDORHedEdoAKDY0ZWRiMzJmMTAzMjdmZWVmODU1YjZhOTVhMDE5YTNiZGU4MjcxNmY",
+  "commit": {
+    "author": {
+      "name": "garv thakre",
+      "email": "garvthakre0@gmail.com",
+      "date": "2026-02-07T06:30:46Z"
+    },
+    "committer": {
+      "name": "garv thakre",
+      "email": "garvthakre0@gmail.com",
+      "date": "2026-02-07T06:30:46Z"
+    },
+    "message": "feat:add the templates",
+    "tree": {
+      "sha": "7e1b4f76c05397c5696e6921d684f6a91acf3f7e",
+      "url": "https://api.github.com/repos/garvthakre/Post90/git/trees/7e1b4f76c05397c5696e6921d684f6a91acf3f7e"
+    },
+    "url": "https://api.github.com/repos/garvthakre/Post90/git/commits/64edb32f10327feef855b6a95a019a3bde82716f",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/garvthakre/Post90/commits/64edb32f10327feef855b6a95a019a3bde82716f",
+  "html_url": "https://github.com/garvthakre/Post90/commit/64edb32f10327feef855b6a95a019a3bde82716f",
+  "comments_url": "https://api.github.com/repos/garvthakre/Post90/commits/64edb32f10327feef855b6a95a019a3bde82716f/comments",
+  "author": {
+    "login": "garvthakre",
+    "id": 157668392,
+    "node_id": "U_kgDOCWXUKA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/garvthakre",
+    "html_url": "https://github.com/garvthakre",
+    "followers_url": "https://api.github.com/users/garvthakre/followers",
+    "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+    "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+    "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+    "repos_url": "https://api.github.com/users/garvthakre/repos",
+    "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "garvthakre",
+    "id": 157668392,
+    "node_id": "U_kgDOCWXUKA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/garvthakre",
+    "html_url": "https://github.com/garvthakre",
+    "followers_url": "https://api.github.com/users/garvthakre/followers",
+    "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+    "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+    "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+    "repos_url": "https://api.github.com/users/garvthakre/repos",
+    "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "7795b53d8f6d9d6d6a1012d105fa294dbdfde39e",
+      "url": "https://api.github.com/repos/garvthakre/Post90/commits/7795b53d8f6d9d6d6a1012d105fa294dbdfde39e",
+      "html_url": "https://github.com/garvthakre/Post90/commit/7795b53d8f6d9d6d6a1012d105fa294dbdfde39e"
+    }
+  ],
+  "stats": {
+    "total": 36,
+    "additions": 36,
+    "deletions": 0
+  },
+  "files": [
+    {
+      "sha": "6752ae99ca5fc62ad6f50e23d1bc723a9f3c7dfa",
+      "filename": "src/post/templates.js",
+      "status": "added",
+      "additions": 36,
+      "deletions": 0,
+      "changes": 36,
+      "blob_url": "https://github.com/garvthakre/Post90/blob/64edb32f10327feef855b6a95a019a3bde82716f/src%2Fpost%2Ftemplates.js",
+      "raw_url": "https://github.com/garvthakre/Post90/raw/64edb32f10327feef855b6a95a019a3bde82716f/src%2Fpost%2Ftemplates.js",
+      "contents_url": "https://api.github.com/repos/garvthakre/Post90/contents/src%2Fpost%2Ftemplates.js?ref=64edb32f10327feef855b6a95a019a3bde82716f",
+      "patch": "@@ -0,0 +1,36 @@\n+export const TEMPLATES = {\n+  build_in_public: {\n+    documentation_progress: `\n+Added documentation updates today 📘\n+\n+Sometimes small changes like better docs and visuals make a project 10x easier to understand.\n+Keeping docs in sync with code is underrated but essential.\n+\n+What’s one thing you document every time?\n+`\n+  },\n+\n+  learning: {\n+    async_patterns: `\n+Worked on async handling today.\n+\n+Promises and async/await look simple until edge cases show up.\n+Refactoring with clearer async flows improved readability and error handling.\n+\n+Still learning—always improving.\n+`\n+  },\n+\n+  technical_decision: {\n+    engineering_tradeoff: `\n+Made a technical change that required careful consideration today.\n+\n+Not all changes are about features—some are about making future work safer and faster.\n+These decisions rarely show up in demos, but they matter most.\n+\n+Engineering is about trade-offs.\n+`\n+  },\n+  \n+\n+};"
+    }
+  ]
+}

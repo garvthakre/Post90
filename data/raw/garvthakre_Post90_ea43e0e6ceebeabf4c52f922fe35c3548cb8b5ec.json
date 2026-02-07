@@ -1,0 +1,101 @@
+{
+  "sha": "ea43e0e6ceebeabf4c52f922fe35c3548cb8b5ec",
+  "node_id": "C_kwDORHedEdoAKGVhNDNlMGU2Y2VlYmVhYmY0YzUyZjkyMmZlMzVjMzU0OGNiOGI1ZWM",
+  "commit": {
+    "author": {
+      "name": "garv thakre",
+      "email": "garvthakre0@gmail.com",
+      "date": "2026-02-07T08:30:59Z"
+    },
+    "committer": {
+      "name": "garv thakre",
+      "email": "garvthakre0@gmail.com",
+      "date": "2026-02-07T08:30:59Z"
+    },
+    "message": "chore:enhance the templates",
+    "tree": {
+      "sha": "4aaef740929efea18874df8fe0747d799406b4d4",
+      "url": "https://api.github.com/repos/garvthakre/Post90/git/trees/4aaef740929efea18874df8fe0747d799406b4d4"
+    },
+    "url": "https://api.github.com/repos/garvthakre/Post90/git/commits/ea43e0e6ceebeabf4c52f922fe35c3548cb8b5ec",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/garvthakre/Post90/commits/ea43e0e6ceebeabf4c52f922fe35c3548cb8b5ec",
+  "html_url": "https://github.com/garvthakre/Post90/commit/ea43e0e6ceebeabf4c52f922fe35c3548cb8b5ec",
+  "comments_url": "https://api.github.com/repos/garvthakre/Post90/commits/ea43e0e6ceebeabf4c52f922fe35c3548cb8b5ec/comments",
+  "author": {
+    "login": "garvthakre",
+    "id": 157668392,
+    "node_id": "U_kgDOCWXUKA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/garvthakre",
+    "html_url": "https://github.com/garvthakre",
+    "followers_url": "https://api.github.com/users/garvthakre/followers",
+    "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+    "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+    "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+    "repos_url": "https://api.github.com/users/garvthakre/repos",
+    "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "garvthakre",
+    "id": 157668392,
+    "node_id": "U_kgDOCWXUKA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/garvthakre",
+    "html_url": "https://github.com/garvthakre",
+    "followers_url": "https://api.github.com/users/garvthakre/followers",
+    "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+    "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+    "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+    "repos_url": "https://api.github.com/users/garvthakre/repos",
+    "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "9482bbd0f36867823029dc2c747747c012c31275",
+      "url": "https://api.github.com/repos/garvthakre/Post90/commits/9482bbd0f36867823029dc2c747747c012c31275",
+      "html_url": "https://github.com/garvthakre/Post90/commit/9482bbd0f36867823029dc2c747747c012c31275"
+    }
+  ],
+  "stats": {
+    "total": 52,
+    "additions": 46,
+    "deletions": 6
+  },
+  "files": [
+    {
+      "sha": "6b9a390bef30112ac2ad0b2e8bee84564d45f6e5",
+      "filename": "src/post/templates.js",
+      "status": "modified",
+      "additions": 46,
+      "deletions": 6,
+      "changes": 52,
+      "blob_url": "https://github.com/garvthakre/Post90/blob/ea43e0e6ceebeabf4c52f922fe35c3548cb8b5ec/src%2Fpost%2Ftemplates.js",
+      "raw_url": "https://github.com/garvthakre/Post90/raw/ea43e0e6ceebeabf4c52f922fe35c3548cb8b5ec/src%2Fpost%2Ftemplates.js",
+      "contents_url": "https://api.github.com/repos/garvthakre/Post90/contents/src%2Fpost%2Ftemplates.js?ref=ea43e0e6ceebeabf4c52f922fe35c3548cb8b5ec",
+      "patch": "@@ -6,8 +6,16 @@ Added documentation updates today 📘\n Sometimes small changes like better docs and visuals make a project 10x easier to understand.\n Keeping docs in sync with code is underrated but essential.\n \n-What’s one thing you document every time?\n-`\n+What's one thing you document every time?\n+`,\n+    tech_stack_update: `\n+Updated the tech stack mentions in the project 🛠️\n+\n+Being transparent about what powers your project helps others learn and contribute.\n+Every line of documentation matters.\n+\n+Building in public, one commit at a time.\n+`,\n   },\n \n   learning: {\n@@ -18,7 +26,7 @@ Promises and async/await look simple until edge cases show up.\n Refactoring with clearer async flows improved readability and error handling.\n \n Still learning—always improving.\n-`\n+`,\n   },\n \n   technical_decision: {\n@@ -29,8 +37,40 @@ Not all changes are about features—some are about making future work safer and\n These decisions rarely show up in demos, but they matter most.\n \n Engineering is about trade-offs.\n-`\n+`,\n+    error_handling: `\n+Improved error handling today.\n+\n+Good error handling is invisible when it works, but saves hours when things break.\n+Every try-catch block is a future debugging session prevented.\n+\n+Defense in depth.\n+`,\n+    networking: `\n+Worked on network calls today.\n+\n+APIs are great until they're not. Proper error handling, retries, and timeouts matter.\n+The difference between a flaky app and a reliable one is how you handle failures.\n+\n+Resilience by design.\n+`,\n+    large_change: `\n+Big refactor today. 500+ lines changed.\n+\n+Large changes are risky but sometimes necessary for long-term maintainability.\n+Careful testing and incremental commits make big changes manageable.\n+\n+Progress over perfection.\n+`,\n   },\n-  \n \n-};\n+  daily_update: {\n+    small_win: `\n+Made progress today. Every change, big or small, is a step forward.\n+\n+Celebrating the wins and learning from the challenges. \n+\n+#DevLife\n+`,\n+  },\n+};\n\\ No newline at end of file"
+    }
+  ]
+}

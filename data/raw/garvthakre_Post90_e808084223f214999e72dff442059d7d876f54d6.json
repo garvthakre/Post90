@@ -1,0 +1,101 @@
+{
+  "sha": "e808084223f214999e72dff442059d7d876f54d6",
+  "node_id": "C_kwDORHedEdoAKGU4MDgwODQyMjNmMjE0OTk5ZTcyZGZmNDQyMDU5ZDdkODc2ZjU0ZDY",
+  "commit": {
+    "author": {
+      "name": "garv thakre",
+      "email": "garvthakre0@gmail.com",
+      "date": "2026-02-07T08:28:52Z"
+    },
+    "committer": {
+      "name": "garv thakre",
+      "email": "garvthakre0@gmail.com",
+      "date": "2026-02-07T08:28:52Z"
+    },
+    "message": "chore:update the env example",
+    "tree": {
+      "sha": "cfec1d574e13ef17f4aada5995bcaa18c9e9ea3f",
+      "url": "https://api.github.com/repos/garvthakre/Post90/git/trees/cfec1d574e13ef17f4aada5995bcaa18c9e9ea3f"
+    },
+    "url": "https://api.github.com/repos/garvthakre/Post90/git/commits/e808084223f214999e72dff442059d7d876f54d6",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/garvthakre/Post90/commits/e808084223f214999e72dff442059d7d876f54d6",
+  "html_url": "https://github.com/garvthakre/Post90/commit/e808084223f214999e72dff442059d7d876f54d6",
+  "comments_url": "https://api.github.com/repos/garvthakre/Post90/commits/e808084223f214999e72dff442059d7d876f54d6/comments",
+  "author": {
+    "login": "garvthakre",
+    "id": 157668392,
+    "node_id": "U_kgDOCWXUKA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/garvthakre",
+    "html_url": "https://github.com/garvthakre",
+    "followers_url": "https://api.github.com/users/garvthakre/followers",
+    "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+    "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+    "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+    "repos_url": "https://api.github.com/users/garvthakre/repos",
+    "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "garvthakre",
+    "id": 157668392,
+    "node_id": "U_kgDOCWXUKA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/garvthakre",
+    "html_url": "https://github.com/garvthakre",
+    "followers_url": "https://api.github.com/users/garvthakre/followers",
+    "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+    "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+    "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+    "repos_url": "https://api.github.com/users/garvthakre/repos",
+    "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "5b68d462c5e274d93dbba209fe965a8a164a34fc",
+      "url": "https://api.github.com/repos/garvthakre/Post90/commits/5b68d462c5e274d93dbba209fe965a8a164a34fc",
+      "html_url": "https://github.com/garvthakre/Post90/commit/5b68d462c5e274d93dbba209fe965a8a164a34fc"
+    }
+  ],
+  "stats": {
+    "total": 6,
+    "additions": 5,
+    "deletions": 1
+  },
+  "files": [
+    {
+      "sha": "3873556309b8c47bf65dc5ef71c450520053d948",
+      "filename": ".env.example",
+      "status": "modified",
+      "additions": 5,
+      "deletions": 1,
+      "changes": 6,
+      "blob_url": "https://github.com/garvthakre/Post90/blob/e808084223f214999e72dff442059d7d876f54d6/.env.example",
+      "raw_url": "https://github.com/garvthakre/Post90/raw/e808084223f214999e72dff442059d7d876f54d6/.env.example",
+      "contents_url": "https://api.github.com/repos/garvthakre/Post90/contents/.env.example?ref=e808084223f214999e72dff442059d7d876f54d6",
+      "patch": "@@ -1 +1,5 @@\n-GITHUB_TOKEN=your_github_personal_access_token\n+# Get your Groq API key from: https://console.groq.com/\n+GROQ_API_KEY=gsk_your_key_here\n+\n+# Get your GitHub token from: https://github.com/settings/tokens\n+GITHUB_TOKEN=ghp_your_token_here\n\\ No newline at end of file"
+    }
+  ]
+}

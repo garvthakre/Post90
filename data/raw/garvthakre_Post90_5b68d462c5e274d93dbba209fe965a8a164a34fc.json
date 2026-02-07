@@ -1,0 +1,125 @@
+{
+  "sha": "5b68d462c5e274d93dbba209fe965a8a164a34fc",
+  "node_id": "C_kwDORHedEdoAKDViNjhkNDYyYzVlMjc0ZDkzZGJiYTIwOWZlOTY1YThhMTY0YTM0ZmM",
+  "commit": {
+    "author": {
+      "name": "garv thakre",
+      "email": "garvthakre0@gmail.com",
+      "date": "2026-02-07T08:16:33Z"
+    },
+    "committer": {
+      "name": "garv thakre",
+      "email": "garvthakre0@gmail.com",
+      "date": "2026-02-07T08:16:33Z"
+    },
+    "message": "chore: update the index.js for ai rewriting and tone",
+    "tree": {
+      "sha": "561582de13c587e48dcdbec8bd780178af79eeaf",
+      "url": "https://api.github.com/repos/garvthakre/Post90/git/trees/561582de13c587e48dcdbec8bd780178af79eeaf"
+    },
+    "url": "https://api.github.com/repos/garvthakre/Post90/git/commits/5b68d462c5e274d93dbba209fe965a8a164a34fc",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/garvthakre/Post90/commits/5b68d462c5e274d93dbba209fe965a8a164a34fc",
+  "html_url": "https://github.com/garvthakre/Post90/commit/5b68d462c5e274d93dbba209fe965a8a164a34fc",
+  "comments_url": "https://api.github.com/repos/garvthakre/Post90/commits/5b68d462c5e274d93dbba209fe965a8a164a34fc/comments",
+  "author": {
+    "login": "garvthakre",
+    "id": 157668392,
+    "node_id": "U_kgDOCWXUKA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/garvthakre",
+    "html_url": "https://github.com/garvthakre",
+    "followers_url": "https://api.github.com/users/garvthakre/followers",
+    "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+    "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+    "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+    "repos_url": "https://api.github.com/users/garvthakre/repos",
+    "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "garvthakre",
+    "id": 157668392,
+    "node_id": "U_kgDOCWXUKA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/garvthakre",
+    "html_url": "https://github.com/garvthakre",
+    "followers_url": "https://api.github.com/users/garvthakre/followers",
+    "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+    "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+    "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+    "repos_url": "https://api.github.com/users/garvthakre/repos",
+    "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "cecbf5332a938295219155b9ad73fa11c4c03b9d",
+      "url": "https://api.github.com/repos/garvthakre/Post90/commits/cecbf5332a938295219155b9ad73fa11c4c03b9d",
+      "html_url": "https://github.com/garvthakre/Post90/commit/cecbf5332a938295219155b9ad73fa11c4c03b9d"
+    }
+  ],
+  "stats": {
+    "total": 117,
+    "additions": 114,
+    "deletions": 3
+  },
+  "files": [
+    {
+      "sha": "938f03462dd372aceae55e43b20034c624de4b78",
+      "filename": "package-lock.json",
+      "status": "modified",
+      "additions": 92,
+      "deletions": 0,
+      "changes": 92,
+      "blob_url": "https://github.com/garvthakre/Post90/blob/5b68d462c5e274d93dbba209fe965a8a164a34fc/package-lock.json",
+      "raw_url": "https://github.com/garvthakre/Post90/raw/5b68d462c5e274d93dbba209fe965a8a164a34fc/package-lock.json",
+      "contents_url": "https://api.github.com/repos/garvthakre/Post90/contents/package-lock.json?ref=5b68d462c5e274d93dbba209fe965a8a164a34fc",
+      "patch": "@@ -13,6 +13,7 @@\n         \"dotenv\": \"^17.2.3\",\n         \"express\": \"^5.2.1\",\n         \"fs-extra\": \"^11.3.3\",\n+        \"node-fetch\": \"^3.3.2\",\n         \"nodemon\": \"^3.1.11\",\n         \"sqlite\": \"^5.1.1\",\n         \"yargs\": \"^18.0.0\"\n@@ -283,6 +284,15 @@\n         \"node\": \">=6.6.0\"\n       }\n     },\n+    \"node_modules/data-uri-to-buffer\": {\n+      \"version\": \"4.0.1\",\n+      \"resolved\": \"https://registry.npmjs.org/data-uri-to-buffer/-/data-uri-to-buffer-4.0.1.tgz\",\n+      \"integrity\": \"sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A==\",\n+      \"license\": \"MIT\",\n+      \"engines\": {\n+        \"node\": \">= 12\"\n+      }\n+    },\n     \"node_modules/debug\": {\n       \"version\": \"4.4.3\",\n       \"resolved\": \"https://registry.npmjs.org/debug/-/debug-4.4.3.tgz\",\n@@ -477,6 +487,29 @@\n         \"url\": \"https://opencollective.com/express\"\n       }\n     },\n+    \"node_modules/fetch-blob\": {\n+      \"version\": \"3.2.0\",\n+      \"resolved\": \"https://registry.npmjs.org/fetch-blob/-/fetch-blob-3.2.0.tgz\",\n+      \"integrity\": \"sha512-7yAQpD2UMJzLi1Dqv7qFYnPbaPx7ZfFK6PiIxQ4PfkGPyNyl2Ugx+a/umUonmKqjhM4DnfbMvdX6otXq83soQQ==\",\n+      \"funding\": [\n+        {\n+          \"type\": \"github\",\n+          \"url\": \"https://github.com/sponsors/jimmywarting\"\n+        },\n+        {\n+          \"type\": \"paypal\",\n+          \"url\": \"https://paypal.me/jimmywarting\"\n+        }\n+      ],\n+      \"license\": \"MIT\",\n+      \"dependencies\": {\n+        \"node-domexception\": \"^1.0.0\",\n+        \"web-streams-polyfill\": \"^3.0.3\"\n+      },\n+      \"engines\": {\n+        \"node\": \"^12.20 || >= 14.13\"\n+      }\n+    },\n     \"node_modules/fill-range\": {\n       \"version\": \"7.1.1\",\n       \"resolved\": \"https://registry.npmjs.org/fill-range/-/fill-range-7.1.1.tgz\",\n@@ -567,6 +600,18 @@\n         \"node\": \">= 0.6\"\n       }\n     },\n+    \"node_modules/formdata-polyfill\": {\n+      \"version\": \"4.0.10\",\n+      \"resolved\": \"https://registry.npmjs.org/formdata-polyfill/-/formdata-polyfill-4.0.10.tgz\",\n+      \"integrity\": \"sha512-buewHzMvYL29jdeQTVILecSaZKnt/RJWjoZCF5OW60Z67/GmSLBkOFM7qh1PI3zFNtJbaZL5eQu1vLfazOwj4g==\",\n+      \"license\": \"MIT\",\n+      \"dependencies\": {\n+        \"fetch-blob\": \"^3.1.2\"\n+      },\n+      \"engines\": {\n+        \"node\": \">=12.20.0\"\n+      }\n+    },\n     \"node_modules/forwarded\": {\n       \"version\": \"0.2.0\",\n       \"resolved\": \"https://registry.npmjs.org/forwarded/-/forwarded-0.2.0.tgz\",\n@@ -957,6 +1002,44 @@\n         \"node\": \">= 0.6\"\n       }\n     },\n+    \"node_modules/node-domexception\": {\n+      \"version\": \"1.0.0\",\n+      \"resolved\": \"https://registry.npmjs.org/node-domexception/-/node-domexception-1.0.0.tgz\",\n+      \"integrity\": \"sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==\",\n+      \"deprecated\": \"Use your platform's native DOMException instead\",\n+      \"funding\": [\n+        {\n+          \"type\": \"github\",\n+          \"url\": \"https://github.com/sponsors/jimmywarting\"\n+        },\n+        {\n+          \"type\": \"github\",\n+          \"url\": \"https://paypal.me/jimmywarting\"\n+        }\n+      ],\n+      \"license\": \"MIT\",\n+      \"engines\": {\n+        \"node\": \">=10.5.0\"\n+      }\n+    },\n+    \"node_modules/node-fetch\": {\n+      \"version\": \"3.3.2\",\n+      \"resolved\": \"https://registry.npmjs.org/node-fetch/-/node-fetch-3.3.2.tgz\",\n+      \"integrity\": \"sha512-dRB78srN/l6gqWulah9SrxeYnxeddIG30+GOqK/9OlLVyLg3HPnr6SqOWTWOXKRwC2eGYCkZ59NNuSgvSrpgOA==\",\n+      \"license\": \"MIT\",\n+      \"dependencies\": {\n+        \"data-uri-to-buffer\": \"^4.0.0\",\n+        \"fetch-blob\": \"^3.1.4\",\n+        \"formdata-polyfill\": \"^4.0.10\"\n+      },\n+      \"engines\": {\n+        \"node\": \"^12.20.0 || ^14.13.1 || >=16.0.0\"\n+      },\n+      \"funding\": {\n+        \"type\": \"opencollective\",\n+        \"url\": \"https://opencollective.com/node-fetch\"\n+      }\n+    },\n     \"node_modules/nodemon\": {\n       \"version\": \"3.1.11\",\n       \"resolved\": \"https://registry.npmjs.org/nodemon/-/nodemon-3.1.11.tgz\",\n@@ -1439,6 +1522,15 @@\n         \"node\": \">= 0.8\"\n       }\n     },\n+    \"node_modules/web-streams-polyfill\": {\n+      \"version\": \"3.3.3\",\n+      \"resolved\": \"https://registry.npmjs.org/web-streams-polyfill/-/web-streams-polyfill-3.3.3.tgz\",\n+      \"integrity\": \"sha512-d2JWLCivmZYTSIoge9MsgFCZrt571BikcWGYkjC1khllbTeDlGqZ2D8vD8E/lJa8WGWbb7Plm8/XJYV7IJHZZw==\",\n+      \"license\": \"MIT\",\n+      \"engines\": {\n+        \"node\": \">= 8\"\n+      }\n+    },\n     \"node_modules/wrap-ansi\": {\n       \"version\": \"9.0.2\",\n       \"resolved\": \"https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-9.0.2.tgz\","
+    },
+    {
+      "sha": "58e7b24b87b466e29b49a05ce98a55cbbfdcc959",
+      "filename": "package.json",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 0,
+      "changes": 1,
+      "blob_url": "https://github.com/garvthakre/Post90/blob/5b68d462c5e274d93dbba209fe965a8a164a34fc/package.json",
+      "raw_url": "https://github.com/garvthakre/Post90/raw/5b68d462c5e274d93dbba209fe965a8a164a34fc/package.json",
+      "contents_url": "https://api.github.com/repos/garvthakre/Post90/contents/package.json?ref=5b68d462c5e274d93dbba209fe965a8a164a34fc",
+      "patch": "@@ -25,6 +25,7 @@\n     \"dotenv\": \"^17.2.3\",\n     \"express\": \"^5.2.1\",\n     \"fs-extra\": \"^11.3.3\",\n+    \"node-fetch\": \"^3.3.2\",\n     \"nodemon\": \"^3.1.11\",\n     \"sqlite\": \"^5.1.1\",\n     \"yargs\": \"^18.0.0\""
+    },
+    {
+      "sha": "719412966680c93f01fc3bd6ba7c22ca601720df",
+      "filename": "src/index.js",
+      "status": "modified",
+      "additions": 21,
+      "deletions": 3,
+      "changes": 24,
+      "blob_url": "https://github.com/garvthakre/Post90/blob/5b68d462c5e274d93dbba209fe965a8a164a34fc/src%2Findex.js",
+      "raw_url": "https://github.com/garvthakre/Post90/raw/5b68d462c5e274d93dbba209fe965a8a164a34fc/src%2Findex.js",
+      "contents_url": "https://api.github.com/repos/garvthakre/Post90/contents/src%2Findex.js?ref=5b68d462c5e274d93dbba209fe965a8a164a34fc",
+      "patch": "@@ -6,10 +6,8 @@ import { fetchCommit } from './fetch/github.js';\n import { extractCommitSignals } from './extract/index.js';\n import { analyzeCommit } from './analyze/commitAnalyzer.js';\n import { composePost } from './post/composer.js';\n+import { rewritePost } from './ai/rewrite.js';\n dotenv.config();\n- \n-\n-  \n \n const argv = yargs(hideBin(process.argv))\n   .option('repo', {\n@@ -45,5 +43,25 @@ const argv = yargs(hideBin(process.argv))\n   const post = composePost(analysis);\n   console.log('\\n COMPOSED POST :\\n')\n   console.log(post);\n+  const basePost = composePost(analysis);\n+\n+const finalPost = await rewritePost({\n+  basePost,\n+  intent: analysis.intent,\n+  angle: analysis.angle,\n+  facts: {\n+    impact: analysis.impact,\n+    signals: analysis.signals\n+  },\n+  constraints: {\n+    platform: 'linkedin',\n+    maxLength: 300,\n+    emoji: true\n+  }\n+});\n+\n+console.log('\\n FINAL POST:\\n');\n+console.log(finalPost);\n+\n   console.log('Done');\n })();"
+    }
+  ]
+}

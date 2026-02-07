@@ -1,0 +1,101 @@
+{
+  "sha": "df23ebdd9e57a1da735da6785844a761cf3ca952",
+  "node_id": "C_kwDORHedEdoAKGRmMjNlYmRkOWU1N2ExZGE3MzVkYTY3ODU4NDRhNzYxY2YzY2E5NTI",
+  "commit": {
+    "author": {
+      "name": "garv thakre",
+      "email": "garvthakre0@gmail.com",
+      "date": "2026-02-07T06:10:09Z"
+    },
+    "committer": {
+      "name": "garv thakre",
+      "email": "garvthakre0@gmail.com",
+      "date": "2026-02-07T06:10:09Z"
+    },
+    "message": "chore: update the index.js",
+    "tree": {
+      "sha": "c7522cd39663760cd65303d0bbc3e83471c93e06",
+      "url": "https://api.github.com/repos/garvthakre/Post90/git/trees/c7522cd39663760cd65303d0bbc3e83471c93e06"
+    },
+    "url": "https://api.github.com/repos/garvthakre/Post90/git/commits/df23ebdd9e57a1da735da6785844a761cf3ca952",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/garvthakre/Post90/commits/df23ebdd9e57a1da735da6785844a761cf3ca952",
+  "html_url": "https://github.com/garvthakre/Post90/commit/df23ebdd9e57a1da735da6785844a761cf3ca952",
+  "comments_url": "https://api.github.com/repos/garvthakre/Post90/commits/df23ebdd9e57a1da735da6785844a761cf3ca952/comments",
+  "author": {
+    "login": "garvthakre",
+    "id": 157668392,
+    "node_id": "U_kgDOCWXUKA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/garvthakre",
+    "html_url": "https://github.com/garvthakre",
+    "followers_url": "https://api.github.com/users/garvthakre/followers",
+    "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+    "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+    "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+    "repos_url": "https://api.github.com/users/garvthakre/repos",
+    "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "garvthakre",
+    "id": 157668392,
+    "node_id": "U_kgDOCWXUKA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/garvthakre",
+    "html_url": "https://github.com/garvthakre",
+    "followers_url": "https://api.github.com/users/garvthakre/followers",
+    "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+    "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+    "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+    "repos_url": "https://api.github.com/users/garvthakre/repos",
+    "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "b70d99dd0f75a0c10d588ea45fccc048f3b10765",
+      "url": "https://api.github.com/repos/garvthakre/Post90/commits/b70d99dd0f75a0c10d588ea45fccc048f3b10765",
+      "html_url": "https://github.com/garvthakre/Post90/commit/b70d99dd0f75a0c10d588ea45fccc048f3b10765"
+    }
+  ],
+  "stats": {
+    "total": 6,
+    "additions": 5,
+    "deletions": 1
+  },
+  "files": [
+    {
+      "sha": "3391c2acefc3761b6173f01087422de23d87aada",
+      "filename": "src/index.js",
+      "status": "modified",
+      "additions": 5,
+      "deletions": 1,
+      "changes": 6,
+      "blob_url": "https://github.com/garvthakre/Post90/blob/df23ebdd9e57a1da735da6785844a761cf3ca952/src%2Findex.js",
+      "raw_url": "https://github.com/garvthakre/Post90/raw/df23ebdd9e57a1da735da6785844a761cf3ca952/src%2Findex.js",
+      "contents_url": "https://api.github.com/repos/garvthakre/Post90/contents/src%2Findex.js?ref=df23ebdd9e57a1da735da6785844a761cf3ca952",
+      "patch": "@@ -4,6 +4,7 @@ import fs from 'fs';\n import { hideBin } from 'yargs/helpers';\n import { fetchCommit } from './fetch/github.js';\n import { extractCommitSignals } from './extract/index.js';\n+import { analyzeCommit } from './analyze/commitAnalyzer.js';\n \n dotenv.config();\n  \n@@ -34,9 +35,12 @@ const argv = yargs(hideBin(process.argv))\n   const rawCommit = JSON.parse(fs.readFileSync(rawPath, 'utf-8'))\n \n   console.log('Extracting signals...')\n-  const signals = extractCommitSignals(rawCommit)\n+  const signals =  await extractCommitSignals(rawCommit)\n \n   console.log('\\n EXTRACTED SIGNALS :\\n')\n   console.log(JSON.stringify(signals, null, 2))\n+  const analysis = analyzeCommit(signals);\n+  console.log('\\n ANALYSIS RESULT :\\n')\n+  console.log(JSON.stringify(analysis, null, 2))\n   console.log('Done');\n })();"
+    }
+  ]
+}

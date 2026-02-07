@@ -1,0 +1,101 @@
+{
+  "sha": "61e521b52793feec73190261267a26893154304a",
+  "node_id": "C_kwDORHedEdoAKDYxZTUyMWI1Mjc5M2ZlZWM3MzE5MDI2MTI2N2EyNjg5MzE1NDMwNGE",
+  "commit": {
+    "author": {
+      "name": "garv thakre",
+      "email": "garvthakre0@gmail.com",
+      "date": "2026-02-07T08:15:24Z"
+    },
+    "committer": {
+      "name": "garv thakre",
+      "email": "garvthakre0@gmail.com",
+      "date": "2026-02-07T08:15:24Z"
+    },
+    "message": "chore: add the ai rewrite",
+    "tree": {
+      "sha": "1ef193cc8efc7bdff8b2ee88f4d9d883bfbe4843",
+      "url": "https://api.github.com/repos/garvthakre/Post90/git/trees/1ef193cc8efc7bdff8b2ee88f4d9d883bfbe4843"
+    },
+    "url": "https://api.github.com/repos/garvthakre/Post90/git/commits/61e521b52793feec73190261267a26893154304a",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/garvthakre/Post90/commits/61e521b52793feec73190261267a26893154304a",
+  "html_url": "https://github.com/garvthakre/Post90/commit/61e521b52793feec73190261267a26893154304a",
+  "comments_url": "https://api.github.com/repos/garvthakre/Post90/commits/61e521b52793feec73190261267a26893154304a/comments",
+  "author": {
+    "login": "garvthakre",
+    "id": 157668392,
+    "node_id": "U_kgDOCWXUKA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/garvthakre",
+    "html_url": "https://github.com/garvthakre",
+    "followers_url": "https://api.github.com/users/garvthakre/followers",
+    "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+    "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+    "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+    "repos_url": "https://api.github.com/users/garvthakre/repos",
+    "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "garvthakre",
+    "id": 157668392,
+    "node_id": "U_kgDOCWXUKA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/garvthakre",
+    "html_url": "https://github.com/garvthakre",
+    "followers_url": "https://api.github.com/users/garvthakre/followers",
+    "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+    "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+    "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+    "repos_url": "https://api.github.com/users/garvthakre/repos",
+    "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "90afd486f061c13512d07b75720ae7ce536d8b78",
+      "url": "https://api.github.com/repos/garvthakre/Post90/commits/90afd486f061c13512d07b75720ae7ce536d8b78",
+      "html_url": "https://github.com/garvthakre/Post90/commit/90afd486f061c13512d07b75720ae7ce536d8b78"
+    }
+  ],
+  "stats": {
+    "total": 38,
+    "additions": 38,
+    "deletions": 0
+  },
+  "files": [
+    {
+      "sha": "a3d626d57916724a8802362c7e7e5a7cc2dc5b29",
+      "filename": "src/ai/rewrite.js",
+      "status": "added",
+      "additions": 38,
+      "deletions": 0,
+      "changes": 38,
+      "blob_url": "https://github.com/garvthakre/Post90/blob/61e521b52793feec73190261267a26893154304a/src%2Fai%2Frewrite.js",
+      "raw_url": "https://github.com/garvthakre/Post90/raw/61e521b52793feec73190261267a26893154304a/src%2Fai%2Frewrite.js",
+      "contents_url": "https://api.github.com/repos/garvthakre/Post90/contents/src%2Fai%2Frewrite.js?ref=61e521b52793feec73190261267a26893154304a",
+      "patch": "@@ -0,0 +1,38 @@\n+import { callHuggingFace } from \"./Provider.js\";\n+\n+export async function rewritePost({\n+  basePost,\n+  intent,\n+  angle,\n+  facts,\n+  constraints\n+}) {\n+  const prompt = `\n+You are rewriting a developer social media post.\n+\n+Rules:\n+- Do NOT add new facts\n+- Do NOT change the meaning\n+- Keep it authentic and concise\n+- Avoid buzzwords\n+\n+Intent: ${intent}\n+Angle: ${angle}\n+\n+Known facts:\n+${JSON.stringify(facts, null, 2)}\n+\n+Base post:\n+\"\"\"\n+${basePost}\n+\"\"\"\n+\n+Platform: ${constraints.platform}\n+Max length: ${constraints.maxLength}\n+Emoji allowed: ${constraints.emoji}\n+\n+Rewrite the post:\n+`;\n+\n+   return await callHuggingFace(prompt);\n+}"
+    }
+  ]
+}

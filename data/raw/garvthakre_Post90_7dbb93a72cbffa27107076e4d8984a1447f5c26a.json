@@ -1,0 +1,101 @@
+{
+  "sha": "7dbb93a72cbffa27107076e4d8984a1447f5c26a",
+  "node_id": "C_kwDORHedEdoAKDdkYmI5M2E3MmNiZmZhMjcxMDcwNzZlNGQ4OTg0YTE0NDdmNWMyNmE",
+  "commit": {
+    "author": {
+      "name": "garv thakre",
+      "email": "garvthakre0@gmail.com",
+      "date": "2026-02-07T08:52:58Z"
+    },
+    "committer": {
+      "name": "garv thakre",
+      "email": "garvthakre0@gmail.com",
+      "date": "2026-02-07T08:52:58Z"
+    },
+    "message": "chore: add the ai tones",
+    "tree": {
+      "sha": "04162829c1198e3b8d86762e932abadbad38a92a",
+      "url": "https://api.github.com/repos/garvthakre/Post90/git/trees/04162829c1198e3b8d86762e932abadbad38a92a"
+    },
+    "url": "https://api.github.com/repos/garvthakre/Post90/git/commits/7dbb93a72cbffa27107076e4d8984a1447f5c26a",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/garvthakre/Post90/commits/7dbb93a72cbffa27107076e4d8984a1447f5c26a",
+  "html_url": "https://github.com/garvthakre/Post90/commit/7dbb93a72cbffa27107076e4d8984a1447f5c26a",
+  "comments_url": "https://api.github.com/repos/garvthakre/Post90/commits/7dbb93a72cbffa27107076e4d8984a1447f5c26a/comments",
+  "author": {
+    "login": "garvthakre",
+    "id": 157668392,
+    "node_id": "U_kgDOCWXUKA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/garvthakre",
+    "html_url": "https://github.com/garvthakre",
+    "followers_url": "https://api.github.com/users/garvthakre/followers",
+    "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+    "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+    "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+    "repos_url": "https://api.github.com/users/garvthakre/repos",
+    "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "garvthakre",
+    "id": 157668392,
+    "node_id": "U_kgDOCWXUKA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/garvthakre",
+    "html_url": "https://github.com/garvthakre",
+    "followers_url": "https://api.github.com/users/garvthakre/followers",
+    "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+    "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+    "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+    "repos_url": "https://api.github.com/users/garvthakre/repos",
+    "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "ea43e0e6ceebeabf4c52f922fe35c3548cb8b5ec",
+      "url": "https://api.github.com/repos/garvthakre/Post90/commits/ea43e0e6ceebeabf4c52f922fe35c3548cb8b5ec",
+      "html_url": "https://github.com/garvthakre/Post90/commit/ea43e0e6ceebeabf4c52f922fe35c3548cb8b5ec"
+    }
+  ],
+  "stats": {
+    "total": 26,
+    "additions": 26,
+    "deletions": 0
+  },
+  "files": [
+    {
+      "sha": "61eebc8f5038a096c3baeec8f29e6fe14f32f8f5",
+      "filename": "src/ai/tones.js",
+      "status": "added",
+      "additions": 26,
+      "deletions": 0,
+      "changes": 26,
+      "blob_url": "https://github.com/garvthakre/Post90/blob/7dbb93a72cbffa27107076e4d8984a1447f5c26a/src%2Fai%2Ftones.js",
+      "raw_url": "https://github.com/garvthakre/Post90/raw/7dbb93a72cbffa27107076e4d8984a1447f5c26a/src%2Fai%2Ftones.js",
+      "contents_url": "https://api.github.com/repos/garvthakre/Post90/contents/src%2Fai%2Ftones.js?ref=7dbb93a72cbffa27107076e4d8984a1447f5c26a",
+      "patch": "@@ -0,0 +1,26 @@\n+export const TONES = {\n+  pro: `\n+Write in a professional, clear, industry-standard tone.\n+Concise, factual, and suitable for senior engineers.\n+`,\n+  devlife: `\n+Write like an experienced developer explaining changes to teammates.\n+Friendly, casual, but still clear and technical.\n+`,\n+  fun: `\n+Write in a light, playful developer tone.\n+Still accurate, but slightly witty.\n+`,\n+  concise: `\n+Write extremely concise.\n+No fluff. No emojis. Just the essentials.\n+`,\n+    detailed: `\n+Write in a detailed, explanatory tone.\n+Provide context and reasoning behind changes.\n+`,\n+    optimistic: `\n+Write in an optimistic, positive tone.\n+Focus on progress and learning, even from challenges.\n+`,\n+};"
+    }
+  ]
+}

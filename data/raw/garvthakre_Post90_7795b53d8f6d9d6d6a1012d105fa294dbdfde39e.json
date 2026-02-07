@@ -1,0 +1,101 @@
+{
+  "sha": "7795b53d8f6d9d6d6a1012d105fa294dbdfde39e",
+  "node_id": "C_kwDORHedEdoAKDc3OTViNTNkOGY2ZDlkNmQ2YTEwMTJkMTA1ZmEyOTRkYmRmZGUzOWU",
+  "commit": {
+    "author": {
+      "name": "garv thakre",
+      "email": "garvthakre0@gmail.com",
+      "date": "2026-02-07T06:30:19Z"
+    },
+    "committer": {
+      "name": "garv thakre",
+      "email": "garvthakre0@gmail.com",
+      "date": "2026-02-07T06:30:19Z"
+    },
+    "message": "feat:add the composer",
+    "tree": {
+      "sha": "70a132ade3c4fff9b8919ef2932b024443e6b81f",
+      "url": "https://api.github.com/repos/garvthakre/Post90/git/trees/70a132ade3c4fff9b8919ef2932b024443e6b81f"
+    },
+    "url": "https://api.github.com/repos/garvthakre/Post90/git/commits/7795b53d8f6d9d6d6a1012d105fa294dbdfde39e",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/garvthakre/Post90/commits/7795b53d8f6d9d6d6a1012d105fa294dbdfde39e",
+  "html_url": "https://github.com/garvthakre/Post90/commit/7795b53d8f6d9d6d6a1012d105fa294dbdfde39e",
+  "comments_url": "https://api.github.com/repos/garvthakre/Post90/commits/7795b53d8f6d9d6d6a1012d105fa294dbdfde39e/comments",
+  "author": {
+    "login": "garvthakre",
+    "id": 157668392,
+    "node_id": "U_kgDOCWXUKA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/garvthakre",
+    "html_url": "https://github.com/garvthakre",
+    "followers_url": "https://api.github.com/users/garvthakre/followers",
+    "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+    "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+    "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+    "repos_url": "https://api.github.com/users/garvthakre/repos",
+    "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "garvthakre",
+    "id": 157668392,
+    "node_id": "U_kgDOCWXUKA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/garvthakre",
+    "html_url": "https://github.com/garvthakre",
+    "followers_url": "https://api.github.com/users/garvthakre/followers",
+    "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+    "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+    "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+    "repos_url": "https://api.github.com/users/garvthakre/repos",
+    "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "7e4e3a581590b399d99630fcb923c281ba0c8ccc",
+      "url": "https://api.github.com/repos/garvthakre/Post90/commits/7e4e3a581590b399d99630fcb923c281ba0c8ccc",
+      "html_url": "https://github.com/garvthakre/Post90/commit/7e4e3a581590b399d99630fcb923c281ba0c8ccc"
+    }
+  ],
+  "stats": {
+    "total": 12,
+    "additions": 12,
+    "deletions": 0
+  },
+  "files": [
+    {
+      "sha": "608f95f59193dfde8fc87979655829487bd153f2",
+      "filename": "src/post/composer.js",
+      "status": "added",
+      "additions": 12,
+      "deletions": 0,
+      "changes": 12,
+      "blob_url": "https://github.com/garvthakre/Post90/blob/7795b53d8f6d9d6d6a1012d105fa294dbdfde39e/src%2Fpost%2Fcomposer.js",
+      "raw_url": "https://github.com/garvthakre/Post90/raw/7795b53d8f6d9d6d6a1012d105fa294dbdfde39e/src%2Fpost%2Fcomposer.js",
+      "contents_url": "https://api.github.com/repos/garvthakre/Post90/contents/src%2Fpost%2Fcomposer.js?ref=7795b53d8f6d9d6d6a1012d105fa294dbdfde39e",
+      "patch": "@@ -0,0 +1,12 @@\n+import { mapIntent } from './intentMapper.js';\n+import { TEMPLATES } from './templates.js';\n+\n+export function composePost(analysis) {\n+    const intent = mapIntent(analysis);\n+    const template = TEMPLATES[intent.type]?.[intent.angle];\n+    if(!template){\n+        return `Made progress today. Every change, big or small, is a step forward.\n+         Celebrating the wins and learning from the challenges. #devlife`;\n+    }\n+    return template.trim();\n+}\n\\ No newline at end of file"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "sha": "cecbf5332a938295219155b9ad73fa11c4c03b9d",
+  "node_id": "C_kwDORHedEdoAKGNlY2JmNTMzMmE5MzgyOTUyMTkxNTViOWFkNzNmYTExYzRjMDNiOWQ",
+  "commit": {
+    "author": {
+      "name": "garv thakre",
+      "email": "garvthakre0@gmail.com",
+      "date": "2026-02-07T08:15:54Z"
+    },
+    "committer": {
+      "name": "garv thakre",
+      "email": "garvthakre0@gmail.com",
+      "date": "2026-02-07T08:15:54Z"
+    },
+    "message": "chore: add the ai tone manager",
+    "tree": {
+      "sha": "da532f7c21396d16150ba7ce3c0cb04c649a2684",
+      "url": "https://api.github.com/repos/garvthakre/Post90/git/trees/da532f7c21396d16150ba7ce3c0cb04c649a2684"
+    },
+    "url": "https://api.github.com/repos/garvthakre/Post90/git/commits/cecbf5332a938295219155b9ad73fa11c4c03b9d",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/garvthakre/Post90/commits/cecbf5332a938295219155b9ad73fa11c4c03b9d",
+  "html_url": "https://github.com/garvthakre/Post90/commit/cecbf5332a938295219155b9ad73fa11c4c03b9d",
+  "comments_url": "https://api.github.com/repos/garvthakre/Post90/commits/cecbf5332a938295219155b9ad73fa11c4c03b9d/comments",
+  "author": {
+    "login": "garvthakre",
+    "id": 157668392,
+    "node_id": "U_kgDOCWXUKA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/garvthakre",
+    "html_url": "https://github.com/garvthakre",
+    "followers_url": "https://api.github.com/users/garvthakre/followers",
+    "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+    "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+    "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+    "repos_url": "https://api.github.com/users/garvthakre/repos",
+    "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "garvthakre",
+    "id": 157668392,
+    "node_id": "U_kgDOCWXUKA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/garvthakre",
+    "html_url": "https://github.com/garvthakre",
+    "followers_url": "https://api.github.com/users/garvthakre/followers",
+    "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+    "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+    "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+    "repos_url": "https://api.github.com/users/garvthakre/repos",
+    "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "61e521b52793feec73190261267a26893154304a",
+      "url": "https://api.github.com/repos/garvthakre/Post90/commits/61e521b52793feec73190261267a26893154304a",
+      "html_url": "https://github.com/garvthakre/Post90/commit/61e521b52793feec73190261267a26893154304a"
+    }
+  ],
+  "stats": {
+    "total": 24,
+    "additions": 24,
+    "deletions": 0
+  },
+  "files": [
+    {
+      "sha": "66a83ba742bc079025498346f8403a6d0c20fda0",
+      "filename": "src/profile/toneprofile.js",
+      "status": "added",
+      "additions": 24,
+      "deletions": 0,
+      "changes": 24,
+      "blob_url": "https://github.com/garvthakre/Post90/blob/cecbf5332a938295219155b9ad73fa11c4c03b9d/src%2Fprofile%2Ftoneprofile.js",
+      "raw_url": "https://github.com/garvthakre/Post90/raw/cecbf5332a938295219155b9ad73fa11c4c03b9d/src%2Fprofile%2Ftoneprofile.js",
+      "contents_url": "https://api.github.com/repos/garvthakre/Post90/contents/src%2Fprofile%2Ftoneprofile.js?ref=cecbf5332a938295219155b9ad73fa11c4c03b9d",
+      "patch": "@@ -0,0 +1,24 @@\n+export const TONE_PROFILES = {\n+    calm_builder:{\n+        style : \"clear,thoughtful,reflective\",\n+        emoji: false,\n+        sentenceLength:\"medium\",\n+    },\n+    excited_learner :{\n+        style : \"enthusiastic,curious,upbeat\",\n+        emoji: true,\n+        sentenceLength:\"short\",\n+    },\n+    senior_engineer:{\n+        style : \"confident,experienced,insightful\",\n+        emoji: false,\n+        sentenceLength:\"medium\",\n+    },\n+    pragmatic_problem_solver:{\n+        style : \"direct,solution-focused,practical\",\n+        emoji: false,\n+        sentenceLength:\"short\",\n+    }\n+\n+\n+};\n\\ No newline at end of file"
+    }
+  ]
+}

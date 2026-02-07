@@ -1,0 +1,101 @@
+{
+  "sha": "412093c355035e44f51b4a997243b582817108f8",
+  "node_id": "C_kwDORHedEdoAKDQxMjA5M2MzNTUwMzVlNDRmNTFiNGE5OTcyNDNiNTgyODE3MTA4Zjg",
+  "commit": {
+    "author": {
+      "name": "garv thakre",
+      "email": "garvthakre0@gmail.com",
+      "date": "2026-02-07T08:29:27Z"
+    },
+    "committer": {
+      "name": "garv thakre",
+      "email": "garvthakre0@gmail.com",
+      "date": "2026-02-07T08:29:27Z"
+    },
+    "message": "chore:fix the provider and add GROQ api",
+    "tree": {
+      "sha": "83a9109c6d17cd655c0363402015a22a1346a469",
+      "url": "https://api.github.com/repos/garvthakre/Post90/git/trees/83a9109c6d17cd655c0363402015a22a1346a469"
+    },
+    "url": "https://api.github.com/repos/garvthakre/Post90/git/commits/412093c355035e44f51b4a997243b582817108f8",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/garvthakre/Post90/commits/412093c355035e44f51b4a997243b582817108f8",
+  "html_url": "https://github.com/garvthakre/Post90/commit/412093c355035e44f51b4a997243b582817108f8",
+  "comments_url": "https://api.github.com/repos/garvthakre/Post90/commits/412093c355035e44f51b4a997243b582817108f8/comments",
+  "author": {
+    "login": "garvthakre",
+    "id": 157668392,
+    "node_id": "U_kgDOCWXUKA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/garvthakre",
+    "html_url": "https://github.com/garvthakre",
+    "followers_url": "https://api.github.com/users/garvthakre/followers",
+    "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+    "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+    "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+    "repos_url": "https://api.github.com/users/garvthakre/repos",
+    "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "garvthakre",
+    "id": 157668392,
+    "node_id": "U_kgDOCWXUKA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/garvthakre",
+    "html_url": "https://github.com/garvthakre",
+    "followers_url": "https://api.github.com/users/garvthakre/followers",
+    "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+    "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+    "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+    "repos_url": "https://api.github.com/users/garvthakre/repos",
+    "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "e808084223f214999e72dff442059d7d876f54d6",
+      "url": "https://api.github.com/repos/garvthakre/Post90/commits/e808084223f214999e72dff442059d7d876f54d6",
+      "html_url": "https://github.com/garvthakre/Post90/commit/e808084223f214999e72dff442059d7d876f54d6"
+    }
+  ],
+  "stats": {
+    "total": 21,
+    "additions": 14,
+    "deletions": 7
+  },
+  "files": [
+    {
+      "sha": "f088f5c7784ad4d678e8b3add64a465fcf61fef2",
+      "filename": "src/ai/Provider.js",
+      "status": "modified",
+      "additions": 14,
+      "deletions": 7,
+      "changes": 21,
+      "blob_url": "https://github.com/garvthakre/Post90/blob/412093c355035e44f51b4a997243b582817108f8/src%2Fai%2FProvider.js",
+      "raw_url": "https://github.com/garvthakre/Post90/raw/412093c355035e44f51b4a997243b582817108f8/src%2Fai%2FProvider.js",
+      "contents_url": "https://api.github.com/repos/garvthakre/Post90/contents/src%2Fai%2FProvider.js?ref=412093c355035e44f51b4a997243b582817108f8",
+      "patch": "@@ -1,29 +1,36 @@\n import fetch from \"node-fetch\";\n \n-const HF_API_URL = \"https://router.huggingface.co/v1/chat/completions\";\n+const GROQ_API_URL = \"https://api.groq.com/openai/v1/chat/completions\";\n \n const MODELS = {\n   MIXTRAL: \"mixtral-8x7b-32768\",\n   LLAMA3_70: \"llama3-70b-8192\",\n   LLAMA3_8: \"llama3-8b-8192\",\n+  LLAMA_90: \"llama-3.3-70b-versatile\",\n   GEMMA_7: \"gemma-7b-it\",\n };\n \n-const DEFAULT_MODEL = MODELS.LLAMA3_70;\n+const DEFAULT_MODEL = MODELS.LLAMA_90;\n \n export async function callHuggingFace(prompt, model = DEFAULT_MODEL) {\n-  const res = await fetch(HF_API_URL, {\n+  const apiKey = process.env.GROQ_API_KEY || process.env.HUGGINGFACE_API_KEY;\n+  \n+  if (!apiKey) {\n+    throw new Error(\"Missing API key. Please set GROQ_API_KEY in your .env file\");\n+  }\n+\n+  const res = await fetch(GROQ_API_URL, {\n     method: \"POST\",\n     headers: {\n-      Authorization: `Bearer ${process.env.HUGGINGFACE_API_KEY}`,\n+      Authorization: `Bearer ${apiKey}`,\n       \"Content-Type\": \"application/json\",\n     },\n     body: JSON.stringify({\n       model,\n       messages: [\n         {\n           role: \"system\",\n-          content: \"You are an expert software engineer who writes excellent commit messages.\"\n+          content: \"You are an expert software engineer who writes excellent commit messages and social media posts about technical work.\"\n         },\n         {\n           role: \"user\",\n@@ -38,10 +45,10 @@ export async function callHuggingFace(prompt, model = DEFAULT_MODEL) {\n   if (!res.ok) {\n     const errText = await res.text();\n     throw new Error(\n-      `HuggingFace Groq Error: ${res.status} - ${errText}`\n+      `Groq API Error: ${res.status} - ${errText}`\n     );\n   }\n \n   const data = await res.json();\n   return data.choices?.[0]?.message?.content?.trim();\n-}\n+}\n\\ No newline at end of file"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "sha": "8aaddca781152184d4798cb84725e41719714d99",
+  "node_id": "C_kwDORHedEdoAKDhhYWRkY2E3ODExNTIxODRkNDc5OGNiODQ3MjVlNDE3MTk3MTRkOTk",
+  "commit": {
+    "author": {
+      "name": "garv thakre",
+      "email": "garvthakre0@gmail.com",
+      "date": "2026-02-07T08:54:16Z"
+    },
+    "committer": {
+      "name": "garv thakre",
+      "email": "garvthakre0@gmail.com",
+      "date": "2026-02-07T08:54:16Z"
+    },
+    "message": "chore: update the index.js and add tones",
+    "tree": {
+      "sha": "252b57544def4fac697a42ac4cbe385e447e42b3",
+      "url": "https://api.github.com/repos/garvthakre/Post90/git/trees/252b57544def4fac697a42ac4cbe385e447e42b3"
+    },
+    "url": "https://api.github.com/repos/garvthakre/Post90/git/commits/8aaddca781152184d4798cb84725e41719714d99",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/garvthakre/Post90/commits/8aaddca781152184d4798cb84725e41719714d99",
+  "html_url": "https://github.com/garvthakre/Post90/commit/8aaddca781152184d4798cb84725e41719714d99",
+  "comments_url": "https://api.github.com/repos/garvthakre/Post90/commits/8aaddca781152184d4798cb84725e41719714d99/comments",
+  "author": {
+    "login": "garvthakre",
+    "id": 157668392,
+    "node_id": "U_kgDOCWXUKA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/garvthakre",
+    "html_url": "https://github.com/garvthakre",
+    "followers_url": "https://api.github.com/users/garvthakre/followers",
+    "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+    "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+    "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+    "repos_url": "https://api.github.com/users/garvthakre/repos",
+    "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "garvthakre",
+    "id": 157668392,
+    "node_id": "U_kgDOCWXUKA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/garvthakre",
+    "html_url": "https://github.com/garvthakre",
+    "followers_url": "https://api.github.com/users/garvthakre/followers",
+    "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+    "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+    "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+    "repos_url": "https://api.github.com/users/garvthakre/repos",
+    "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "c4bfbe4eb163f3fa6a26355294dc6ed402aca63b",
+      "url": "https://api.github.com/repos/garvthakre/Post90/commits/c4bfbe4eb163f3fa6a26355294dc6ed402aca63b",
+      "html_url": "https://github.com/garvthakre/Post90/commit/c4bfbe4eb163f3fa6a26355294dc6ed402aca63b"
+    }
+  ],
+  "stats": {
+    "total": 104,
+    "additions": 104,
+    "deletions": 0
+  },
+  "files": [
+    {
+      "sha": "fb90c7da829ec2b9a9155a1ea9f24ae75a753172",
+      "filename": "data/raw/garvthakre_Post90_9482bbd0f36867823029dc2c747747c012c31275.json",
+      "status": "added",
+      "additions": 101,
+      "deletions": 0,
+      "changes": 101,
+      "blob_url": "https://github.com/garvthakre/Post90/blob/8aaddca781152184d4798cb84725e41719714d99/data%2Fraw%2Fgarvthakre_Post90_9482bbd0f36867823029dc2c747747c012c31275.json",
+      "raw_url": "https://github.com/garvthakre/Post90/raw/8aaddca781152184d4798cb84725e41719714d99/data%2Fraw%2Fgarvthakre_Post90_9482bbd0f36867823029dc2c747747c012c31275.json",
+      "contents_url": "https://api.github.com/repos/garvthakre/Post90/contents/data%2Fraw%2Fgarvthakre_Post90_9482bbd0f36867823029dc2c747747c012c31275.json?ref=8aaddca781152184d4798cb84725e41719714d99",
+      "patch": "@@ -0,0 +1,101 @@\n+{\n+  \"sha\": \"9482bbd0f36867823029dc2c747747c012c31275\",\n+  \"node_id\": \"C_kwDORHedEdoAKDk0ODJiYmQwZjM2ODY3ODIzMDI5ZGMyYzc0Nzc0N2MwMTJjMzEyNzU\",\n+  \"commit\": {\n+    \"author\": {\n+      \"name\": \"garv thakre\",\n+      \"email\": \"garvthakre0@gmail.com\",\n+      \"date\": \"2026-02-07T08:30:34Z\"\n+    },\n+    \"committer\": {\n+      \"name\": \"garv thakre\",\n+      \"email\": \"garvthakre0@gmail.com\",\n+      \"date\": \"2026-02-07T08:30:34Z\"\n+    },\n+    \"message\": \"chore:enhance the intent mapper\",\n+    \"tree\": {\n+      \"sha\": \"6a52a637b022147d56df3aebedad17155dc9dcc9\",\n+      \"url\": \"https://api.github.com/repos/garvthakre/Post90/git/trees/6a52a637b022147d56df3aebedad17155dc9dcc9\"\n+    },\n+    \"url\": \"https://api.github.com/repos/garvthakre/Post90/git/commits/9482bbd0f36867823029dc2c747747c012c31275\",\n+    \"comment_count\": 0,\n+    \"verification\": {\n+      \"verified\": false,\n+      \"reason\": \"unsigned\",\n+      \"signature\": null,\n+      \"payload\": null,\n+      \"verified_at\": null\n+    }\n+  },\n+  \"url\": \"https://api.github.com/repos/garvthakre/Post90/commits/9482bbd0f36867823029dc2c747747c012c31275\",\n+  \"html_url\": \"https://github.com/garvthakre/Post90/commit/9482bbd0f36867823029dc2c747747c012c31275\",\n+  \"comments_url\": \"https://api.github.com/repos/garvthakre/Post90/commits/9482bbd0f36867823029dc2c747747c012c31275/comments\",\n+  \"author\": {\n+    \"login\": \"garvthakre\",\n+    \"id\": 157668392,\n+    \"node_id\": \"U_kgDOCWXUKA\",\n+    \"avatar_url\": \"https://avatars.githubusercontent.com/u/157668392?v=4\",\n+    \"gravatar_id\": \"\",\n+    \"url\": \"https://api.github.com/users/garvthakre\",\n+    \"html_url\": \"https://github.com/garvthakre\",\n+    \"followers_url\": \"https://api.github.com/users/garvthakre/followers\",\n+    \"following_url\": \"https://api.github.com/users/garvthakre/following{/other_user}\",\n+    \"gists_url\": \"https://api.github.com/users/garvthakre/gists{/gist_id}\",\n+    \"starred_url\": \"https://api.github.com/users/garvthakre/starred{/owner}{/repo}\",\n+    \"subscriptions_url\": \"https://api.github.com/users/garvthakre/subscriptions\",\n+    \"organizations_url\": \"https://api.github.com/users/garvthakre/orgs\",\n+    \"repos_url\": \"https://api.github.com/users/garvthakre/repos\",\n+    \"events_url\": \"https://api.github.com/users/garvthakre/events{/privacy}\",\n+    \"received_events_url\": \"https://api.github.com/users/garvthakre/received_events\",\n+    \"type\": \"User\",\n+    \"user_view_type\": \"public\",\n+    \"site_admin\": false\n+  },\n+  \"committer\": {\n+    \"login\": \"garvthakre\",\n+    \"id\": 157668392,\n+    \"node_id\": \"U_kgDOCWXUKA\",\n+    \"avatar_url\": \"https://avatars.githubusercontent.com/u/157668392?v=4\",\n+    \"gravatar_id\": \"\",\n+    \"url\": \"https://api.github.com/users/garvthakre\",\n+    \"html_url\": \"https://github.com/garvthakre\",\n+    \"followers_url\": \"https://api.github.com/users/garvthakre/followers\",\n+    \"following_url\": \"https://api.github.com/users/garvthakre/following{/other_user}\",\n+    \"gists_url\": \"https://api.github.com/users/garvthakre/gists{/gist_id}\",\n+    \"starred_url\": \"https://api.github.com/users/garvthakre/starred{/owner}{/repo}\",\n+    \"subscriptions_url\": \"https://api.github.com/users/garvthakre/subscriptions\",\n+    \"organizations_url\": \"https://api.github.com/users/garvthakre/orgs\",\n+    \"repos_url\": \"https://api.github.com/users/garvthakre/repos\",\n+    \"events_url\": \"https://api.github.com/users/garvthakre/events{/privacy}\",\n+    \"received_events_url\": \"https://api.github.com/users/garvthakre/received_events\",\n+    \"type\": \"User\",\n+    \"user_view_type\": \"public\",\n+    \"site_admin\": false\n+  },\n+  \"parents\": [\n+    {\n+      \"sha\": \"412093c355035e44f51b4a997243b582817108f8\",\n+      \"url\": \"https://api.github.com/repos/garvthakre/Post90/commits/412093c355035e44f51b4a997243b582817108f8\",\n+      \"html_url\": \"https://github.com/garvthakre/Post90/commit/412093c355035e44f51b4a997243b582817108f8\"\n+    }\n+  ],\n+  \"stats\": {\n+    \"total\": 71,\n+    \"additions\": 48,\n+    \"deletions\": 23\n+  },\n+  \"files\": [\n+    {\n+      \"sha\": \"c3b9d068b42c304a464751e904497eec5867ad26\",\n+      \"filename\": \"src/post/intentMapper.js\",\n+      \"status\": \"modified\",\n+      \"additions\": 48,\n+      \"deletions\": 23,\n+      \"changes\": 71,\n+      \"blob_url\": \"https://github.com/garvthakre/Post90/blob/9482bbd0f36867823029dc2c747747c012c31275/src%2Fpost%2FintentMapper.js\",\n+      \"raw_url\": \"https://github.com/garvthakre/Post90/raw/9482bbd0f36867823029dc2c747747c012c31275/src%2Fpost%2FintentMapper.js\",\n+      \"contents_url\": \"https://api.github.com/repos/garvthakre/Post90/contents/src%2Fpost%2FintentMapper.js?ref=9482bbd0f36867823029dc2c747747c012c31275\",\n+      \"patch\": \"@@ -1,39 +1,64 @@\\n-export function mapIntent(analysis){\\n-    const {impact,signals,totalWeight} = analysis;\\n-    if(impact === 'HIGH_RISK'){\\n-     return {\\n-        type:'technical_decision',\\n-        angle:'engineering_tradeoff',\\n-     } ;  \\n-\\n-\\n+export function mapIntent(analysis) {\\n+    const { impact, signals, totalWeight } = analysis;\\n+    \\n+    // Check for documentation changes\\n+    if (signals.doc_image_change || signals.doc_link_change || signals.doc_heading_change) {\\n+        return {\\n+            type: 'build_in_public',\\n+            angle: 'documentation_progress',\\n+        };\\n+    }\\n+    \\n+    if (signals.doc_tech_stack_change) {\\n+        return {\\n+            type: 'build_in_public',\\n+            angle: 'tech_stack_update',\\n+        };\\n+    }\\n+    \\n+    // High risk changes\\n+    if (impact === 'HIGH_RISK') {\\n+        return {\\n+            type: 'technical_decision',\\n+            angle: 'engineering_tradeoff',\\n+        };\\n     }\\n-    if(signals.async_change || signals.promise_change){\\n+    \\n+    // Async patterns\\n+    if (signals.async_change || signals.promise_change) {\\n         return {\\n-            type:'technical_decision',\\n-            angle:'asynchronous_handling',\\n+            type: 'learning',\\n+            angle: 'async_patterns',\\n         };\\n     }\\n-    if(signals.error_handling_change){\\n+    \\n+    // Error handling\\n+    if (signals.error_handling_change) {\\n         return {\\n-            type:'technical_decision',\\n-            angle:'error_handling',\\n+            type: 'technical_decision',\\n+            angle: 'error_handling',\\n         };\\n     }\\n-    if(signals.networking_change){\\n+    \\n+    // Networking changes\\n+    if (signals.networking_change) {\\n         return {\\n-            type:'technical_decision',\\n-            angle:'networking',\\n+            type: 'technical_decision',\\n+            angle: 'networking',\\n         };\\n     }\\n-    if(totalWeight > 500){\\n+    \\n+    // Large changes\\n+    if (totalWeight > 500) {\\n         return {\\n-            type:'technical_decision',\\n-            angle:'large_change',\\n+            type: 'technical_decision',\\n+            angle: 'large_change',\\n         };\\n     }\\n+    \\n+    // Default: small win\\n     return {\\n-        type:'daily_update',\\n-        angle:'small_win',\\n+        type: 'daily_update',\\n+        angle: 'small_win',\\n     };\\n }\\n\\\\ No newline at end of file\"\n+    }\n+  ]\n+}"
+    },
+    {
+      "sha": "e94e9f79c6216cbd3d86b00214df2657c71fc484",
+      "filename": "src/index.js",
+      "status": "modified",
+      "additions": 3,
+      "deletions": 0,
+      "changes": 3,
+      "blob_url": "https://github.com/garvthakre/Post90/blob/8aaddca781152184d4798cb84725e41719714d99/src%2Findex.js",
+      "raw_url": "https://github.com/garvthakre/Post90/raw/8aaddca781152184d4798cb84725e41719714d99/src%2Findex.js",
+      "contents_url": "https://api.github.com/repos/garvthakre/Post90/contents/src%2Findex.js?ref=8aaddca781152184d4798cb84725e41719714d99",
+      "patch": "@@ -53,12 +53,15 @@ const finalPost = await rewritePost({\n     impact: analysis.impact,\n     signals: analysis.signals\n   },\n+  tone: argv.tone,\n   constraints: {\n     platform: 'linkedin',\n     maxLength: 300,\n     emoji: true\n   }\n });\n+ \n+ \n \n console.log('\\n FINAL POST:\\n');\n console.log(finalPost);"
+    }
+  ]
+}
