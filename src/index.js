@@ -5,7 +5,7 @@ import { hideBin } from 'yargs/helpers';
 import { fetchCommit } from './fetch/github.js';
 import { extractCommitSignals } from './extract/index.js';
 import { analyzeCommit } from './analyze/commitAnalyzer.js';
-
+import { composePost } from './post/composer.js';
 dotenv.config();
  
 
@@ -42,5 +42,8 @@ const argv = yargs(hideBin(process.argv))
   const analysis = analyzeCommit(signals);
   console.log('\n ANALYSIS RESULT :\n')
   console.log(JSON.stringify(analysis, null, 2))
+  const post = composePost(analysis);
+  console.log('\n COMPOSED POST :\n')
+  console.log(post);
   console.log('Done');
 })();
