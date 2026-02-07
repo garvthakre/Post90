@@ -1,0 +1,101 @@
+{
+  "sha": "9482bbd0f36867823029dc2c747747c012c31275",
+  "node_id": "C_kwDORHedEdoAKDk0ODJiYmQwZjM2ODY3ODIzMDI5ZGMyYzc0Nzc0N2MwMTJjMzEyNzU",
+  "commit": {
+    "author": {
+      "name": "garv thakre",
+      "email": "garvthakre0@gmail.com",
+      "date": "2026-02-07T08:30:34Z"
+    },
+    "committer": {
+      "name": "garv thakre",
+      "email": "garvthakre0@gmail.com",
+      "date": "2026-02-07T08:30:34Z"
+    },
+    "message": "chore:enhance the intent mapper",
+    "tree": {
+      "sha": "6a52a637b022147d56df3aebedad17155dc9dcc9",
+      "url": "https://api.github.com/repos/garvthakre/Post90/git/trees/6a52a637b022147d56df3aebedad17155dc9dcc9"
+    },
+    "url": "https://api.github.com/repos/garvthakre/Post90/git/commits/9482bbd0f36867823029dc2c747747c012c31275",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/garvthakre/Post90/commits/9482bbd0f36867823029dc2c747747c012c31275",
+  "html_url": "https://github.com/garvthakre/Post90/commit/9482bbd0f36867823029dc2c747747c012c31275",
+  "comments_url": "https://api.github.com/repos/garvthakre/Post90/commits/9482bbd0f36867823029dc2c747747c012c31275/comments",
+  "author": {
+    "login": "garvthakre",
+    "id": 157668392,
+    "node_id": "U_kgDOCWXUKA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/garvthakre",
+    "html_url": "https://github.com/garvthakre",
+    "followers_url": "https://api.github.com/users/garvthakre/followers",
+    "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+    "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+    "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+    "repos_url": "https://api.github.com/users/garvthakre/repos",
+    "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "garvthakre",
+    "id": 157668392,
+    "node_id": "U_kgDOCWXUKA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/garvthakre",
+    "html_url": "https://github.com/garvthakre",
+    "followers_url": "https://api.github.com/users/garvthakre/followers",
+    "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+    "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+    "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+    "repos_url": "https://api.github.com/users/garvthakre/repos",
+    "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "412093c355035e44f51b4a997243b582817108f8",
+      "url": "https://api.github.com/repos/garvthakre/Post90/commits/412093c355035e44f51b4a997243b582817108f8",
+      "html_url": "https://github.com/garvthakre/Post90/commit/412093c355035e44f51b4a997243b582817108f8"
+    }
+  ],
+  "stats": {
+    "total": 71,
+    "additions": 48,
+    "deletions": 23
+  },
+  "files": [
+    {
+      "sha": "c3b9d068b42c304a464751e904497eec5867ad26",
+      "filename": "src/post/intentMapper.js",
+      "status": "modified",
+      "additions": 48,
+      "deletions": 23,
+      "changes": 71,
+      "blob_url": "https://github.com/garvthakre/Post90/blob/9482bbd0f36867823029dc2c747747c012c31275/src%2Fpost%2FintentMapper.js",
+      "raw_url": "https://github.com/garvthakre/Post90/raw/9482bbd0f36867823029dc2c747747c012c31275/src%2Fpost%2FintentMapper.js",
+      "contents_url": "https://api.github.com/repos/garvthakre/Post90/contents/src%2Fpost%2FintentMapper.js?ref=9482bbd0f36867823029dc2c747747c012c31275",
+      "patch": "@@ -1,39 +1,64 @@\n-export function mapIntent(analysis){\n-    const {impact,signals,totalWeight} = analysis;\n-    if(impact === 'HIGH_RISK'){\n-     return {\n-        type:'technical_decision',\n-        angle:'engineering_tradeoff',\n-     } ;  \n-\n-\n+export function mapIntent(analysis) {\n+    const { impact, signals, totalWeight } = analysis;\n+    \n+    // Check for documentation changes\n+    if (signals.doc_image_change || signals.doc_link_change || signals.doc_heading_change) {\n+        return {\n+            type: 'build_in_public',\n+            angle: 'documentation_progress',\n+        };\n+    }\n+    \n+    if (signals.doc_tech_stack_change) {\n+        return {\n+            type: 'build_in_public',\n+            angle: 'tech_stack_update',\n+        };\n+    }\n+    \n+    // High risk changes\n+    if (impact === 'HIGH_RISK') {\n+        return {\n+            type: 'technical_decision',\n+            angle: 'engineering_tradeoff',\n+        };\n     }\n-    if(signals.async_change || signals.promise_change){\n+    \n+    // Async patterns\n+    if (signals.async_change || signals.promise_change) {\n         return {\n-            type:'technical_decision',\n-            angle:'asynchronous_handling',\n+            type: 'learning',\n+            angle: 'async_patterns',\n         };\n     }\n-    if(signals.error_handling_change){\n+    \n+    // Error handling\n+    if (signals.error_handling_change) {\n         return {\n-            type:'technical_decision',\n-            angle:'error_handling',\n+            type: 'technical_decision',\n+            angle: 'error_handling',\n         };\n     }\n-    if(signals.networking_change){\n+    \n+    // Networking changes\n+    if (signals.networking_change) {\n         return {\n-            type:'technical_decision',\n-            angle:'networking',\n+            type: 'technical_decision',\n+            angle: 'networking',\n         };\n     }\n-    if(totalWeight > 500){\n+    \n+    // Large changes\n+    if (totalWeight > 500) {\n         return {\n-            type:'technical_decision',\n-            angle:'large_change',\n+            type: 'technical_decision',\n+            angle: 'large_change',\n         };\n     }\n+    \n+    // Default: small win\n     return {\n-        type:'daily_update',\n-        angle:'small_win',\n+        type: 'daily_update',\n+        angle: 'small_win',\n     };\n }\n\\ No newline at end of file"
+    }
+  ]
+}

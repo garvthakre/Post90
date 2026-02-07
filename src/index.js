@@ -53,12 +53,15 @@ const finalPost = await rewritePost({
     impact: analysis.impact,
     signals: analysis.signals
   },
+  tone: argv.tone,
   constraints: {
     platform: 'linkedin',
     maxLength: 300,
     emoji: true
   }
 });
+ 
+ 
 
 console.log('\n FINAL POST:\n');
 console.log(finalPost);
