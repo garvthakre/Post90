@@ -6,10 +6,8 @@ import { fetchCommit } from './fetch/github.js';
 import { extractCommitSignals } from './extract/index.js';
 import { analyzeCommit } from './analyze/commitAnalyzer.js';
 import { composePost } from './post/composer.js';
+import { rewritePost } from './ai/rewrite.js';
 dotenv.config();
- 
-
-  
 
 const argv = yargs(hideBin(process.argv))
   .option('repo', {
@@ -45,5 +43,25 @@ const argv = yargs(hideBin(process.argv))
   const post = composePost(analysis);
   console.log('\n COMPOSED POST :\n')
   console.log(post);
+  const basePost = composePost(analysis);
+
+const finalPost = await rewritePost({
+  basePost,
+  intent: analysis.intent,
+  angle: analysis.angle,
+  facts: {
+    impact: analysis.impact,
+    signals: analysis.signals
+  },
+  constraints: {
+    platform: 'linkedin',
+    maxLength: 300,
+    emoji: true
+  }
+});
+
+console.log('\n FINAL POST:\n');
+console.log(finalPost);
+
   console.log('Done');
 })();
