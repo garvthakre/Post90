@@ -1,0 +1,101 @@
+{
+  "sha": "087f58594807d73965c3343573b6d782f8a66348",
+  "node_id": "C_kwDORHedEdoAKDA4N2Y1ODU5NDgwN2Q3Mzk2NWMzMzQzNTczYjZkNzgyZjhhNjYzNDg",
+  "commit": {
+    "author": {
+      "name": "garv thakre",
+      "email": "garvthakre0@gmail.com",
+      "date": "2026-02-07T09:43:22Z"
+    },
+    "committer": {
+      "name": "garv thakre",
+      "email": "garvthakre0@gmail.com",
+      "date": "2026-02-07T09:43:22Z"
+    },
+    "message": "chore: add the generate ideas",
+    "tree": {
+      "sha": "09372f3b8633d5da1f4d64e6f97b80ed527c0e36",
+      "url": "https://api.github.com/repos/garvthakre/Post90/git/trees/09372f3b8633d5da1f4d64e6f97b80ed527c0e36"
+    },
+    "url": "https://api.github.com/repos/garvthakre/Post90/git/commits/087f58594807d73965c3343573b6d782f8a66348",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/garvthakre/Post90/commits/087f58594807d73965c3343573b6d782f8a66348",
+  "html_url": "https://github.com/garvthakre/Post90/commit/087f58594807d73965c3343573b6d782f8a66348",
+  "comments_url": "https://api.github.com/repos/garvthakre/Post90/commits/087f58594807d73965c3343573b6d782f8a66348/comments",
+  "author": {
+    "login": "garvthakre",
+    "id": 157668392,
+    "node_id": "U_kgDOCWXUKA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/garvthakre",
+    "html_url": "https://github.com/garvthakre",
+    "followers_url": "https://api.github.com/users/garvthakre/followers",
+    "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+    "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+    "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+    "repos_url": "https://api.github.com/users/garvthakre/repos",
+    "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "garvthakre",
+    "id": 157668392,
+    "node_id": "U_kgDOCWXUKA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/garvthakre",
+    "html_url": "https://github.com/garvthakre",
+    "followers_url": "https://api.github.com/users/garvthakre/followers",
+    "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+    "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+    "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+    "repos_url": "https://api.github.com/users/garvthakre/repos",
+    "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "71c5d52f73dd09c417fed7276dcf05c613d61f19",
+      "url": "https://api.github.com/repos/garvthakre/Post90/commits/71c5d52f73dd09c417fed7276dcf05c613d61f19",
+      "html_url": "https://github.com/garvthakre/Post90/commit/71c5d52f73dd09c417fed7276dcf05c613d61f19"
+    }
+  ],
+  "stats": {
+    "total": 144,
+    "additions": 144,
+    "deletions": 0
+  },
+  "files": [
+    {
+      "sha": "c098d0d5e3ea0036024006a2e7398466307bb3d5",
+      "filename": "src/post/ideaGenerator.js",
+      "status": "added",
+      "additions": 144,
+      "deletions": 0,
+      "changes": 144,
+      "blob_url": "https://github.com/garvthakre/Post90/blob/087f58594807d73965c3343573b6d782f8a66348/src%2Fpost%2FideaGenerator.js",
+      "raw_url": "https://github.com/garvthakre/Post90/raw/087f58594807d73965c3343573b6d782f8a66348/src%2Fpost%2FideaGenerator.js",
+      "contents_url": "https://api.github.com/repos/garvthakre/Post90/contents/src%2Fpost%2FideaGenerator.js?ref=087f58594807d73965c3343573b6d782f8a66348",
+      "patch": "@@ -0,0 +1,144 @@\n+import { mapIntent } from './intentMapper.js';\n+\n+export function generatePostIdeas(aggregatedAnalysis) {\n+  const ideas = [];\n+  \n+  // Analyze the day's work and generate different angles\n+  const { totalCommits, signals, impacts, totalWeight } = aggregatedAnalysis;\n+  \n+  // Idea 1: High-level daily summary\n+  ideas.push({\n+    type: 'daily_summary',\n+    angle: 'productivity',\n+    title: `📊 Daily Summary: ${totalCommits} commits`,\n+    description: `Overview of the day's work with key metrics`,\n+    metadata: {\n+      commits: totalCommits,\n+      filesChanged: aggregatedAnalysis.totalFilesChanged,\n+      totalWeight,\n+      impacts\n+    }\n+  });\n+  \n+  // Idea 2: Focus on the most significant change type\n+  const topSignal = getTopSignal(signals);\n+  if (topSignal) {\n+    ideas.push({\n+      type: 'focused_technical',\n+      angle: topSignal.signal,\n+      title: `🔧 ${formatSignalName(topSignal.signal)}`,\n+      description: `Deep dive into the main technical work of the day`,\n+      metadata: {\n+        signal: topSignal.signal,\n+        count: topSignal.count,\n+        percentage: ((topSignal.count / Object.values(signals).reduce((a, b) => a + b, 0)) * 100).toFixed(0)\n+      }\n+    });\n+  }\n+  \n+  // Idea 3: Learning/growth angle (if async or error handling)\n+  if (signals.async_change || signals.promise_change || signals.error_handling_change) {\n+    ideas.push({\n+      type: 'learning',\n+      angle: 'async_mastery',\n+      title: `📚 Learning: Async Patterns`,\n+      description: `Share insights about async programming challenges`,\n+      metadata: {\n+        async_changes: signals.async_change || 0,\n+        promise_changes: signals.promise_change || 0,\n+        error_handling: signals.error_handling_change || 0\n+      }\n+    });\n+  }\n+  \n+  // Idea 4: Documentation/build in public (if doc changes)\n+  if (signals.doc_image_change || signals.doc_heading_change || signals.doc_link_change) {\n+    ideas.push({\n+      type: 'build_in_public',\n+      angle: 'documentation',\n+      title: `📝 Documentation Progress`,\n+      description: `Share the importance of good documentation`,\n+      metadata: {\n+        doc_changes: (signals.doc_image_change || 0) + (signals.doc_heading_change || 0) + (signals.doc_link_change || 0)\n+      }\n+    });\n+  }\n+  \n+  // Idea 5: High-stakes technical decision (if high risk changes)\n+  if (impacts.HIGH_RISK > 0) {\n+    ideas.push({\n+      type: 'technical_decision',\n+      angle: 'risk_management',\n+      title: `⚠️ Technical Decisions: Managing Risk`,\n+      description: `Discuss careful engineering decisions made today`,\n+      metadata: {\n+        highRiskCommits: impacts.HIGH_RISK,\n+        networking: signals.networking_change || 0,\n+        env_variables: signals.env_variable_change || 0\n+      }\n+    });\n+  }\n+  \n+  // Idea 6: Refactoring/code quality (if large weight)\n+  if (totalWeight > 500) {\n+    ideas.push({\n+      type: 'engineering_practice',\n+      angle: 'refactoring',\n+      title: `♻️ Big Refactor: ${totalWeight} lines changed`,\n+      description: `Share the story of a major code improvement`,\n+      metadata: {\n+        linesChanged: totalWeight,\n+        commits: totalCommits\n+      }\n+    });\n+  }\n+  \n+  // Idea 7: Testing focus (if test changes)\n+  if (signals.test_change) {\n+    ideas.push({\n+      type: 'quality',\n+      angle: 'testing',\n+      title: `✅ Testing & Quality`,\n+      description: `Emphasize the importance of testing`,\n+      metadata: {\n+        testChanges: signals.test_change\n+      }\n+    });\n+  }\n+  \n+  // Idea 8: Multi-faceted day (if many different signal types)\n+  const signalTypes = Object.keys(signals).length;\n+  if (signalTypes >= 5) {\n+    ideas.push({\n+      type: 'variety',\n+      angle: 'full_stack_day',\n+      title: `🌈 Full-Stack Day: ${signalTypes} different types of work`,\n+      description: `Highlight the variety of work accomplished`,\n+      metadata: {\n+        signalTypes,\n+        signals: Object.keys(signals)\n+      }\n+    });\n+  }\n+  \n+  return ideas;\n+}\n+\n+function getTopSignal(signals) {\n+  const entries = Object.entries(signals);\n+  if (entries.length === 0) return null;\n+  \n+  entries.sort((a, b) => b[1] - a[1]);\n+  return {\n+    signal: entries[0][0],\n+    count: entries[0][1]\n+  };\n+}\n+\n+function formatSignalName(signal) {\n+  return signal\n+    .replace(/_/g, ' ')\n+    .split(' ')\n+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))\n+    .join(' ');\n+}\n\\ No newline at end of file"
+    }
+  ]
+}

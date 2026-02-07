@@ -1,0 +1,101 @@
+{
+  "sha": "71c5d52f73dd09c417fed7276dcf05c613d61f19",
+  "node_id": "C_kwDORHedEdoAKDcxYzVkNTJmNzNkZDA5YzQxN2ZlZDcyNzZkY2YwNWM2MTNkNjFmMTk",
+  "commit": {
+    "author": {
+      "name": "garv thakre",
+      "email": "garvthakre0@gmail.com",
+      "date": "2026-02-07T09:42:29Z"
+    },
+    "committer": {
+      "name": "garv thakre",
+      "email": "garvthakre0@gmail.com",
+      "date": "2026-02-07T09:42:29Z"
+    },
+    "message": "chore: add the function of commit from 24hours",
+    "tree": {
+      "sha": "77297991230307af96f1d53263e2eb3f0d054f5d",
+      "url": "https://api.github.com/repos/garvthakre/Post90/git/trees/77297991230307af96f1d53263e2eb3f0d054f5d"
+    },
+    "url": "https://api.github.com/repos/garvthakre/Post90/git/commits/71c5d52f73dd09c417fed7276dcf05c613d61f19",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/garvthakre/Post90/commits/71c5d52f73dd09c417fed7276dcf05c613d61f19",
+  "html_url": "https://github.com/garvthakre/Post90/commit/71c5d52f73dd09c417fed7276dcf05c613d61f19",
+  "comments_url": "https://api.github.com/repos/garvthakre/Post90/commits/71c5d52f73dd09c417fed7276dcf05c613d61f19/comments",
+  "author": {
+    "login": "garvthakre",
+    "id": 157668392,
+    "node_id": "U_kgDOCWXUKA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/garvthakre",
+    "html_url": "https://github.com/garvthakre",
+    "followers_url": "https://api.github.com/users/garvthakre/followers",
+    "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+    "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+    "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+    "repos_url": "https://api.github.com/users/garvthakre/repos",
+    "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "garvthakre",
+    "id": 157668392,
+    "node_id": "U_kgDOCWXUKA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/garvthakre",
+    "html_url": "https://github.com/garvthakre",
+    "followers_url": "https://api.github.com/users/garvthakre/followers",
+    "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+    "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+    "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+    "repos_url": "https://api.github.com/users/garvthakre/repos",
+    "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "8aaddca781152184d4798cb84725e41719714d99",
+      "url": "https://api.github.com/repos/garvthakre/Post90/commits/8aaddca781152184d4798cb84725e41719714d99",
+      "html_url": "https://github.com/garvthakre/Post90/commit/8aaddca781152184d4798cb84725e41719714d99"
+    }
+  ],
+  "stats": {
+    "total": 59,
+    "additions": 58,
+    "deletions": 1
+  },
+  "files": [
+    {
+      "sha": "a2a5253f5ab2bd38cffe0b6d76971e4765b48423",
+      "filename": "src/fetch/github.js",
+      "status": "modified",
+      "additions": 58,
+      "deletions": 1,
+      "changes": 59,
+      "blob_url": "https://github.com/garvthakre/Post90/blob/71c5d52f73dd09c417fed7276dcf05c613d61f19/src%2Ffetch%2Fgithub.js",
+      "raw_url": "https://github.com/garvthakre/Post90/raw/71c5d52f73dd09c417fed7276dcf05c613d61f19/src%2Ffetch%2Fgithub.js",
+      "contents_url": "https://api.github.com/repos/garvthakre/Post90/contents/src%2Ffetch%2Fgithub.js?ref=71c5d52f73dd09c417fed7276dcf05c613d61f19",
+      "patch": "@@ -22,4 +22,61 @@ async function fetchCommit(repo,sha) {\n     console.log(`Commit data saved to ${filepath}`);\n     return filepath;\n }\n- export {fetchCommit};\n\\ No newline at end of file\n+\n+async function fetchCommitsLast24Hours(repo, author = null) {\n+    // Calculate timestamp for 24 hours ago\n+    const since = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();\n+    \n+    const url = `https://api.github.com/repos/${repo}/commits`;\n+    const params = {\n+        since: since,\n+        per_page: 100\n+    };\n+    \n+    if (author) {\n+        params.author = author;\n+    }\n+    \n+    console.log(`Fetching commits from ${repo} since ${since}${author ? ` by ${author}` : ''}`);\n+    \n+    const res = await axios.get(url, {\n+        headers: {\n+            'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,\n+            'Accept': 'application/vnd.github.v3+json'\n+        },\n+        params\n+    });\n+    \n+    const commits = res.data;\n+    console.log(`Found ${commits.length} commits in the last 24 hours`);\n+    \n+    // Fetch detailed info for each commit\n+    const detailedCommits = [];\n+    for (const commit of commits) {\n+        const detailUrl = `https://api.github.com/repos/${repo}/commits/${commit.sha}`;\n+        const detailRes = await axios.get(detailUrl, {\n+            headers: {\n+                'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,\n+                'Accept': 'application/vnd.github.v3+json'\n+            }\n+        });\n+        detailedCommits.push(detailRes.data);\n+        \n+        // Save individual commit\n+        const outputDir = path.join(__dirname,'../../data/raw');\n+        await fs.ensureDir(outputDir);\n+        const filepath = path.join(outputDir,`${repo.replace('/','_')}_${commit.sha}.json`);\n+        await fs.writeJson(filepath, detailRes.data, {spaces:2});\n+    }\n+    \n+    // Save aggregated commits\n+    const outputDir = path.join(__dirname,'../../data/raw');\n+    await fs.ensureDir(outputDir);\n+    const aggregatedPath = path.join(outputDir, `${repo.replace('/','_')}_last24h.json`);\n+    await fs.writeJson(aggregatedPath, detailedCommits, {spaces:2});\n+    console.log(`Aggregated commits saved to ${aggregatedPath}`);\n+    \n+    return detailedCommits;\n+}\n+\n+export { fetchCommit, fetchCommitsLast24Hours };\n\\ No newline at end of file"
+    }
+  ]
+}
