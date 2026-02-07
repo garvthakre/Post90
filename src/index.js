@@ -4,6 +4,7 @@ import fs from 'fs';
 import { hideBin } from 'yargs/helpers';
 import { fetchCommit } from './fetch/github.js';
 import { extractCommitSignals } from './extract/index.js';
+import { analyzeCommit } from './analyze/commitAnalyzer.js';
 
 dotenv.config();
  
@@ -34,9 +35,12 @@ const argv = yargs(hideBin(process.argv))
   const rawCommit = JSON.parse(fs.readFileSync(rawPath, 'utf-8'))
 
   console.log('Extracting signals...')
-  const signals = extractCommitSignals(rawCommit)
+  const signals =  await extractCommitSignals(rawCommit)
 
   console.log('\n EXTRACTED SIGNALS :\n')
   console.log(JSON.stringify(signals, null, 2))
+  const analysis = analyzeCommit(signals);
+  console.log('\n ANALYSIS RESULT :\n')
+  console.log(JSON.stringify(analysis, null, 2))
   console.log('Done');
 })();
