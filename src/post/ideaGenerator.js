@@ -1,11 +1,17 @@
+import { extractFeatureFromCommits } from '../analyze/commitAnalyzer.js';
+
 /**
- * Enhanced Post Ideas Generator
+ * Enhanced Post Ideas Generator - LinkedIn-Ready Version
  * Generates specific, personalized post ideas based on actual commit patterns
+ * Now includes feature context for better post generation
  */
 
 export function generatePostIdeas(aggregatedAnalysis) {
   const ideas = [];
   const { totalCommits, signals, impacts, totalWeight, commits } = aggregatedAnalysis;
+  
+  // Extract the actual feature/topic
+  const feature = extractFeatureFromCommits(commits);
   
   // Analyze patterns in commit messages
   const commitPatterns = analyzeCommitPatterns(commits);
@@ -17,84 +23,85 @@ export function generatePostIdeas(aggregatedAnalysis) {
   // 1. If there's a clear focus area (one signal dominates)
   const dominantSignal = findDominantSignal(signals);
   if (dominantSignal && dominantSignal.percentage > 40) {
-    ideas.push(createFocusedWorkIdea(dominantSignal, commits, workPattern));
+    ideas.push(createFocusedWorkIdea(dominantSignal, commits, workPattern, feature));
   }
   
   // 2. If there's a learning/struggle pattern (lots of async, error handling)
   if (signals.async_change > 3 || signals.error_handling_change > 3 || signals.promise_change > 3) {
-    ideas.push(createLearningJourneyIdea(signals, commits, commitPatterns));
+    ideas.push(createLearningJourneyIdea(signals, commits, commitPatterns, feature));
   }
   
   // 3. If there's documentation work
   const docSignals = (signals.doc_image_change || 0) + (signals.doc_heading_change || 0) + 
                      (signals.doc_link_change || 0) + (signals.doc_tech_stack_change || 0);
   if (docSignals > 0) {
-    ideas.push(createDocumentationStoryIdea(signals, commits, docSignals));
+    ideas.push(createDocumentationStoryIdea(signals, commits, docSignals, feature));
   }
   
   // 4. If there are high-risk changes
   if (impacts.HIGH_RISK > 0) {
-    ideas.push(createRiskManagementIdea(signals, impacts, commits));
+    ideas.push(createRiskManagementIdea(signals, impacts, commits, feature));
   }
   
   // 5. If it's a large refactor
   if (totalWeight > 500 && totalCommits > 5) {
-    ideas.push(createRefactorStoryIdea(totalWeight, totalCommits, commits, signals));
+    ideas.push(createRefactorStoryIdea(totalWeight, totalCommits, commits, signals, feature));
   }
   
   // 6. If there's test work
   if (signals.test_change > 2) {
-    ideas.push(createTestingQualityIdea(signals.test_change, commits));
+    ideas.push(createTestingQualityIdea(signals.test_change, commits, feature));
   }
   
   // 7. If it's a variety day (many different types of work)
   const signalTypes = Object.keys(signals).length;
   if (signalTypes >= 5) {
-    ideas.push(createFullStackDayIdea(signals, commits, signalTypes));
+    ideas.push(createFullStackDayIdea(signals, commits, signalTypes, feature));
   }
   
   // 8. If there's a specific technical challenge (networking, env vars)
   if (signals.networking_change > 0 || signals.env_variable_change > 0) {
-    ideas.push(createTechnicalChallengeIdea(signals, commits));
+    ideas.push(createTechnicalChallengeIdea(signals, commits, feature));
   }
   
   // 9. Generic daily summary (always include as fallback)
-  ideas.push(createDailySummaryIdea(aggregatedAnalysis, commitPatterns, timeSpan));
+  ideas.push(createDailySummaryIdea(aggregatedAnalysis, commitPatterns, timeSpan, feature));
   
   // 10. If there's a consistent theme in commit messages
   if (commitPatterns.theme) {
-    ideas.push(createThematicWorkIdea(commitPatterns, commits, signals));
+    ideas.push(createThematicWorkIdea(commitPatterns, commits, signals, feature));
   }
   
   // Sort by relevance score
   return ideas.sort((a, b) => b.relevanceScore - a.relevanceScore);
 }
 
-function createFocusedWorkIdea(dominantSignal, commits, workPattern) {
+function createFocusedWorkIdea(dominantSignal, commits, workPattern, feature) {
   const readableName = formatSignalForReading(dominantSignal.signal);
   
   return {
     type: 'focused_technical',
     angle: dominantSignal.signal,
-    title: `Deep Work: ${readableName}`,
-    description: `A day spent focusing on one specific technical area`,
+    title: `Deep Work: ${feature}`,
+    description: `A day spent focusing on ${feature.toLowerCase()}`,
     relevanceScore: dominantSignal.percentage,
     metadata: {
       signal: dominantSignal.signal,
       count: dominantSignal.count,
       percentage: dominantSignal.percentage,
       affectedFiles: getAffectedFileCount(commits, dominantSignal.signal),
-      pattern: workPattern
+      pattern: workPattern,
+      feature: feature
     },
     personalizedHooks: [
-      `${dominantSignal.count} instances of ${readableName} today`,
-      `Spent the day deep in ${readableName}`,
-      `${readableName} everywhere I looked today`
+      `Built ${feature.toLowerCase()} today`,
+      `Worked on ${feature.toLowerCase()}`,
+      `Spent the day on ${feature.toLowerCase()}`
     ]
   };
 }
 
-function createLearningJourneyIdea(signals, commits, commitPatterns) {
+function createLearningJourneyIdea(signals, commits, commitPatterns, feature) {
   const asyncCount = signals.async_change || 0;
   const errorCount = signals.error_handling_change || 0;
   const promiseCount = signals.promise_change || 0;
@@ -104,25 +111,26 @@ function createLearningJourneyIdea(signals, commits, commitPatterns) {
   return {
     type: 'learning',
     angle: 'async_complexity',
-    title: `Learning in Public: Async Challenges`,
-    description: `Share the real learning experience with async patterns`,
+    title: `Learning: ${feature}`,
+    description: `Real learning experience with ${feature.toLowerCase()}`,
     relevanceScore: 80,
     metadata: {
       async_changes: asyncCount,
       error_handling: errorCount,
       promise_changes: promiseCount,
       iterations: commitPatterns.iterations || 0,
-      learningIndicators
+      learningIndicators,
+      feature: feature
     },
     personalizedHooks: [
-      `Hit some async complexity today that made me think`,
-      `Async JavaScript still has surprises for me`,
-      `Learning curve day with promises and async/await`
+      `Worked on ${feature.toLowerCase()} today`,
+      `Hit a learning curve with ${feature.toLowerCase()}`,
+      `Learned a lot about ${feature.toLowerCase()} today`
     ]
   };
 }
 
-function createDocumentationStoryIdea(signals, commits, docSignals) {
+function createDocumentationStoryIdea(signals, commits, docSignals, feature) {
   const docTypes = [];
   if (signals.doc_image_change) docTypes.push('images');
   if (signals.doc_heading_change) docTypes.push('structure');
@@ -131,23 +139,24 @@ function createDocumentationStoryIdea(signals, commits, docSignals) {
   return {
     type: 'build_in_public',
     angle: 'documentation',
-    title: `Documentation Day: Making it Better`,
-    description: `The often overlooked but crucial work of good docs`,
+    title: `Documentation: ${feature}`,
+    description: `Improving documentation for ${feature.toLowerCase()}`,
     relevanceScore: 70,
     metadata: {
       doc_changes: docSignals,
       types: docTypes,
-      filesUpdated: getDocFilesUpdated(commits)
+      filesUpdated: getDocFilesUpdated(commits),
+      feature: feature
     },
     personalizedHooks: [
-      `Took a break from features to focus on docs`,
-      `Documentation day - not glamorous, but necessary`,
-      `Making sure the docs actually reflect reality`
+      `Took a break from features to document ${feature.toLowerCase()}`,
+      `Documentation day for ${feature.toLowerCase()}`,
+      `Made the docs better for ${feature.toLowerCase()}`
     ]
   };
 }
 
-function createRiskManagementIdea(signals, impacts, commits) {
+function createRiskManagementIdea(signals, impacts, commits, feature) {
   const riskFactors = [];
   if (signals.networking_change) riskFactors.push('API changes');
   if (signals.env_variable_change) riskFactors.push('env config');
@@ -156,88 +165,92 @@ function createRiskManagementIdea(signals, impacts, commits) {
   return {
     type: 'technical_decision',
     angle: 'risk_management',
-    title: `Careful Engineering: Managing Risk`,
-    description: `Decisions that required extra thought and testing`,
+    title: `Technical Decisions: ${feature}`,
+    description: `Careful engineering on ${feature.toLowerCase()}`,
     relevanceScore: 90,
     metadata: {
       highRiskCommits: impacts.HIGH_RISK,
       riskFactors,
-      safeguards: detectSafeguards(signals)
+      safeguards: detectSafeguards(signals),
+      feature: feature
     },
     personalizedHooks: [
-      `Made some changes today that needed extra care`,
-      `Not the kind of commits you make without thinking twice`,
-      `Engineering decisions that matter in production`
+      `Made some technical decisions on ${feature.toLowerCase()}`,
+      `Careful work on ${feature.toLowerCase()} today`,
+      `${feature} required extra thought today`
     ]
   };
 }
 
-function createRefactorStoryIdea(totalWeight, totalCommits, commits, signals) {
+function createRefactorStoryIdea(totalWeight, totalCommits, commits, signals, feature) {
   const refactorReasons = detectRefactorReasons(signals, commits);
   
   return {
     type: 'engineering_practice',
     angle: 'refactoring',
-    title: `Big Refactor: ${totalWeight} Lines Changed`,
-    description: `The story of cleaning up technical debt`,
+    title: `Big Refactor: ${feature}`,
+    description: `Refactoring ${feature.toLowerCase()}`,
     relevanceScore: 85,
     metadata: {
       linesChanged: totalWeight,
       commits: totalCommits,
       reasons: refactorReasons,
-      scope: categorizeRefactorScope(signals)
+      scope: categorizeRefactorScope(signals),
+      feature: feature
     },
     personalizedHooks: [
-      `${totalWeight} lines changed. Started small, ended up refactoring everything`,
-      `One of those refactors that keeps growing`,
-      `Sometimes you need to tear things down to build them better`
+      `${totalWeight} lines changed in ${feature.toLowerCase()}`,
+      `Big refactor on ${feature.toLowerCase()}`,
+      `Cleaned up ${feature.toLowerCase()} today`
     ]
   };
 }
 
-function createTestingQualityIdea(testCount, commits) {
+function createTestingQualityIdea(testCount, commits, feature) {
   return {
     type: 'quality',
     angle: 'testing',
-    title: `Testing Day: Building Confidence`,
-    description: `The unglamorous work that prevents future headaches`,
+    title: `Testing: ${feature}`,
+    description: `Building test coverage for ${feature.toLowerCase()}`,
     relevanceScore: 75,
     metadata: {
       testChanges: testCount,
-      coverage: 'improved', // Could calculate if we had coverage data
-      testTypes: detectTestTypes(commits)
+      coverage: 'improved',
+      testTypes: detectTestTypes(commits),
+      feature: feature
     },
     personalizedHooks: [
-      `Testing day. Not exciting, but necessary`,
-      `Adding the safety net before changing things`,
-      `Future me will thank present me for writing these tests`
+      `Testing day for ${feature.toLowerCase()}`,
+      `Added tests for ${feature.toLowerCase()}`,
+      `Building confidence in ${feature.toLowerCase()}`
     ]
   };
 }
 
-function createFullStackDayIdea(signals, commits, signalTypes) {
+function createFullStackDayIdea(signals, commits, signalTypes, feature) {
   const areas = categorizeDayAreas(signals);
   
   return {
     type: 'variety',
     angle: 'full_stack',
-    title: `Full-Stack Day: ${signalTypes} Different Areas`,
-    description: `Working across the entire stack in one day`,
+    title: `Full-Stack: ${feature}`,
+    description: `Working across the stack on ${feature.toLowerCase()}`,
     relevanceScore: 65,
     metadata: {
       signalTypes,
       areas,
-      breadth: 'high'
+      breadth: 'high',
+      feature: feature
     },
     personalizedHooks: [
-      `Full-stack day. Touched everything from UI to infrastructure`,
-      `One of those days where you context-switch constantly`,
-      `From frontend to backend and everything between`
+      `Full-stack day on ${feature.toLowerCase()}`,
+      `Touched everything while working on ${feature.toLowerCase()}`,
+      `From frontend to backend on ${feature.toLowerCase()}`
     ]
   };
 }
 
-function createTechnicalChallengeIdea(signals, commits) {
+function createTechnicalChallengeIdea(signals, commits, feature) {
   const challenges = [];
   if (signals.networking_change) challenges.push('API integration');
   if (signals.env_variable_change) challenges.push('configuration');
@@ -245,61 +258,64 @@ function createTechnicalChallengeIdea(signals, commits) {
   return {
     type: 'technical_decision',
     angle: 'infrastructure',
-    title: `Infrastructure Work: ${challenges.join(' & ')}`,
-    description: `The behind-the-scenes technical work`,
+    title: `Infrastructure: ${feature}`,
+    description: `Technical infrastructure work on ${feature.toLowerCase()}`,
     relevanceScore: 80,
     metadata: {
       challenges,
-      complexity: 'high'
+      complexity: 'high',
+      feature: feature
     },
     personalizedHooks: [
-      `Working on the stuff that doesn't show up in the UI`,
-      `Infrastructure changes - invisible but critical`,
-      `Making sure the foundation is solid`
+      `Infrastructure work on ${feature.toLowerCase()}`,
+      `Behind-the-scenes work on ${feature.toLowerCase()}`,
+      `Technical challenges in ${feature.toLowerCase()}`
     ]
   };
 }
 
-function createDailySummaryIdea(aggregatedAnalysis, commitPatterns, timeSpan) {
+function createDailySummaryIdea(aggregatedAnalysis, commitPatterns, timeSpan, feature) {
   const { totalCommits, totalFilesChanged, totalWeight } = aggregatedAnalysis;
   
   return {
     type: 'daily_summary',
     angle: 'productivity',
-    title: `Daily Wrap: ${totalCommits} Commits`,
-    description: `High-level overview of the day's work`,
+    title: `Daily Update: ${feature}`,
+    description: `Progress on ${feature.toLowerCase()}`,
     relevanceScore: 50,
     metadata: {
       commits: totalCommits,
       filesChanged: totalFilesChanged,
       totalWeight,
       timeSpan,
-      theme: commitPatterns.theme || 'mixed work'
+      theme: commitPatterns.theme || 'mixed work',
+      feature: feature
     },
     personalizedHooks: [
-      `${totalCommits} commits today. Productive day.`,
-      `Wrapped up with ${totalCommits} commits across ${totalFilesChanged} files`,
-      `One of those days where you look up and it's already evening`
+      `${totalCommits} commits on ${feature.toLowerCase()} today`,
+      `Made progress on ${feature.toLowerCase()}`,
+      `Productive day on ${feature.toLowerCase()}`
     ]
   };
 }
 
-function createThematicWorkIdea(commitPatterns, commits, signals) {
+function createThematicWorkIdea(commitPatterns, commits, signals, feature) {
   return {
     type: 'focused_effort',
     angle: 'thematic',
-    title: `Theme: ${commitPatterns.theme}`,
-    description: `Work centered around a specific theme or feature`,
+    title: `Focused Work: ${feature}`,
+    description: `Consistent work on ${feature.toLowerCase()}`,
     relevanceScore: 75,
     metadata: {
       theme: commitPatterns.theme,
       commits: commits.length,
-      consistency: commitPatterns.consistency
+      consistency: commitPatterns.consistency,
+      feature: feature
     },
     personalizedHooks: [
-      `All commits today pointed in the same direction: ${commitPatterns.theme}`,
-      `Focused session on ${commitPatterns.theme}`,
-      `When the commits tell a coherent story`
+      `Focused session on ${feature.toLowerCase()}`,
+      `All commits pointed to ${feature.toLowerCase()}`,
+      `Deep work on ${feature.toLowerCase()}`
     ]
   };
 }
