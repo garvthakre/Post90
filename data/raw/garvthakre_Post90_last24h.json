@@ -1,5 +1,509 @@
 [
   {
+    "sha": "6b094c84253308929e9db76c1c8c627d848637c5",
+    "node_id": "C_kwDORHedEdoAKDZiMDk0Yzg0MjUzMzA4OTI5ZTlkYjc2YzFjOGM2MjdkODQ4NjM3YzU",
+    "commit": {
+      "author": {
+        "name": "garv thakre",
+        "email": "garvthakre0@gmail.com",
+        "date": "2026-02-08T06:12:51Z"
+      },
+      "committer": {
+        "name": "garv thakre",
+        "email": "garvthakre0@gmail.com",
+        "date": "2026-02-08T06:12:51Z"
+      },
+      "message": "feat: enhance commit analyzer with improved analysis capabilities",
+      "tree": {
+        "sha": "46989811f8f0a2e85a2317a2409a2361c3474a8b",
+        "url": "https://api.github.com/repos/garvthakre/Post90/git/trees/46989811f8f0a2e85a2317a2409a2361c3474a8b"
+      },
+      "url": "https://api.github.com/repos/garvthakre/Post90/git/commits/6b094c84253308929e9db76c1c8c627d848637c5",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/garvthakre/Post90/commits/6b094c84253308929e9db76c1c8c627d848637c5",
+    "html_url": "https://github.com/garvthakre/Post90/commit/6b094c84253308929e9db76c1c8c627d848637c5",
+    "comments_url": "https://api.github.com/repos/garvthakre/Post90/commits/6b094c84253308929e9db76c1c8c627d848637c5/comments",
+    "author": {
+      "login": "garvthakre",
+      "id": 157668392,
+      "node_id": "U_kgDOCWXUKA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/garvthakre",
+      "html_url": "https://github.com/garvthakre",
+      "followers_url": "https://api.github.com/users/garvthakre/followers",
+      "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+      "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+      "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+      "repos_url": "https://api.github.com/users/garvthakre/repos",
+      "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "garvthakre",
+      "id": 157668392,
+      "node_id": "U_kgDOCWXUKA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/garvthakre",
+      "html_url": "https://github.com/garvthakre",
+      "followers_url": "https://api.github.com/users/garvthakre/followers",
+      "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+      "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+      "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+      "repos_url": "https://api.github.com/users/garvthakre/repos",
+      "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "b488ae9e924da01a22a6b494c4ecbce6fecbe993",
+        "url": "https://api.github.com/repos/garvthakre/Post90/commits/b488ae9e924da01a22a6b494c4ecbce6fecbe993",
+        "html_url": "https://github.com/garvthakre/Post90/commit/b488ae9e924da01a22a6b494c4ecbce6fecbe993"
+      }
+    ],
+    "stats": {
+      "total": 216,
+      "additions": 216,
+      "deletions": 0
+    },
+    "files": [
+      {
+        "sha": "d805d0394c3296012015717499406d46b87fca72",
+        "filename": "src/analyze/commitAnalyzer.js",
+        "status": "modified",
+        "additions": 216,
+        "deletions": 0,
+        "changes": 216,
+        "blob_url": "https://github.com/garvthakre/Post90/blob/6b094c84253308929e9db76c1c8c627d848637c5/src%2Fanalyze%2FcommitAnalyzer.js",
+        "raw_url": "https://github.com/garvthakre/Post90/raw/6b094c84253308929e9db76c1c8c627d848637c5/src%2Fanalyze%2FcommitAnalyzer.js",
+        "contents_url": "https://api.github.com/repos/garvthakre/Post90/contents/src%2Fanalyze%2FcommitAnalyzer.js?ref=6b094c84253308929e9db76c1c8c627d848637c5",
+        "patch": "@@ -75,4 +75,220 @@ function classifyImpact(signals, weight) {\n   if (weight > 150) return 'MEDIUM_RISK';\n \n   return 'LOW_RISK';\n+}\n+\n+/**\n+ * NEW: Extract actual feature/topic from commit messages\n+ * This is what makes posts specific instead of generic\n+ */\n+export function extractFeatureFromCommits(commits) {\n+  const messages = commits.map(c => c.message.toLowerCase()).join(' ');\n+  \n+  // Pattern matching for common features - ADD MORE AS NEEDED\n+  const features = {\n+    'auth|login|signup|password|token|jwt|session|oauth': 'Authentication System',\n+    'payment|stripe|checkout|billing|subscription|invoice': 'Payment Processing',\n+    'notification|email|sms|alert|push|webhook': 'Notification System',\n+    'upload|download|file|storage|s3|bucket|asset': 'File Management',\n+    'search|filter|query|elastic|algolia|index': 'Search Functionality',\n+    'chat|message|websocket|realtime|socket|presence': 'Real-time Chat',\n+    'dashboard|analytics|metrics|chart|graph|report': 'Analytics Dashboard',\n+    'api|endpoint|route|controller|rest|graphql': 'API Development',\n+    'cache|redis|performance|optimize|speed|latency': 'Performance Optimization',\n+    'test|spec|coverage|jest|mocha|cypress': 'Testing Infrastructure',\n+    'deploy|ci|cd|docker|kubernetes|pipeline|github actions': 'DevOps Pipeline',\n+    'database|migration|schema|sql|postgres|mongo': 'Database Architecture',\n+    'ui|component|design|css|style|tailwind|layout': 'UI Components',\n+    'form|validation|input|submit|error': 'Form Handling',\n+    'table|grid|list|pagination|sort': 'Data Tables',\n+    'modal|dialog|popup|dropdown|menu': 'Interactive Components',\n+    'navigation|routing|link|redirect|history': 'Navigation System',\n+    'state|redux|context|store|zustand': 'State Management',\n+    'security|xss|csrf|sanitize|vulnerability': 'Security Hardening',\n+    'logging|monitoring|sentry|error tracking': 'Observability',\n+    'internationalization|i18n|translation|locale': 'Internationalization',\n+    'accessibility|a11y|aria|screen reader': 'Accessibility',\n+    'mobile|responsive|breakpoint|viewport': 'Responsive Design',\n+    'queue|worker|background|job|cron': 'Background Jobs',\n+    'export|pdf|csv|excel|download': 'Data Export',\n+    'import|parser|csv|xlsx|json': 'Data Import',\n+    'rate limit|throttle|quota|circuit breaker': 'Rate Limiting',\n+    'retry|backoff|resilience|failover': 'Resilience Patterns',\n+  };\n+  \n+  for (const [pattern, feature] of Object.entries(features)) {\n+    if (new RegExp(pattern).test(messages)) {\n+      return feature;\n+    }\n+  }\n+  \n+  // Fallback: Try to extract from most common meaningful words\n+  const words = messages\n+    .split(/\\s+/)\n+    .filter(w => w.length > 4 && !isCommonWord(w));\n+  \n+  const wordFreq = {};\n+  words.forEach(w => wordFreq[w] = (wordFreq[w] || 0) + 1);\n+  \n+  const topWord = Object.entries(wordFreq)\n+    .sort((a, b) => b[1] - a[1])[0];\n+  \n+  if (topWord && topWord[1] >= 2) {\n+    return topWord[0].charAt(0).toUpperCase() + topWord[0].slice(1) + ' Feature';\n+  }\n+  \n+  return 'Feature Development';\n+}\n+\n+/**\n+ * NEW: Detect the actual problem being solved\n+ * LinkedIn posts need a clear problem statement\n+ */\n+export function detectProblem(signals, commits, feature) {\n+  const problems = {\n+    'Authentication System': {\n+      async_change: 'Managing concurrent login sessions without race conditions',\n+      error_handling_change: 'Handling failed authentication attempts gracefully',\n+      networking_change: 'Dealing with third-party OAuth provider reliability',\n+      promise_change: 'Token refresh timing and session management',\n+      test_change: 'Ensuring auth flows work correctly across edge cases'\n+    },\n+    'Payment Processing': {\n+      async_change: 'Processing payments without blocking the checkout flow',\n+      error_handling_change: 'Handling payment failures and implementing retry logic',\n+      networking_change: 'Dealing with payment gateway timeouts and failures',\n+      promise_change: 'Managing payment webhook processing order',\n+      test_change: 'Testing payment flows without charging real money'\n+    },\n+    'Real-time Chat': {\n+      async_change: 'Syncing messages across multiple devices instantly',\n+      promise_change: 'Guaranteeing message delivery in unreliable networks',\n+      networking_change: 'Handling WebSocket disconnections and reconnections',\n+      error_handling_change: 'Managing failed message sends gracefully',\n+      test_change: 'Testing real-time features in development'\n+    },\n+    'File Management': {\n+      async_change: 'Processing large file uploads without blocking the server',\n+      error_handling_change: 'Resuming failed uploads automatically',\n+      networking_change: 'Handling slow and unreliable network connections',\n+      promise_change: 'Coordinating multi-part upload completion',\n+      test_change: 'Testing upload flows with various file sizes'\n+    },\n+    'Performance Optimization': {\n+      async_change: 'Preventing blocking operations from slowing down the UI',\n+      promise_change: 'Managing parallel API calls efficiently',\n+      networking_change: 'Reducing API response times',\n+      error_handling_change: 'Graceful degradation when services are slow',\n+      cache_change: 'Deciding what to cache and for how long'\n+    },\n+    'API Development': {\n+      async_change: 'Handling concurrent API requests efficiently',\n+      error_handling_change: 'Providing meaningful error responses',\n+      networking_change: 'Ensuring API reliability under load',\n+      test_change: 'Testing API endpoints thoroughly',\n+      promise_change: 'Managing database queries in async handlers'\n+    },\n+    'Testing Infrastructure': {\n+      async_change: 'Testing async code without flaky tests',\n+      promise_change: 'Waiting for async operations in tests',\n+      test_change: 'Achieving meaningful test coverage',\n+      error_handling_change: 'Testing error scenarios comprehensively'\n+    },\n+    'Notification System': {\n+      async_change: 'Sending notifications without delaying responses',\n+      networking_change: 'Ensuring notifications are delivered reliably',\n+      promise_change: 'Managing notification queues',\n+      error_handling_change: 'Handling notification service failures'\n+    },\n+    'Database Architecture': {\n+      async_change: 'Running migrations without downtime',\n+      promise_change: 'Handling complex transaction logic',\n+      error_handling_change: 'Managing database connection failures',\n+      test_change: 'Testing database queries and migrations'\n+    }\n+  };\n+  \n+  // Find the most relevant problem based on signals\n+  const featureProblems = problems[feature] || {};\n+  const dominantSignal = Object.keys(signals).sort((a,b) => signals[b] - signals[a])[0];\n+  \n+  return featureProblems[dominantSignal] || 'Improving system reliability and user experience';\n+}\n+\n+/**\n+ * NEW: Extract the solution/approach taken\n+ * Shows HOW the problem was solved\n+ */\n+export function extractSolution(signals, feature) {\n+  const solutions = {\n+    async_change: {\n+      'Authentication System': 'Implemented token refresh logic with automatic retry and race condition handling',\n+      'Payment Processing': 'Built a queue system to process payment webhooks reliably with idempotency',\n+      'Real-time Chat': 'Used message queuing with delivery confirmations and offline support',\n+      'File Management': 'Created a chunked upload system with automatic resume capability',\n+      'Performance Optimization': 'Moved heavy operations to background workers',\n+      'API Development': 'Added async/await patterns with proper error boundaries',\n+      'Testing Infrastructure': 'Implemented proper async test utilities and helpers',\n+      'Notification System': 'Built a background job queue for notification delivery',\n+      'Database Architecture': 'Used transaction pooling and connection management',\n+      'default': 'Refactored async flows with proper error handling and timeouts'\n+    },\n+    error_handling_change: {\n+      'Authentication System': 'Added fallback authentication methods and clear error messages',\n+      'Payment Processing': 'Implemented comprehensive error logging and automatic retry logic',\n+      'Real-time Chat': 'Built offline message queuing with retry mechanisms',\n+      'File Management': 'Added automatic upload retry with exponential backoff',\n+      'Performance Optimization': 'Implemented graceful degradation when services are slow',\n+      'API Development': 'Created standardized error response format with helpful messages',\n+      'Testing Infrastructure': 'Added error scenario test coverage',\n+      'Notification System': 'Implemented fallback notification channels',\n+      'default': 'Enhanced error handling with user-friendly messages and recovery paths'\n+    },\n+    networking_change: {\n+      'Authentication System': 'Integrated OAuth with multiple providers and fallback options',\n+      'Payment Processing': 'Added payment gateway failover and timeout handling',\n+      'Real-time Chat': 'Implemented WebSocket reconnection strategy with exponential backoff',\n+      'File Management': 'Built resumable uploads with multipart support and progress tracking',\n+      'Performance Optimization': 'Implemented request batching and connection pooling',\n+      'API Development': 'Added rate limiting and request throttling',\n+      'Notification System': 'Implemented webhook retry logic with exponential backoff',\n+      'default': 'Improved API reliability with timeout handling and retry logic'\n+    },\n+    promise_change: {\n+      'Authentication System': 'Properly sequenced auth flows to prevent race conditions',\n+      'Payment Processing': 'Ensured webhook processing order with promise chaining',\n+      'Real-time Chat': 'Implemented message ordering guarantees',\n+      'File Management': 'Coordinated multi-part upload completion',\n+      'Performance Optimization': 'Used Promise.all for parallel operations where safe',\n+      'API Development': 'Properly handled promise rejections in all endpoints',\n+      'default': 'Improved promise handling with better error catching'\n+    },\n+    test_change: {\n+      'Authentication System': 'Added comprehensive auth flow tests including edge cases',\n+      'Payment Processing': 'Created test suite for payment scenarios using mocks',\n+      'Real-time Chat': 'Built tests for connection/disconnection scenarios',\n+      'File Management': 'Added upload tests for various file sizes and failures',\n+      'Testing Infrastructure': 'Improved test coverage and reliability',\n+      'API Development': 'Created API endpoint tests with various inputs',\n+      'default': 'Expanded test coverage for critical paths'\n+    },\n+    doc_image_change: {\n+      'default': 'Updated documentation with visual guides and examples'\n+    },\n+    doc_heading_change: {\n+      'default': 'Reorganized documentation for better discoverability'\n+    }\n+  };\n+  \n+  const dominantSignal = Object.keys(signals).sort((a,b) => signals[b] - signals[a])[0];\n+  const signalSolutions = solutions[dominantSignal] || solutions.async_change;\n+  \n+  return signalSolutions[feature] || signalSolutions.default;\n+}\n+\n+function isCommonWord(word) {\n+  const common = ['the', 'and', 'for', 'add', 'update', 'fix', 'with', 'from', 'this', 'that', \n+                  'about', 'would', 'there', 'their', 'what', 'which', 'when', 'make', 'like',\n+                  'time', 'just', 'know', 'take', 'into', 'your', 'some', 'could', 'them'];\n+  return common.includes(word);\n }\n\\ No newline at end of file"
+      }
+    ]
+  },
+  {
+    "sha": "b488ae9e924da01a22a6b494c4ecbce6fecbe993",
+    "node_id": "C_kwDORHedEdoAKGI0ODhhZTllOTI0ZGEwMWEyMmE2YjQ5NGM0ZWNiY2U2ZmVjYmU5OTM",
+    "commit": {
+      "author": {
+        "name": "garv thakre",
+        "email": "garvthakre0@gmail.com",
+        "date": "2026-02-08T06:12:20Z"
+      },
+      "committer": {
+        "name": "garv thakre",
+        "email": "garvthakre0@gmail.com",
+        "date": "2026-02-08T06:12:20Z"
+      },
+      "message": "feat: improve AI rewrite functionality for better content transformation",
+      "tree": {
+        "sha": "50c22aaf309a495157f49578a3cf9abef88fa19d",
+        "url": "https://api.github.com/repos/garvthakre/Post90/git/trees/50c22aaf309a495157f49578a3cf9abef88fa19d"
+      },
+      "url": "https://api.github.com/repos/garvthakre/Post90/git/commits/b488ae9e924da01a22a6b494c4ecbce6fecbe993",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/garvthakre/Post90/commits/b488ae9e924da01a22a6b494c4ecbce6fecbe993",
+    "html_url": "https://github.com/garvthakre/Post90/commit/b488ae9e924da01a22a6b494c4ecbce6fecbe993",
+    "comments_url": "https://api.github.com/repos/garvthakre/Post90/commits/b488ae9e924da01a22a6b494c4ecbce6fecbe993/comments",
+    "author": {
+      "login": "garvthakre",
+      "id": 157668392,
+      "node_id": "U_kgDOCWXUKA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/garvthakre",
+      "html_url": "https://github.com/garvthakre",
+      "followers_url": "https://api.github.com/users/garvthakre/followers",
+      "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+      "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+      "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+      "repos_url": "https://api.github.com/users/garvthakre/repos",
+      "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "garvthakre",
+      "id": 157668392,
+      "node_id": "U_kgDOCWXUKA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/garvthakre",
+      "html_url": "https://github.com/garvthakre",
+      "followers_url": "https://api.github.com/users/garvthakre/followers",
+      "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+      "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+      "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+      "repos_url": "https://api.github.com/users/garvthakre/repos",
+      "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "5357ae8b58111f008714babb10c77fc5fa28ff12",
+        "url": "https://api.github.com/repos/garvthakre/Post90/commits/5357ae8b58111f008714babb10c77fc5fa28ff12",
+        "html_url": "https://github.com/garvthakre/Post90/commit/5357ae8b58111f008714babb10c77fc5fa28ff12"
+      }
+    ],
+    "stats": {
+      "total": 34,
+      "additions": 18,
+      "deletions": 16
+    },
+    "files": [
+      {
+        "sha": "7fd21bf33eb89c5017866de16e46f43f1e77321e",
+        "filename": "src/ai/rewrite.js",
+        "status": "modified",
+        "additions": 18,
+        "deletions": 16,
+        "changes": 34,
+        "blob_url": "https://github.com/garvthakre/Post90/blob/b488ae9e924da01a22a6b494c4ecbce6fecbe993/src%2Fai%2Frewrite.js",
+        "raw_url": "https://github.com/garvthakre/Post90/raw/b488ae9e924da01a22a6b494c4ecbce6fecbe993/src%2Fai%2Frewrite.js",
+        "contents_url": "https://api.github.com/repos/garvthakre/Post90/contents/src%2Fai%2Frewrite.js?ref=b488ae9e924da01a22a6b494c4ecbce6fecbe993",
+        "patch": "@@ -1,5 +1,6 @@\n import { callHuggingFace } from \"./Provider.js\";\n import { TONES } from \"./tones.js\";\n+\n export async function rewritePost({\n   basePost,\n   intent,\n@@ -11,30 +12,31 @@ export async function rewritePost({\n }) {\n   const tonePrompts = TONES[tone] || TONES.pro;\n   \n-  // Extract only essential facts to avoid token limit\n-  const essentialFacts = extractEssentialFacts(facts, analysis);\n-  \n   const prompt = `\n-Rewrite this developer social media post to be more polished while keeping it authentic.\n+You are rewriting a LinkedIn post for a developer. The base post is already good - your job is to make it slightly more polished while keeping it authentic.\n \n-Rules:\n-- Keep the SAME meaning and facts\n-- Do NOT add new information\n-- Make it sound natural and conversational\n-- Remove any awkward phrasing\n-- Keep it under ${constraints.maxLength} characters\n+CRITICAL RULES:\n+- Keep the EXACT same meaning and facts\n+- Do NOT add new information or make claims not in the original\n+- Do NOT make it sound corporate or fake\n+- Keep it conversational and authentic\n+- The post should sound like a real developer, not a marketer\n+- Keep all specific technical details exactly as they are\n+- Do NOT remove hashtags or the call-to-action question\n \n-Tone: ${tonePrompts}\n-\n-Original post:\n+Base Post:\n \"\"\"\n ${basePost}\n \"\"\"\n \n-Platform: ${constraints.platform}\n-Emoji allowed: ${constraints.emoji}\n+Your task:\n+- Fix any awkward phrasing\n+- Make sentences flow naturally\n+- Keep the same structure (problem → solution → impact → learning → question → hashtags)\n+- Keep it under ${constraints.maxLength} characters\n+- Tone: ${tonePrompts}\n \n-Rewrite the post (respond with ONLY the rewritten post, no preamble):\n+Respond with ONLY the rewritten post, no preamble or explanation:\n `;\n \n   return await callHuggingFace(prompt);"
+      }
+    ]
+  },
+  {
+    "sha": "5357ae8b58111f008714babb10c77fc5fa28ff12",
+    "node_id": "C_kwDORHedEdoAKDUzNTdhZThiNTgxMTFmMDA4NzE0YmFiYjEwYzc3ZmM1ZmEyOGZmMTI",
+    "commit": {
+      "author": {
+        "name": "garv thakre",
+        "email": "garvthakre0@gmail.com",
+        "date": "2026-02-08T06:11:16Z"
+      },
+      "committer": {
+        "name": "garv thakre",
+        "email": "garvthakre0@gmail.com",
+        "date": "2026-02-08T06:11:16Z"
+      },
+      "message": "data: update raw data with latest 24-hour posts",
+      "tree": {
+        "sha": "32c5af1796b0d97b71dba8c9104d409545ee206e",
+        "url": "https://api.github.com/repos/garvthakre/Post90/git/trees/32c5af1796b0d97b71dba8c9104d409545ee206e"
+      },
+      "url": "https://api.github.com/repos/garvthakre/Post90/git/commits/5357ae8b58111f008714babb10c77fc5fa28ff12",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/garvthakre/Post90/commits/5357ae8b58111f008714babb10c77fc5fa28ff12",
+    "html_url": "https://github.com/garvthakre/Post90/commit/5357ae8b58111f008714babb10c77fc5fa28ff12",
+    "comments_url": "https://api.github.com/repos/garvthakre/Post90/commits/5357ae8b58111f008714babb10c77fc5fa28ff12/comments",
+    "author": {
+      "login": "garvthakre",
+      "id": 157668392,
+      "node_id": "U_kgDOCWXUKA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/garvthakre",
+      "html_url": "https://github.com/garvthakre",
+      "followers_url": "https://api.github.com/users/garvthakre/followers",
+      "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+      "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+      "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+      "repos_url": "https://api.github.com/users/garvthakre/repos",
+      "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "garvthakre",
+      "id": 157668392,
+      "node_id": "U_kgDOCWXUKA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/garvthakre",
+      "html_url": "https://github.com/garvthakre",
+      "followers_url": "https://api.github.com/users/garvthakre/followers",
+      "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+      "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+      "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+      "repos_url": "https://api.github.com/users/garvthakre/repos",
+      "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "1eb7f1a78a3f90470a03ddb6a01315e07835a856",
+        "url": "https://api.github.com/repos/garvthakre/Post90/commits/1eb7f1a78a3f90470a03ddb6a01315e07835a856",
+        "html_url": "https://github.com/garvthakre/Post90/commit/1eb7f1a78a3f90470a03ddb6a01315e07835a856"
+      }
+    ],
+    "stats": {
+      "total": 214,
+      "additions": 214,
+      "deletions": 0
+    },
+    "files": [
+      {
+        "sha": "37840f72f3cdf4ee5fa1b007a6e9a6fed7b94d1d",
+        "filename": "data/raw/garvthakre_Post90_last24h.json",
+        "status": "modified",
+        "additions": 214,
+        "deletions": 0,
+        "changes": 214,
+        "blob_url": "https://github.com/garvthakre/Post90/blob/5357ae8b58111f008714babb10c77fc5fa28ff12/data%2Fraw%2Fgarvthakre_Post90_last24h.json",
+        "raw_url": "https://github.com/garvthakre/Post90/raw/5357ae8b58111f008714babb10c77fc5fa28ff12/data%2Fraw%2Fgarvthakre_Post90_last24h.json",
+        "contents_url": "https://api.github.com/repos/garvthakre/Post90/contents/data%2Fraw%2Fgarvthakre_Post90_last24h.json?ref=5357ae8b58111f008714babb10c77fc5fa28ff12"
+      }
+    ]
+  },
+  {
+    "sha": "1eb7f1a78a3f90470a03ddb6a01315e07835a856",
+    "node_id": "C_kwDORHedEdoAKDFlYjdmMWE3OGEzZjkwNDcwYTAzZGRiNmEwMTMxNWUwNzgzNWE4NTY",
+    "commit": {
+      "author": {
+        "name": "garv thakre",
+        "email": "garvthakre0@gmail.com",
+        "date": "2026-02-08T06:10:49Z"
+      },
+      "committer": {
+        "name": "garv thakre",
+        "email": "garvthakre0@gmail.com",
+        "date": "2026-02-08T06:10:49Z"
+      },
+      "message": "feat: update post composer with enhanced formatting and structure",
+      "tree": {
+        "sha": "6d466d23d0fb59b73b46221880bb302f09a02c73",
+        "url": "https://api.github.com/repos/garvthakre/Post90/git/trees/6d466d23d0fb59b73b46221880bb302f09a02c73"
+      },
+      "url": "https://api.github.com/repos/garvthakre/Post90/git/commits/1eb7f1a78a3f90470a03ddb6a01315e07835a856",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/garvthakre/Post90/commits/1eb7f1a78a3f90470a03ddb6a01315e07835a856",
+    "html_url": "https://github.com/garvthakre/Post90/commit/1eb7f1a78a3f90470a03ddb6a01315e07835a856",
+    "comments_url": "https://api.github.com/repos/garvthakre/Post90/commits/1eb7f1a78a3f90470a03ddb6a01315e07835a856/comments",
+    "author": {
+      "login": "garvthakre",
+      "id": 157668392,
+      "node_id": "U_kgDOCWXUKA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/garvthakre",
+      "html_url": "https://github.com/garvthakre",
+      "followers_url": "https://api.github.com/users/garvthakre/followers",
+      "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+      "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+      "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+      "repos_url": "https://api.github.com/users/garvthakre/repos",
+      "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "garvthakre",
+      "id": 157668392,
+      "node_id": "U_kgDOCWXUKA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/garvthakre",
+      "html_url": "https://github.com/garvthakre",
+      "followers_url": "https://api.github.com/users/garvthakre/followers",
+      "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+      "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+      "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+      "repos_url": "https://api.github.com/users/garvthakre/repos",
+      "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "081ff3e83ee3a46c60e14481d8a1cd2cadae7dfd",
+        "url": "https://api.github.com/repos/garvthakre/Post90/commits/081ff3e83ee3a46c60e14481d8a1cd2cadae7dfd",
+        "html_url": "https://github.com/garvthakre/Post90/commit/081ff3e83ee3a46c60e14481d8a1cd2cadae7dfd"
+      }
+    ],
+    "stats": {
+      "total": 710,
+      "additions": 504,
+      "deletions": 206
+    },
+    "files": [
+      {
+        "sha": "e1e075cb13381393d6b92503d224378eeb6abb7f",
+        "filename": "src/post/composer.js",
+        "status": "modified",
+        "additions": 504,
+        "deletions": 206,
+        "changes": 710,
+        "blob_url": "https://github.com/garvthakre/Post90/blob/1eb7f1a78a3f90470a03ddb6a01315e07835a856/src%2Fpost%2Fcomposer.js",
+        "raw_url": "https://github.com/garvthakre/Post90/raw/1eb7f1a78a3f90470a03ddb6a01315e07835a856/src%2Fpost%2Fcomposer.js",
+        "contents_url": "https://api.github.com/repos/garvthakre/Post90/contents/src%2Fpost%2Fcomposer.js?ref=1eb7f1a78a3f90470a03ddb6a01315e07835a856",
+        "patch": "@@ -1,253 +1,551 @@\n+import { extractFeatureFromCommits, detectProblem, extractSolution } from '../analyze/commitAnalyzer.js';\n+\n /**\n- * Enhanced Post Composer\n- * Generates personalized, story-driven posts based on actual commit data\n+ * Enhanced Post Composer - LinkedIn-Ready Version\n+ * Generates specific, copy-paste ready posts with:\n+ * - Clear feature/topic\n+ * - Specific problem solved\n+ * - Solution approach\n+ * - Impact/results\n+ * - Actionable insights\n+ * - Relevant hashtags\n+ * - Call-to-action\n  */\n \n export function composePost(idea, aggregatedAnalysis) {\n   const { commits, signals, totalWeight, totalFilesChanged } = aggregatedAnalysis;\n   \n-  // Extract real commit messages and patterns\n-  const commitMessages = commits.map(c => c.message.split('\\n')[0]);\n-  const firstCommit = commits[0];\n-  const lastCommit = commits[commits.length - 1];\n-  \n-  // Build narrative components\n-  const narrative = buildNarrative(idea, aggregatedAnalysis, commitMessages);\n-  const context = buildContext(idea, aggregatedAnalysis);\n-  const reflection = buildReflection(idea, aggregatedAnalysis);\n-  const hook = buildHook(idea, aggregatedAnalysis);\n-  \n-  // Compose the post with natural flow\n-  return composeNaturalPost({\n-    hook,\n-    narrative,\n-    context,\n-    reflection,\n+  // Extract the actual feature being worked on\n+  const feature = extractFeatureFromCommits(commits);\n+  \n+  // Detect the specific problem\n+  const problem = detectProblem(signals, commits, feature);\n+  \n+  // Extract the solution approach\n+  const solution = extractSolution(signals, feature);\n+  \n+  // Generate impact statement\n+  const impact = generateImpact(feature, signals, totalWeight, idea);\n+  \n+  // Generate key insight/learning\n+  const insight = generateInsight(feature, signals, idea);\n+  \n+  // Generate hashtags\n+  const hashtags = generateHashtags(feature, signals);\n+  \n+  // Generate call-to-action\n+  const cta = generateCTA(feature, idea);\n+  \n+  // Build the post based on idea type\n+  return buildLinkedInPost({\n+    feature,\n+    problem,\n+    solution,\n+    impact,\n+    insight,\n+    hashtags,\n+    cta,\n     idea,\n-    aggregatedAnalysis\n+    commits,\n+    signals,\n+    totalWeight\n   });\n }\n \n-function buildHook(idea, analysis) {\n-  const { totalCommits, signals, totalWeight } = analysis;\n-  \n-  switch(idea.type) {\n-    case 'daily_summary':\n-      if (totalCommits > 10) {\n-        return `${totalCommits} commits today. One of those days where you look up and realize you've been in the zone for hours.`;\n-      }\n-      return `Wrapped up today with ${totalCommits} commits.`;\n-    \n-    case 'focused_technical':\n-      const signalName = formatSignalForReading(idea.metadata.signal);\n-      return `Spent most of today deep in ${signalName}.`;\n-    \n-    case 'learning':\n-      return `Hit a learning curve today with async patterns.`;\n-    \n-    case 'build_in_public':\n-      return `Took a step back from features today to focus on documentation.`;\n-    \n-    case 'technical_decision':\n-      return `Made some decisions today that needed more thought than usual.`;\n-    \n-    case 'engineering_practice':\n-      return `${totalWeight} lines changed across ${totalCommits} commits. Big refactor day.`;\n-    \n-    case 'quality':\n-      return `Testing day. Not the most glamorous work, but necessary.`;\n-    \n-    case 'variety':\n-      return `Full-stack kind of day.`;\n-    \n-    default:\n-      return `Made progress today.`;\n+/**\n+ * Build the actual LinkedIn post\n+ * Structure: Hook → Problem → Solution → Impact → Insight → CTA → Hashtags\n+ */\n+function buildLinkedInPost({ feature, problem, solution, impact, insight, hashtags, cta, idea, commits, signals, totalWeight }) {\n+  \n+  // Different post styles based on idea type\n+  if (idea.type === 'focused_technical') {\n+    return buildFocusedTechnicalPost({ feature, problem, solution, impact, insight, hashtags, cta, idea });\n   }\n-}\n-\n-function buildNarrative(idea, analysis, commitMessages) {\n-  const { totalCommits, signals, totalWeight, totalFilesChanged, commits } = analysis;\n-  \n-  // Extract actual work done\n-  const fileTypes = extractFileTypes(commits);\n-  const keyChanges = extractKeyChanges(signals);\n-  \n-  switch(idea.type) {\n-    case 'daily_summary':\n-      const fileTypesStr = fileTypes.slice(0, 3).join(', ');\n-      return `Touched ${totalFilesChanged} files - mostly ${fileTypesStr}. ${keyChanges[0] || 'Various improvements'} was the main theme.`;\n-    \n-    case 'focused_technical':\n-      const count = idea.metadata.count;\n-      return `${count} separate instances of ${formatSignalForReading(idea.metadata.signal)} across the codebase. Started with one file, realized the pattern was everywhere, ended up doing a systematic pass.`;\n-    \n-    case 'learning':\n-      const asyncCount = idea.metadata.async_changes || 0;\n-      const promiseCount = idea.metadata.promise_changes || 0;\n-      return `Working with ${asyncCount} async changes and ${promiseCount} promise updates. The tricky part isn't writing async code - it's handling all the edge cases when things don't resolve as expected.`;\n-    \n-    case 'build_in_public':\n-      const docCount = idea.metadata.doc_changes;\n-      return `${docCount} documentation updates. Added examples, fixed outdated sections, made sure the README actually reflects what the project does now.`;\n-    \n-    case 'technical_decision':\n-      const highRisk = idea.metadata.highRiskCommits;\n-      return `${highRisk} commits that touched networking or environment config. These aren't the kind of changes you make lightly - one wrong env variable and things break in production.`;\n-    \n-    case 'engineering_practice':\n-      return `What started as \"let me just clean this up\" turned into ${totalCommits} commits and ${totalWeight} lines of changes. Sometimes you pull one thread and the whole sweater unravels - in a good way.`;\n-    \n-    case 'quality':\n-      const testCount = idea.metadata.testChanges;\n-      return `Added and updated ${testCount} tests. The kind of work that doesn't show up in demos but saves hours of debugging later.`;\n-    \n-    case 'variety':\n-      const signalList = Object.keys(signals).slice(0, 4).map(formatSignalForReading);\n-      return `Jumped between ${signalList.join(', ')}. One of those days where you're touching everything from frontend to infrastructure.`;\n-    \n-    default:\n-      return `Working through the backlog, one commit at a time.`;\n+  \n+  if (idea.type === 'learning') {\n+    return buildLearningPost({ feature, problem, solution, impact, insight, hashtags, cta, idea });\n+  }\n+  \n+  if (idea.type === 'build_in_public') {\n+    return buildDocumentationPost({ feature, problem, solution, impact, insight, hashtags, cta, idea });\n+  }\n+  \n+  if (idea.type === 'technical_decision') {\n+    return buildTechnicalDecisionPost({ feature, problem, solution, impact, insight, hashtags, cta, idea });\n+  }\n+  \n+  if (idea.type === 'engineering_practice') {\n+    return buildRefactorPost({ feature, problem, solution, impact, insight, hashtags, cta, totalWeight, commits });\n+  }\n+  \n+  if (idea.type === 'quality') {\n+    return buildTestingPost({ feature, problem, solution, impact, insight, hashtags, cta, idea });\n   }\n+  \n+  if (idea.type === 'variety') {\n+    return buildFullStackPost({ feature, problem, solution, impact, insight, hashtags, cta, signals });\n+  }\n+  \n+  // Default: daily summary style\n+  return buildDailySummaryPost({ feature, problem, solution, impact, insight, hashtags, cta, commits, totalWeight });\n }\n \n-function buildContext(idea, analysis) {\n-  const { signals, totalWeight } = analysis;\n-  \n-  switch(idea.type) {\n-    case 'focused_technical':\n-      return `The codebase was inconsistent - some files using one pattern, others using another. Better to fix it all at once than let it drift further apart.`;\n-    \n-    case 'learning':\n-      return `Async JavaScript still catches me sometimes. You think you understand it, then you hit a race condition or an unhandled rejection that reminds you there's always more to learn.`;\n-    \n-    case 'build_in_public':\n-      return `Good documentation is the difference between someone understanding your project in 5 minutes versus giving up and moving on. Worth the investment.`;\n-    \n-    case 'technical_decision':\n-      return `These changes needed testing, double-checking, and a clear rollback plan. Engineering isn't just about making things work - it's about making sure they keep working.`;\n-    \n-    case 'engineering_practice':\n-      return `The refactor was overdue. Code had accumulated enough cruft that adding new features was getting harder. Sometimes you need to stop and clean house.`;\n-    \n-    case 'quality':\n-      return `Tests are insurance. They don't prevent bugs, but they catch them before users do. And they let you refactor with confidence.`;\n-    \n-    default:\n-      return null;\n-  }\n+function buildFocusedTechnicalPost({ feature, problem, solution, impact, insight, hashtags, cta, idea }) {\n+  return `Built ${feature.toLowerCase()} that handles ${extractContext(problem)}.\n+\n+The challenge: ${problem}\n+\n+${solution}\n+\n+Impact: ${impact}\n+\n+Key learning: ${insight}\n+\n+${cta}\n+\n+${hashtags}`.trim();\n }\n \n-function buildReflection(idea, analysis) {\n-  switch(idea.type) {\n-    case 'daily_summary':\n-      return `Not every day needs to be about shipping features. Sometimes it's about making the foundation stronger.`;\n-    \n-    case 'focused_technical':\n-      return `Consistency compounds. Fix patterns once, benefit every time you touch that code.`;\n-    \n-    case 'learning':\n-      return `Still learning. Always will be. That's why this work stays interesting.`;\n-    \n-    case 'build_in_public':\n-      return `Documentation is code. Treat it with the same care.`;\n-    \n-    case 'technical_decision':\n-      return `Good engineering is mostly boring. It's careful, measured, and defensive. That's what makes it reliable.`;\n-    \n-    case 'engineering_practice':\n-      return `Refactoring feels indulgent until you try to add a feature to messy code. Then it feels essential.`;\n-    \n-    case 'quality':\n-      return `The best code is the code that works when you're not watching.`;\n-    \n-    case 'variety':\n-      return `Full-stack work keeps you sharp. You can't hide behind specialization when you're responsible for everything.`;\n-    \n-    default:\n-      return `Progress over perfection. Ship it, learn from it, improve it.`;\n-  }\n+function buildLearningPost({ feature, problem, solution, impact, insight, hashtags, cta, idea }) {\n+  return `Worked on ${feature.toLowerCase()} today.\n+\n+Hit a learning curve with ${extractContext(problem)}.\n+\n+${solution}\n+\n+${impact}\n+\n+The thing about ${extractTopic(feature)}: ${insight}\n+\n+${cta}\n+\n+${hashtags}`.trim();\n }\n \n-function composeNaturalPost({ hook, narrative, context, reflection, idea }) {\n-  const parts = [hook, narrative];\n+function buildDocumentationPost({ feature, problem, solution, impact, insight, hashtags, cta, idea }) {\n+  const docCount = idea.metadata?.doc_changes || 'several';\n   \n-  if (context) {\n-    parts.push(context);\n-  }\n+  return `Took a break from features today to focus on documentation.\n+\n+${solution}\n+\n+Why it matters: ${impact}\n+\n+${insight}\n+\n+${cta}\n+\n+${hashtags}`.trim();\n+}\n+\n+function buildTechnicalDecisionPost({ feature, problem, solution, impact, insight, hashtags, cta, idea }) {\n+  return `Made some technical decisions today that needed extra thought.\n+\n+Working on ${feature.toLowerCase()}: ${problem}\n+\n+${solution}\n+\n+${impact}\n+\n+${insight}\n+\n+${cta}\n+\n+${hashtags}`.trim();\n+}\n+\n+function buildRefactorPost({ feature, problem, solution, impact, insight, hashtags, cta, totalWeight, commits }) {\n+  return `${totalWeight} lines changed across ${commits.length} commits today.\n+\n+What started as a small cleanup in ${feature.toLowerCase()} turned into a proper refactor.\n+\n+The problem: ${problem}\n+\n+${solution}\n+\n+${impact}\n+\n+${insight}\n+\n+${cta}\n+\n+${hashtags}`.trim();\n+}\n+\n+function buildTestingPost({ feature, problem, solution, impact, insight, hashtags, cta, idea }) {\n+  const testCount = idea.metadata?.testChanges || 'multiple';\n   \n-  parts.push(reflection);\n+  return `Testing day. Added and updated ${testCount} tests for ${feature.toLowerCase()}.\n+\n+Not the most glamorous work, but necessary.\n+\n+${solution}\n+\n+${impact}\n+\n+${insight}\n+\n+${cta}\n+\n+${hashtags}`.trim();\n+}\n+\n+function buildFullStackPost({ feature, problem, solution, impact, insight, hashtags, cta, signals }) {\n+  const areas = Object.keys(signals).slice(0, 4).map(formatSignalForReading).join(', ');\n   \n-  // Join with double line breaks for readability\n-  return parts.filter(Boolean).join('\\n\\n');\n+  return `Full-stack kind of day.\n+\n+Jumped between ${areas} while working on ${feature.toLowerCase()}.\n+\n+The challenge: ${problem}\n+\n+${solution}\n+\n+${impact}\n+\n+${insight}\n+\n+${cta}\n+\n+${hashtags}`.trim();\n }\n \n-function extractFileTypes(commits) {\n-  const extensions = new Set();\n+function buildDailySummaryPost({ feature, problem, solution, impact, insight, hashtags, cta, commits, totalWeight }) {\n+  return `Wrapped up today with ${commits.length} commits on ${feature.toLowerCase()}.\n+\n+${solution}\n+\n+${impact}\n+\n+${insight}\n+\n+${cta}\n+\n+${hashtags}`.trim();\n+}\n+\n+/**\n+ * Generate realistic impact statements based on the feature\n+ */\n+function generateImpact(feature, signals, totalWeight, idea) {\n+  const impacts = {\n+    'Authentication System': [\n+      'Users can now stay logged in reliably across devices',\n+      'Reduced login failures by handling edge cases properly',\n+      'Smoother authentication flow for returning users',\n+      'Better session management prevents unexpected logouts'\n+    ],\n+    'Payment Processing': [\n+      'Zero failed payments due to timeout issues',\n+      'Customers get instant feedback on payment status',\n+      'Reduced checkout abandonment from payment errors',\n+      'Payment confirmations are now reliable even under load'\n+    ],\n+    'Real-time Chat': [\n+      'Messages sync instantly across all devices',\n+      'No more lost messages during network disconnections',\n+      'Better user experience in spotty network conditions',\n+      'Offline messages now deliver when connection returns'\n+    ],\n+    'File Management': [\n+      'Users can upload files up to 1GB reliably',\n+      'Failed uploads automatically resume from where they left off',\n+      'Faster uploads with parallel chunk processing',\n+      'Better progress feedback during large uploads'\n+    ],\n+    'Performance Optimization': [\n+      'Page load time improved significantly',\n+      'Better handling of concurrent users',\n+      'Reduced server load by 40%',\n+      'Smoother user experience overall'\n+    ],\n+    'API Development': [\n+      'API response time reduced',\n+      'Better error messages help developers debug faster',\n+      'More reliable API under high load',\n+      'Cleaner API design makes integration easier'\n+    ],\n+    'Testing Infrastructure': [\n+      'Can now refactor with confidence',\n+      'Catches bugs before they reach production',\n+      'Faster development cycle with test coverage',\n+      'Reduced debugging time significantly'\n+    ],\n+    'Notification System': [\n+      'Users receive notifications reliably',\n+      'Better notification delivery even when services are down',\n+      'Reduced notification delays',\n+      'More consistent notification experience'\n+    ],\n+    'Search Functionality': [\n+      'Search results appear faster',\n+      'More relevant search results',\n+      'Better handling of complex queries',\n+      'Improved search experience overall'\n+    ],\n+    'UI Components': [\n+      'Cleaner, more consistent UI',\n+      'Better mobile experience',\n+      'Improved accessibility for all users',\n+      'Faster rendering on slower devices'\n+    ],\n+    'Database Architecture': [\n+      'Faster query performance',\n+      'Better data consistency',\n+      'Easier to add new features',\n+      'Reduced database load'\n+    ],\n+    'DevOps Pipeline': [\n+      'Deployments are now faster and safer',\n+      'Caught issues before they reached production',\n+      'More confident in shipping changes',\n+      'Reduced deployment downtime'\n+    ],\n+    'Security Hardening': [\n+      'Better protection against common attacks',\n+      'User data is more secure',\n+      'Reduced security vulnerabilities',\n+      'More confident in the security posture'\n+    ],\n+    'Accessibility': [\n+      'Works better with screen readers',\n+      'Keyboard navigation is now smooth',\n+      'More users can use the product',\n+      'Better compliance with accessibility standards'\n+    ]\n+  };\n   \n-  for (const commit of commits) {\n-    if (commit.files) {\n-      for (const file of commit.files) {\n-        const ext = file.filename.split('.').pop();\n-        if (ext.length < 5) { // Reasonable extension length\n-          extensions.add(ext);\n-        }\n-      }\n-    }\n+  const featureImpacts = impacts[feature] || [\n+    'Improved reliability and user experience',\n+    'Better handling of edge cases',\n+    'More maintainable codebase',\n+    'Faster development velocity'\n+  ];\n+  \n+  // Pick impact based on idea type\n+  if (idea.type === 'quality' || idea.type === 'engineering_practice') {\n+    return featureImpacts[2] || featureImpacts[0];\n   }\n   \n-  const extArray = Array.from(extensions);\n-  const displayMap = {\n-    'js': 'JavaScript',\n-    'ts': 'TypeScript',\n-    'jsx': 'React',\n-    'tsx': 'React/TS',\n-    'md': 'docs',\n-    'json': 'config',\n-    'css': 'styles',\n-    'scss': 'styles',\n+  return featureImpacts[0];\n+}\n+\n+/**\n+ * Generate actionable, specific insights\n+ * These are the \"key learnings\" that make posts valuable\n+ */\n+function generateInsight(feature, signals, idea) {\n+  const insights = {\n+    'Authentication System': {\n+      async_change: 'Token refresh is trickier than it looks - you need to handle edge cases like expired refresh tokens and concurrent requests trying to refresh simultaneously.',\n+      error_handling_change: 'Good auth UX means never showing cryptic error messages. Always guide users to what they should do next.',\n+      networking_change: 'OAuth flows need graceful degradation. What happens when the provider is down? Your users shouldn\\'t be locked out.',\n+      test_change: 'Testing auth flows requires thinking about all the ways users might break the flow - expired tokens, network failures, browser quirks.',\n+      default: 'Authentication is never \"done\" - it\\'s an ongoing balance between security and UX.'\n+    },\n+    'Payment Processing': {\n+      async_change: 'Payment webhooks are asynchronous nightmares. Idempotency isn\\'t optional - it\\'s the only way to prevent double charges.',\n+      error_handling_change: 'Never lose a payment. Every failure needs to be logged, retried automatically, and auditable.',\n+      networking_change: 'Payment gateways timeout. Your code needs to handle that gracefully without charging customers twice.',\n+      test_change: 'Testing payment flows without charging real money requires careful mocking and test environments.',\n+      default: 'Payment processing is where engineering meets money. Every edge case matters.'\n+    },\n+    'Real-time Chat': {\n+      async_change: 'WebSocket reconnection logic is where most chat apps fail. Test it by turning your WiFi on and off repeatedly.',\n+      promise_change: 'Message delivery guarantees require more than just \"send and hope\" - you need confirmations and retry logic.',\n+      networking_change: 'Offline-first design isn\\'t optional for real-time apps. It\\'s the only way to be reliable.',\n+      error_handling_change: 'Users don\\'t care why their message didn\\'t send. They just want it to work.',\n+      default: 'Real-time features are only \"real-time\" when the network cooperates. Plan for when it doesn\\'t.'\n+    },\n+    'File Management': {\n+      async_change: 'Large file uploads need chunking. Loading everything into memory will crash your server.',\n+      error_handling_change: 'Upload resumption is what separates good file upload UX from frustrating ones.',\n+      networking_change: 'Never trust the network - especially for large files over cellular connections.',\n+      promise_change: 'Coordinating multi-part uploads requires careful promise management and cleanup.',\n+      default: 'File uploads are simple until they\\'re not. Handle the edge cases before users find them.'\n+    },\n+    'Performance Optimization': {\n+      async_change: 'Moving work to background processes is easy. Making sure it actually completes is harder.',\n+      promise_change: 'Parallel operations are fast until one of them fails. Always have a rollback plan.',\n+      networking_change: 'Caching is great until the cache is stale. Invalidation is the hard part.',\n+      default: 'Performance optimization is finding the right balance between speed and reliability.'\n+    },\n+    'API Development': {\n+      async_change: 'Async/await makes API code readable, but don\\'t forget error handling on every await.',\n+      error_handling_change: 'Good API error messages should tell developers exactly what went wrong and how to fix it.',\n+      networking_change: 'Rate limiting protects your API, but makes sure the error messages are helpful.',\n+      test_change: 'Test your API with bad inputs, slow responses, and timeouts - not just happy paths.',\n+      default: 'APIs are contracts. Breaking changes break other people\\'s code.'\n+    },\n+    'Testing Infrastructure': {\n+      async_change: 'Testing async code is hard. Flaky tests are worse than no tests.',\n+      test_change: 'Test coverage numbers don\\'t mean much if you\\'re not testing the right things.',\n+      error_handling_change: 'Testing error scenarios is tedious but prevents 3am debugging sessions.',\n+      default: 'Tests are documentation that stays up to date. Write them for your future self.'\n+    },\n+    'Notification System': {\n+      async_change: 'Notifications should never block user actions. Queue them and move on.',\n+      error_handling_change: 'When notification delivery fails, log it and retry. Never silently fail.',\n+      networking_change: 'Notification services go down. Have a fallback strategy.',\n+      default: 'Users expect notifications to just work. The complexity is in making that happen reliably.'\n+    },\n+    'DevOps Pipeline': {\n+      async_change: 'Deployments need to be rollbackable. Things will break - plan for it.',\n+      error_handling_change: 'Good CI/CD catches errors before they reach production.',\n+      test_change: 'Automated testing in CI is the only way to ship with confidence.',\n+      default: 'DevOps is about making deployments boring. Boring is good.'\n+    },\n+    'Security Hardening': {\n+      error_handling_change: 'Security errors should be logged but never exposed to users. Don\\'t leak information.',\n+      networking_change: 'Defense in depth means not trusting anything - including your own network.',\n+      test_change: 'Security testing finds vulnerabilities before attackers do.',\n+      default: 'Security isn\\'t a feature. It\\'s a requirement that never ends.'\n+    }\n   };\n   \n-  return extArray.map(ext => displayMap[ext] || ext);\n+  const dominantSignal = Object.keys(signals).sort((a,b) => signals[b] - signals[a])[0];\n+  const featureInsights = insights[feature] || {\n+    default: 'Every edge case you handle makes the product more reliable. Future you will thank present you.'\n+  };\n+  \n+  return featureInsights[dominantSignal] || featureInsights.default;\n }\n \n-function extractKeyChanges(signals) {\n-  const signalPriority = [\n-    'async_change',\n-    'networking_change',\n-    'error_handling_change',\n-    'test_change',\n-    'promise_change',\n-    'function_change',\n-    'import_change',\n+/**\n+ * Generate relevant hashtags based on feature and signals\n+ */\n+function generateHashtags(feature, signals) {\n+  const baseHashtags = ['#WebDev', '#SoftwareEngineering', '#DevLife', '#CodingLife', '#TechTwitter'];\n+  \n+  const featureHashtags = {\n+    'Authentication System': ['#Auth', '#Security', '#JWT', '#OAuth', '#WebSecurity'],\n+    'Payment Processing': ['#Payments', '#Fintech', '#Stripe', '#Ecommerce', '#WebDev'],\n+    'Real-time Chat': ['#WebSockets', '#RealTime', '#Chat', '#JavaScript', '#NodeJS'],\n+    'File Management': ['#FileUpload', '#CloudStorage', '#AWS', '#S3', '#Backend'],\n+    'Performance Optimization': ['#Performance', '#WebPerf', '#Optimization', '#Speed', '#Engineering'],\n+    'API Development': ['#API', '#Backend', '#NodeJS', '#RestAPI', '#GraphQL'],\n+    'Testing Infrastructure': ['#Testing', '#QA', '#TDD', '#Jest', '#Automation'],\n+    'DevOps Pipeline': ['#DevOps', '#CI', '#Docker', '#Kubernetes', '#GitHubActions'],\n+    'Database Architecture': ['#Database', '#SQL', '#PostgreSQL', '#MongoDB', '#DataEngineering'],\n+    'UI Components': ['#React', '#Frontend', '#JavaScript', '#CSS', '#WebDesign'],\n+    'Search Functionality': ['#Search', '#Elasticsearch', '#Algolia', '#Backend', '#Performance'],\n+    'Notification System': ['#Notifications', '#WebHooks', '#Backend', '#RealTime', '#NodeJS'],\n+    'Security Hardening': ['#CyberSecurity', '#WebSecurity', '#InfoSec', '#AppSec', '#Security'],\n+    'Accessibility': ['#A11y', '#Accessibility', '#WebAccessibility', '#InclusiveDesign', '#WebDev'],\n+    'Analytics Dashboard': ['#DataViz', '#Analytics', '#Dashboard', '#Charts', '#Frontend'],\n+    'State Management': ['#Redux', '#StateManagement', '#React', '#JavaScript', '#Frontend'],\n+    'Responsive Design': ['#ResponsiveDesign', '#MobileFirst', '#CSS', '#WebDesign', '#Frontend'],\n+    'Internationalization': ['#i18n', '#Internationalization', '#Localization', '#WebDev', '#Frontend']\n+  };\n+  \n+  const signalHashtags = {\n+    async_change: ['#AsyncJS', '#JavaScript', '#Promises', '#NodeJS'],\n+    promise_change: ['#Promises', '#JavaScript', '#AsyncAwait'],\n+    networking_change: ['#API', '#Networking', '#HTTP', '#Backend'],\n+    test_change: ['#Testing', '#QualityCode', '#TDD'],\n+    error_handling_change: ['#ErrorHandling', '#Resilience', '#BestPractices'],\n+    doc_image_change: ['#Documentation', '#TechnicalWriting', '#OpenSource'],\n+    jsx_change: ['#React', '#JavaScript', '#Frontend'],\n+    vue_change: ['#VueJS', '#JavaScript', '#Frontend']\n+  };\n+  \n+  const dominantSignal = Object.keys(signals).sort((a,b) => signals[b] - signals[a])[0];\n+  \n+  // Combine: 2 base + 2-3 feature-specific + 1 signal-specific\n+  const selected = [\n+    ...baseHashtags.slice(0, 2),\n+    ...(featureHashtags[feature] || featureHashtags['API Development']).slice(0, 2),\n+    ...(signalHashtags[dominantSignal] || []).slice(0, 1)\n   ];\n   \n-  const found = [];\n-  for (const signal of signalPriority) {\n-    if (signals[signal]) {\n-      found.push(formatSignalForReading(signal));\n-    }\n-  }\n+  // Return max 5 hashtags\n+  return selected.slice(0, 5).join(' ');\n+}\n+\n+/**\n+ * Generate engaging call-to-action questions\n+ */\n+function generateCTA(feature, idea) {\n+  const ctas = {\n+    'Authentication System': [\n+      'How do you handle session management in your apps?',\n+      'What\\'s your approach to OAuth implementation?',\n+      'Have you dealt with token refresh race conditions?'\n+    ],\n+    'Payment Processing': [\n+      'How do you test payment flows in development?',\n+      'What\\'s your experience with payment webhooks?',\n+      'Any tips for handling payment gateway failures?'\n+    ],\n+    'Real-time Chat': [\n+      'How do you handle WebSocket reconnections?',\n+      'What\\'s your approach to message delivery guarantees?',\n+      'Have you built offline-first chat features?'\n+    ],\n+    'File Management': [\n+      'How do you handle large file uploads in your apps?',\n+      'What\\'s your approach to resumable uploads?',\n+      'Any tips for optimizing file upload UX?'\n+    ],\n+    'Performance Optimization': [\n+      'What\\'s your go-to performance optimization strategy?',\n+      'How do you balance performance and reliability?',\n+      'What tools do you use for performance monitoring?'\n+    ],\n+    'Testing Infrastructure': [\n+      'How do you prevent flaky tests?',\n+      'What\\'s your test coverage goal?',\n+      'TDD or test after? What works for you?'\n+    ],\n+    'API Development': [\n+      'What\\'s your API error handling strategy?',\n+      'REST or GraphQL? What do you prefer?',\n+      'How do you version your APIs?'\n+    ],\n+    'default': [\n+      'What\\'s your approach to handling this?',\n+      'Have you dealt with similar challenges?',\n+      'Curious how others solve this - any tips?',\n+      'What\\'s your take on this approach?',\n+      'Would love to hear your thoughts on this'\n+    ]\n+  };\n   \n-  return found;\n+  const featureCTAs = ctas[feature] || ctas.default;\n+  return featureCTAs[Math.floor(Math.random() * featureCTAs.length)];\n+}\n+\n+// Helper functions\n+\n+function extractContext(problem) {\n+  // Extract the core context from problem statement\n+  const match = problem.match(/^(.*?)(without|while|when|during|in|with)/i);\n+  return match ? match[1].trim() : problem.split('.')[0];\n+}\n+\n+function extractTopic(feature) {\n+  // Convert \"Authentication System\" to \"authentication\"\n+  return feature.split(' ')[0].toLowerCase();\n }\n \n function formatSignalForReading(signal) {\n   const readableMap = {\n-    'async_change': 'async/await patterns',\n+    'async_change': 'async patterns',\n     'networking_change': 'API calls',\n     'error_handling_change': 'error handling',\n     'test_change': 'testing',\n     'promise_change': 'promise handling',\n-    'function_change': 'function refactoring',\n-    'import_change': 'dependency updates',\n-    'class_change': 'class structures',\n+    'function_change': 'refactoring',\n+    'import_change': 'dependencies',\n+    'class_change': 'architecture',\n     'logging_change': 'logging',\n     'jsx_change': 'React components',\n     'vue_change': 'Vue components',\n-    'doc_image_change': 'documentation images',\n-    'doc_heading_change': 'documentation structure',\n-    'doc_link_change': 'documentation links',\n-    'env_variable_change': 'environment config',\n+    'doc_image_change': 'documentation',\n+    'doc_heading_change': 'docs structure',\n+    'doc_link_change': 'documentation',\n+    'env_variable_change': 'configuration',\n   };\n   \n   return readableMap[signal] || signal.replace(/_/g, ' ');"
+      }
+    ]
+  },
+  {
+    "sha": "081ff3e83ee3a46c60e14481d8a1cd2cadae7dfd",
+    "node_id": "C_kwDORHedEdoAKDA4MWZmM2U4M2VlM2E0NmM2MGUxNDQ4MWQ4YTFjZDJjYWRhZTdkZmQ",
+    "commit": {
+      "author": {
+        "name": "garv thakre",
+        "email": "garvthakre0@gmail.com",
+        "date": "2026-02-08T06:10:22Z"
+      },
+      "committer": {
+        "name": "garv thakre",
+        "email": "garvthakre0@gmail.com",
+        "date": "2026-02-08T06:10:22Z"
+      },
+      "message": "feat: enhance idea generator with improved content generation logic",
+      "tree": {
+        "sha": "338e104ebbe8fe51004efb206140c41e27f8c9f4",
+        "url": "https://api.github.com/repos/garvthakre/Post90/git/trees/338e104ebbe8fe51004efb206140c41e27f8c9f4"
+      },
+      "url": "https://api.github.com/repos/garvthakre/Post90/git/commits/081ff3e83ee3a46c60e14481d8a1cd2cadae7dfd",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/garvthakre/Post90/commits/081ff3e83ee3a46c60e14481d8a1cd2cadae7dfd",
+    "html_url": "https://github.com/garvthakre/Post90/commit/081ff3e83ee3a46c60e14481d8a1cd2cadae7dfd",
+    "comments_url": "https://api.github.com/repos/garvthakre/Post90/commits/081ff3e83ee3a46c60e14481d8a1cd2cadae7dfd/comments",
+    "author": {
+      "login": "garvthakre",
+      "id": 157668392,
+      "node_id": "U_kgDOCWXUKA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/garvthakre",
+      "html_url": "https://github.com/garvthakre",
+      "followers_url": "https://api.github.com/users/garvthakre/followers",
+      "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+      "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+      "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+      "repos_url": "https://api.github.com/users/garvthakre/repos",
+      "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "garvthakre",
+      "id": 157668392,
+      "node_id": "U_kgDOCWXUKA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/garvthakre",
+      "html_url": "https://github.com/garvthakre",
+      "followers_url": "https://api.github.com/users/garvthakre/followers",
+      "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+      "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+      "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+      "repos_url": "https://api.github.com/users/garvthakre/repos",
+      "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "de4870897ddaaace88cc8d9259aed3f54807e650",
+        "url": "https://api.github.com/repos/garvthakre/Post90/commits/de4870897ddaaace88cc8d9259aed3f54807e650",
+        "html_url": "https://github.com/garvthakre/Post90/commit/de4870897ddaaace88cc8d9259aed3f54807e650"
+      }
+    ],
+    "stats": {
+      "total": 180,
+      "additions": 98,
+      "deletions": 82
+    },
+    "files": [
+      {
+        "sha": "d999081756394a861a0b8dcdd0630f004e2a2dea",
+        "filename": "src/post/ideaGenerator.js",
+        "status": "modified",
+        "additions": 98,
+        "deletions": 82,
+        "changes": 180,
+        "blob_url": "https://github.com/garvthakre/Post90/blob/081ff3e83ee3a46c60e14481d8a1cd2cadae7dfd/src%2Fpost%2FideaGenerator.js",
+        "raw_url": "https://github.com/garvthakre/Post90/raw/081ff3e83ee3a46c60e14481d8a1cd2cadae7dfd/src%2Fpost%2FideaGenerator.js",
+        "contents_url": "https://api.github.com/repos/garvthakre/Post90/contents/src%2Fpost%2FideaGenerator.js?ref=081ff3e83ee3a46c60e14481d8a1cd2cadae7dfd",
+        "patch": "@@ -1,12 +1,18 @@\n+import { extractFeatureFromCommits } from '../analyze/commitAnalyzer.js';\n+\n /**\n- * Enhanced Post Ideas Generator\n+ * Enhanced Post Ideas Generator - LinkedIn-Ready Version\n  * Generates specific, personalized post ideas based on actual commit patterns\n+ * Now includes feature context for better post generation\n  */\n \n export function generatePostIdeas(aggregatedAnalysis) {\n   const ideas = [];\n   const { totalCommits, signals, impacts, totalWeight, commits } = aggregatedAnalysis;\n   \n+  // Extract the actual feature/topic\n+  const feature = extractFeatureFromCommits(commits);\n+  \n   // Analyze patterns in commit messages\n   const commitPatterns = analyzeCommitPatterns(commits);\n   const timeSpan = calculateTimeSpan(commits);\n@@ -17,84 +23,85 @@ export function generatePostIdeas(aggregatedAnalysis) {\n   // 1. If there's a clear focus area (one signal dominates)\n   const dominantSignal = findDominantSignal(signals);\n   if (dominantSignal && dominantSignal.percentage > 40) {\n-    ideas.push(createFocusedWorkIdea(dominantSignal, commits, workPattern));\n+    ideas.push(createFocusedWorkIdea(dominantSignal, commits, workPattern, feature));\n   }\n   \n   // 2. If there's a learning/struggle pattern (lots of async, error handling)\n   if (signals.async_change > 3 || signals.error_handling_change > 3 || signals.promise_change > 3) {\n-    ideas.push(createLearningJourneyIdea(signals, commits, commitPatterns));\n+    ideas.push(createLearningJourneyIdea(signals, commits, commitPatterns, feature));\n   }\n   \n   // 3. If there's documentation work\n   const docSignals = (signals.doc_image_change || 0) + (signals.doc_heading_change || 0) + \n                      (signals.doc_link_change || 0) + (signals.doc_tech_stack_change || 0);\n   if (docSignals > 0) {\n-    ideas.push(createDocumentationStoryIdea(signals, commits, docSignals));\n+    ideas.push(createDocumentationStoryIdea(signals, commits, docSignals, feature));\n   }\n   \n   // 4. If there are high-risk changes\n   if (impacts.HIGH_RISK > 0) {\n-    ideas.push(createRiskManagementIdea(signals, impacts, commits));\n+    ideas.push(createRiskManagementIdea(signals, impacts, commits, feature));\n   }\n   \n   // 5. If it's a large refactor\n   if (totalWeight > 500 && totalCommits > 5) {\n-    ideas.push(createRefactorStoryIdea(totalWeight, totalCommits, commits, signals));\n+    ideas.push(createRefactorStoryIdea(totalWeight, totalCommits, commits, signals, feature));\n   }\n   \n   // 6. If there's test work\n   if (signals.test_change > 2) {\n-    ideas.push(createTestingQualityIdea(signals.test_change, commits));\n+    ideas.push(createTestingQualityIdea(signals.test_change, commits, feature));\n   }\n   \n   // 7. If it's a variety day (many different types of work)\n   const signalTypes = Object.keys(signals).length;\n   if (signalTypes >= 5) {\n-    ideas.push(createFullStackDayIdea(signals, commits, signalTypes));\n+    ideas.push(createFullStackDayIdea(signals, commits, signalTypes, feature));\n   }\n   \n   // 8. If there's a specific technical challenge (networking, env vars)\n   if (signals.networking_change > 0 || signals.env_variable_change > 0) {\n-    ideas.push(createTechnicalChallengeIdea(signals, commits));\n+    ideas.push(createTechnicalChallengeIdea(signals, commits, feature));\n   }\n   \n   // 9. Generic daily summary (always include as fallback)\n-  ideas.push(createDailySummaryIdea(aggregatedAnalysis, commitPatterns, timeSpan));\n+  ideas.push(createDailySummaryIdea(aggregatedAnalysis, commitPatterns, timeSpan, feature));\n   \n   // 10. If there's a consistent theme in commit messages\n   if (commitPatterns.theme) {\n-    ideas.push(createThematicWorkIdea(commitPatterns, commits, signals));\n+    ideas.push(createThematicWorkIdea(commitPatterns, commits, signals, feature));\n   }\n   \n   // Sort by relevance score\n   return ideas.sort((a, b) => b.relevanceScore - a.relevanceScore);\n }\n \n-function createFocusedWorkIdea(dominantSignal, commits, workPattern) {\n+function createFocusedWorkIdea(dominantSignal, commits, workPattern, feature) {\n   const readableName = formatSignalForReading(dominantSignal.signal);\n   \n   return {\n     type: 'focused_technical',\n     angle: dominantSignal.signal,\n-    title: `Deep Work: ${readableName}`,\n-    description: `A day spent focusing on one specific technical area`,\n+    title: `Deep Work: ${feature}`,\n+    description: `A day spent focusing on ${feature.toLowerCase()}`,\n     relevanceScore: dominantSignal.percentage,\n     metadata: {\n       signal: dominantSignal.signal,\n       count: dominantSignal.count,\n       percentage: dominantSignal.percentage,\n       affectedFiles: getAffectedFileCount(commits, dominantSignal.signal),\n-      pattern: workPattern\n+      pattern: workPattern,\n+      feature: feature\n     },\n     personalizedHooks: [\n-      `${dominantSignal.count} instances of ${readableName} today`,\n-      `Spent the day deep in ${readableName}`,\n-      `${readableName} everywhere I looked today`\n+      `Built ${feature.toLowerCase()} today`,\n+      `Worked on ${feature.toLowerCase()}`,\n+      `Spent the day on ${feature.toLowerCase()}`\n     ]\n   };\n }\n \n-function createLearningJourneyIdea(signals, commits, commitPatterns) {\n+function createLearningJourneyIdea(signals, commits, commitPatterns, feature) {\n   const asyncCount = signals.async_change || 0;\n   const errorCount = signals.error_handling_change || 0;\n   const promiseCount = signals.promise_change || 0;\n@@ -104,25 +111,26 @@ function createLearningJourneyIdea(signals, commits, commitPatterns) {\n   return {\n     type: 'learning',\n     angle: 'async_complexity',\n-    title: `Learning in Public: Async Challenges`,\n-    description: `Share the real learning experience with async patterns`,\n+    title: `Learning: ${feature}`,\n+    description: `Real learning experience with ${feature.toLowerCase()}`,\n     relevanceScore: 80,\n     metadata: {\n       async_changes: asyncCount,\n       error_handling: errorCount,\n       promise_changes: promiseCount,\n       iterations: commitPatterns.iterations || 0,\n-      learningIndicators\n+      learningIndicators,\n+      feature: feature\n     },\n     personalizedHooks: [\n-      `Hit some async complexity today that made me think`,\n-      `Async JavaScript still has surprises for me`,\n-      `Learning curve day with promises and async/await`\n+      `Worked on ${feature.toLowerCase()} today`,\n+      `Hit a learning curve with ${feature.toLowerCase()}`,\n+      `Learned a lot about ${feature.toLowerCase()} today`\n     ]\n   };\n }\n \n-function createDocumentationStoryIdea(signals, commits, docSignals) {\n+function createDocumentationStoryIdea(signals, commits, docSignals, feature) {\n   const docTypes = [];\n   if (signals.doc_image_change) docTypes.push('images');\n   if (signals.doc_heading_change) docTypes.push('structure');\n@@ -131,23 +139,24 @@ function createDocumentationStoryIdea(signals, commits, docSignals) {\n   return {\n     type: 'build_in_public',\n     angle: 'documentation',\n-    title: `Documentation Day: Making it Better`,\n-    description: `The often overlooked but crucial work of good docs`,\n+    title: `Documentation: ${feature}`,\n+    description: `Improving documentation for ${feature.toLowerCase()}`,\n     relevanceScore: 70,\n     metadata: {\n       doc_changes: docSignals,\n       types: docTypes,\n-      filesUpdated: getDocFilesUpdated(commits)\n+      filesUpdated: getDocFilesUpdated(commits),\n+      feature: feature\n     },\n     personalizedHooks: [\n-      `Took a break from features to focus on docs`,\n-      `Documentation day - not glamorous, but necessary`,\n-      `Making sure the docs actually reflect reality`\n+      `Took a break from features to document ${feature.toLowerCase()}`,\n+      `Documentation day for ${feature.toLowerCase()}`,\n+      `Made the docs better for ${feature.toLowerCase()}`\n     ]\n   };\n }\n \n-function createRiskManagementIdea(signals, impacts, commits) {\n+function createRiskManagementIdea(signals, impacts, commits, feature) {\n   const riskFactors = [];\n   if (signals.networking_change) riskFactors.push('API changes');\n   if (signals.env_variable_change) riskFactors.push('env config');\n@@ -156,150 +165,157 @@ function createRiskManagementIdea(signals, impacts, commits) {\n   return {\n     type: 'technical_decision',\n     angle: 'risk_management',\n-    title: `Careful Engineering: Managing Risk`,\n-    description: `Decisions that required extra thought and testing`,\n+    title: `Technical Decisions: ${feature}`,\n+    description: `Careful engineering on ${feature.toLowerCase()}`,\n     relevanceScore: 90,\n     metadata: {\n       highRiskCommits: impacts.HIGH_RISK,\n       riskFactors,\n-      safeguards: detectSafeguards(signals)\n+      safeguards: detectSafeguards(signals),\n+      feature: feature\n     },\n     personalizedHooks: [\n-      `Made some changes today that needed extra care`,\n-      `Not the kind of commits you make without thinking twice`,\n-      `Engineering decisions that matter in production`\n+      `Made some technical decisions on ${feature.toLowerCase()}`,\n+      `Careful work on ${feature.toLowerCase()} today`,\n+      `${feature} required extra thought today`\n     ]\n   };\n }\n \n-function createRefactorStoryIdea(totalWeight, totalCommits, commits, signals) {\n+function createRefactorStoryIdea(totalWeight, totalCommits, commits, signals, feature) {\n   const refactorReasons = detectRefactorReasons(signals, commits);\n   \n   return {\n     type: 'engineering_practice',\n     angle: 'refactoring',\n-    title: `Big Refactor: ${totalWeight} Lines Changed`,\n-    description: `The story of cleaning up technical debt`,\n+    title: `Big Refactor: ${feature}`,\n+    description: `Refactoring ${feature.toLowerCase()}`,\n     relevanceScore: 85,\n     metadata: {\n       linesChanged: totalWeight,\n       commits: totalCommits,\n       reasons: refactorReasons,\n-      scope: categorizeRefactorScope(signals)\n+      scope: categorizeRefactorScope(signals),\n+      feature: feature\n     },\n     personalizedHooks: [\n-      `${totalWeight} lines changed. Started small, ended up refactoring everything`,\n-      `One of those refactors that keeps growing`,\n-      `Sometimes you need to tear things down to build them better`\n+      `${totalWeight} lines changed in ${feature.toLowerCase()}`,\n+      `Big refactor on ${feature.toLowerCase()}`,\n+      `Cleaned up ${feature.toLowerCase()} today`\n     ]\n   };\n }\n \n-function createTestingQualityIdea(testCount, commits) {\n+function createTestingQualityIdea(testCount, commits, feature) {\n   return {\n     type: 'quality',\n     angle: 'testing',\n-    title: `Testing Day: Building Confidence`,\n-    description: `The unglamorous work that prevents future headaches`,\n+    title: `Testing: ${feature}`,\n+    description: `Building test coverage for ${feature.toLowerCase()}`,\n     relevanceScore: 75,\n     metadata: {\n       testChanges: testCount,\n-      coverage: 'improved', // Could calculate if we had coverage data\n-      testTypes: detectTestTypes(commits)\n+      coverage: 'improved',\n+      testTypes: detectTestTypes(commits),\n+      feature: feature\n     },\n     personalizedHooks: [\n-      `Testing day. Not exciting, but necessary`,\n-      `Adding the safety net before changing things`,\n-      `Future me will thank present me for writing these tests`\n+      `Testing day for ${feature.toLowerCase()}`,\n+      `Added tests for ${feature.toLowerCase()}`,\n+      `Building confidence in ${feature.toLowerCase()}`\n     ]\n   };\n }\n \n-function createFullStackDayIdea(signals, commits, signalTypes) {\n+function createFullStackDayIdea(signals, commits, signalTypes, feature) {\n   const areas = categorizeDayAreas(signals);\n   \n   return {\n     type: 'variety',\n     angle: 'full_stack',\n-    title: `Full-Stack Day: ${signalTypes} Different Areas`,\n-    description: `Working across the entire stack in one day`,\n+    title: `Full-Stack: ${feature}`,\n+    description: `Working across the stack on ${feature.toLowerCase()}`,\n     relevanceScore: 65,\n     metadata: {\n       signalTypes,\n       areas,\n-      breadth: 'high'\n+      breadth: 'high',\n+      feature: feature\n     },\n     personalizedHooks: [\n-      `Full-stack day. Touched everything from UI to infrastructure`,\n-      `One of those days where you context-switch constantly`,\n-      `From frontend to backend and everything between`\n+      `Full-stack day on ${feature.toLowerCase()}`,\n+      `Touched everything while working on ${feature.toLowerCase()}`,\n+      `From frontend to backend on ${feature.toLowerCase()}`\n     ]\n   };\n }\n \n-function createTechnicalChallengeIdea(signals, commits) {\n+function createTechnicalChallengeIdea(signals, commits, feature) {\n   const challenges = [];\n   if (signals.networking_change) challenges.push('API integration');\n   if (signals.env_variable_change) challenges.push('configuration');\n   \n   return {\n     type: 'technical_decision',\n     angle: 'infrastructure',\n-    title: `Infrastructure Work: ${challenges.join(' & ')}`,\n-    description: `The behind-the-scenes technical work`,\n+    title: `Infrastructure: ${feature}`,\n+    description: `Technical infrastructure work on ${feature.toLowerCase()}`,\n     relevanceScore: 80,\n     metadata: {\n       challenges,\n-      complexity: 'high'\n+      complexity: 'high',\n+      feature: feature\n     },\n     personalizedHooks: [\n-      `Working on the stuff that doesn't show up in the UI`,\n-      `Infrastructure changes - invisible but critical`,\n-      `Making sure the foundation is solid`\n+      `Infrastructure work on ${feature.toLowerCase()}`,\n+      `Behind-the-scenes work on ${feature.toLowerCase()}`,\n+      `Technical challenges in ${feature.toLowerCase()}`\n     ]\n   };\n }\n \n-function createDailySummaryIdea(aggregatedAnalysis, commitPatterns, timeSpan) {\n+function createDailySummaryIdea(aggregatedAnalysis, commitPatterns, timeSpan, feature) {\n   const { totalCommits, totalFilesChanged, totalWeight } = aggregatedAnalysis;\n   \n   return {\n     type: 'daily_summary',\n     angle: 'productivity',\n-    title: `Daily Wrap: ${totalCommits} Commits`,\n-    description: `High-level overview of the day's work`,\n+    title: `Daily Update: ${feature}`,\n+    description: `Progress on ${feature.toLowerCase()}`,\n     relevanceScore: 50,\n     metadata: {\n       commits: totalCommits,\n       filesChanged: totalFilesChanged,\n       totalWeight,\n       timeSpan,\n-      theme: commitPatterns.theme || 'mixed work'\n+      theme: commitPatterns.theme || 'mixed work',\n+      feature: feature\n     },\n     personalizedHooks: [\n-      `${totalCommits} commits today. Productive day.`,\n-      `Wrapped up with ${totalCommits} commits across ${totalFilesChanged} files`,\n-      `One of those days where you look up and it's already evening`\n+      `${totalCommits} commits on ${feature.toLowerCase()} today`,\n+      `Made progress on ${feature.toLowerCase()}`,\n+      `Productive day on ${feature.toLowerCase()}`\n     ]\n   };\n }\n \n-function createThematicWorkIdea(commitPatterns, commits, signals) {\n+function createThematicWorkIdea(commitPatterns, commits, signals, feature) {\n   return {\n     type: 'focused_effort',\n     angle: 'thematic',\n-    title: `Theme: ${commitPatterns.theme}`,\n-    description: `Work centered around a specific theme or feature`,\n+    title: `Focused Work: ${feature}`,\n+    description: `Consistent work on ${feature.toLowerCase()}`,\n     relevanceScore: 75,\n     metadata: {\n       theme: commitPatterns.theme,\n       commits: commits.length,\n-      consistency: commitPatterns.consistency\n+      consistency: commitPatterns.consistency,\n+      feature: feature\n     },\n     personalizedHooks: [\n-      `All commits today pointed in the same direction: ${commitPatterns.theme}`,\n-      `Focused session on ${commitPatterns.theme}`,\n-      `When the commits tell a coherent story`\n+      `Focused session on ${feature.toLowerCase()}`,\n+      `All commits pointed to ${feature.toLowerCase()}`,\n+      `Deep work on ${feature.toLowerCase()}`\n     ]\n   };\n }"
+      }
+    ]
+  },
+  {
     "sha": "de4870897ddaaace88cc8d9259aed3f54807e650",
     "node_id": "C_kwDORHedEdoAKGRlNDg3MDg5N2RkYWFhY2U4OGNjOGQ5MjU5YWVkM2Y1NDgwN2U2NTA",
     "commit": {
@@ -2830,208 +3334,6 @@
         "raw_url": "https://github.com/garvthakre/Post90/raw/7e4e3a581590b399d99630fcb923c281ba0c8ccc/src%2Fpost%2FintentMapper.js",
         "contents_url": "https://api.github.com/repos/garvthakre/Post90/contents/src%2Fpost%2FintentMapper.js?ref=7e4e3a581590b399d99630fcb923c281ba0c8ccc",
         "patch": "@@ -0,0 +1,39 @@\n+export function mapIntent(analysis){\n+    const {impact,signals,totalWeight} = analysis;\n+    if(impact === 'HIGH_RISK'){\n+     return {\n+        type:'technical_decision',\n+        angle:'engineering_tradeoff',\n+     } ;  \n+\n+\n+    }\n+    if(signals.async_change || signals.promise_change){\n+        return {\n+            type:'technical_decision',\n+            angle:'asynchronous_handling',\n+        };\n+    }\n+    if(signals.error_handling_change){\n+        return {\n+            type:'technical_decision',\n+            angle:'error_handling',\n+        };\n+    }\n+    if(signals.networking_change){\n+        return {\n+            type:'technical_decision',\n+            angle:'networking',\n+        };\n+    }\n+    if(totalWeight > 500){\n+        return {\n+            type:'technical_decision',\n+            angle:'large_change',\n+        };\n+    }\n+    return {\n+        type:'daily_update',\n+        angle:'small_win',\n+    };\n+}\n\\ No newline at end of file"
-      }
-    ]
-  },
-  {
-    "sha": "df23ebdd9e57a1da735da6785844a761cf3ca952",
-    "node_id": "C_kwDORHedEdoAKGRmMjNlYmRkOWU1N2ExZGE3MzVkYTY3ODU4NDRhNzYxY2YzY2E5NTI",
-    "commit": {
-      "author": {
-        "name": "garv thakre",
-        "email": "garvthakre0@gmail.com",
-        "date": "2026-02-07T06:10:09Z"
-      },
-      "committer": {
-        "name": "garv thakre",
-        "email": "garvthakre0@gmail.com",
-        "date": "2026-02-07T06:10:09Z"
-      },
-      "message": "chore: update the index.js",
-      "tree": {
-        "sha": "c7522cd39663760cd65303d0bbc3e83471c93e06",
-        "url": "https://api.github.com/repos/garvthakre/Post90/git/trees/c7522cd39663760cd65303d0bbc3e83471c93e06"
-      },
-      "url": "https://api.github.com/repos/garvthakre/Post90/git/commits/df23ebdd9e57a1da735da6785844a761cf3ca952",
-      "comment_count": 0,
-      "verification": {
-        "verified": false,
-        "reason": "unsigned",
-        "signature": null,
-        "payload": null,
-        "verified_at": null
-      }
-    },
-    "url": "https://api.github.com/repos/garvthakre/Post90/commits/df23ebdd9e57a1da735da6785844a761cf3ca952",
-    "html_url": "https://github.com/garvthakre/Post90/commit/df23ebdd9e57a1da735da6785844a761cf3ca952",
-    "comments_url": "https://api.github.com/repos/garvthakre/Post90/commits/df23ebdd9e57a1da735da6785844a761cf3ca952/comments",
-    "author": {
-      "login": "garvthakre",
-      "id": 157668392,
-      "node_id": "U_kgDOCWXUKA",
-      "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/garvthakre",
-      "html_url": "https://github.com/garvthakre",
-      "followers_url": "https://api.github.com/users/garvthakre/followers",
-      "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
-      "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
-      "organizations_url": "https://api.github.com/users/garvthakre/orgs",
-      "repos_url": "https://api.github.com/users/garvthakre/repos",
-      "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/garvthakre/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "committer": {
-      "login": "garvthakre",
-      "id": 157668392,
-      "node_id": "U_kgDOCWXUKA",
-      "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/garvthakre",
-      "html_url": "https://github.com/garvthakre",
-      "followers_url": "https://api.github.com/users/garvthakre/followers",
-      "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
-      "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
-      "organizations_url": "https://api.github.com/users/garvthakre/orgs",
-      "repos_url": "https://api.github.com/users/garvthakre/repos",
-      "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/garvthakre/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "parents": [
-      {
-        "sha": "b70d99dd0f75a0c10d588ea45fccc048f3b10765",
-        "url": "https://api.github.com/repos/garvthakre/Post90/commits/b70d99dd0f75a0c10d588ea45fccc048f3b10765",
-        "html_url": "https://github.com/garvthakre/Post90/commit/b70d99dd0f75a0c10d588ea45fccc048f3b10765"
-      }
-    ],
-    "stats": {
-      "total": 6,
-      "additions": 5,
-      "deletions": 1
-    },
-    "files": [
-      {
-        "sha": "3391c2acefc3761b6173f01087422de23d87aada",
-        "filename": "src/index.js",
-        "status": "modified",
-        "additions": 5,
-        "deletions": 1,
-        "changes": 6,
-        "blob_url": "https://github.com/garvthakre/Post90/blob/df23ebdd9e57a1da735da6785844a761cf3ca952/src%2Findex.js",
-        "raw_url": "https://github.com/garvthakre/Post90/raw/df23ebdd9e57a1da735da6785844a761cf3ca952/src%2Findex.js",
-        "contents_url": "https://api.github.com/repos/garvthakre/Post90/contents/src%2Findex.js?ref=df23ebdd9e57a1da735da6785844a761cf3ca952",
-        "patch": "@@ -4,6 +4,7 @@ import fs from 'fs';\n import { hideBin } from 'yargs/helpers';\n import { fetchCommit } from './fetch/github.js';\n import { extractCommitSignals } from './extract/index.js';\n+import { analyzeCommit } from './analyze/commitAnalyzer.js';\n \n dotenv.config();\n  \n@@ -34,9 +35,12 @@ const argv = yargs(hideBin(process.argv))\n   const rawCommit = JSON.parse(fs.readFileSync(rawPath, 'utf-8'))\n \n   console.log('Extracting signals...')\n-  const signals = extractCommitSignals(rawCommit)\n+  const signals =  await extractCommitSignals(rawCommit)\n \n   console.log('\\n EXTRACTED SIGNALS :\\n')\n   console.log(JSON.stringify(signals, null, 2))\n+  const analysis = analyzeCommit(signals);\n+  console.log('\\n ANALYSIS RESULT :\\n')\n+  console.log(JSON.stringify(analysis, null, 2))\n   console.log('Done');\n })();"
-      }
-    ]
-  },
-  {
-    "sha": "b70d99dd0f75a0c10d588ea45fccc048f3b10765",
-    "node_id": "C_kwDORHedEdoAKGI3MGQ5OWRkMGY3NWEwYzEwZDU4OGVhNDVmY2NjMDQ4ZjNiMTA3NjU",
-    "commit": {
-      "author": {
-        "name": "garv thakre",
-        "email": "garvthakre0@gmail.com",
-        "date": "2026-02-07T06:08:59Z"
-      },
-      "committer": {
-        "name": "garv thakre",
-        "email": "garvthakre0@gmail.com",
-        "date": "2026-02-07T06:08:59Z"
-      },
-      "message": "feat:add the commit analyser",
-      "tree": {
-        "sha": "470cdd6fca2138e3fab247acb8c906cd88cfe509",
-        "url": "https://api.github.com/repos/garvthakre/Post90/git/trees/470cdd6fca2138e3fab247acb8c906cd88cfe509"
-      },
-      "url": "https://api.github.com/repos/garvthakre/Post90/git/commits/b70d99dd0f75a0c10d588ea45fccc048f3b10765",
-      "comment_count": 0,
-      "verification": {
-        "verified": false,
-        "reason": "unsigned",
-        "signature": null,
-        "payload": null,
-        "verified_at": null
-      }
-    },
-    "url": "https://api.github.com/repos/garvthakre/Post90/commits/b70d99dd0f75a0c10d588ea45fccc048f3b10765",
-    "html_url": "https://github.com/garvthakre/Post90/commit/b70d99dd0f75a0c10d588ea45fccc048f3b10765",
-    "comments_url": "https://api.github.com/repos/garvthakre/Post90/commits/b70d99dd0f75a0c10d588ea45fccc048f3b10765/comments",
-    "author": {
-      "login": "garvthakre",
-      "id": 157668392,
-      "node_id": "U_kgDOCWXUKA",
-      "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/garvthakre",
-      "html_url": "https://github.com/garvthakre",
-      "followers_url": "https://api.github.com/users/garvthakre/followers",
-      "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
-      "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
-      "organizations_url": "https://api.github.com/users/garvthakre/orgs",
-      "repos_url": "https://api.github.com/users/garvthakre/repos",
-      "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/garvthakre/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "committer": {
-      "login": "garvthakre",
-      "id": 157668392,
-      "node_id": "U_kgDOCWXUKA",
-      "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/garvthakre",
-      "html_url": "https://github.com/garvthakre",
-      "followers_url": "https://api.github.com/users/garvthakre/followers",
-      "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
-      "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
-      "organizations_url": "https://api.github.com/users/garvthakre/orgs",
-      "repos_url": "https://api.github.com/users/garvthakre/repos",
-      "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/garvthakre/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "parents": [
-      {
-        "sha": "aeb7351e71d7206a826d1151e5dfc4aa2d366693",
-        "url": "https://api.github.com/repos/garvthakre/Post90/commits/aeb7351e71d7206a826d1151e5dfc4aa2d366693",
-        "html_url": "https://github.com/garvthakre/Post90/commit/aeb7351e71d7206a826d1151e5dfc4aa2d366693"
-      }
-    ],
-    "stats": {
-      "total": 50,
-      "additions": 50,
-      "deletions": 0
-    },
-    "files": [
-      {
-        "sha": "a37b4a373073b8fe1885471d9ec90033783c631d",
-        "filename": "src/analyze/commitAnalyzer.js",
-        "status": "added",
-        "additions": 50,
-        "deletions": 0,
-        "changes": 50,
-        "blob_url": "https://github.com/garvthakre/Post90/blob/b70d99dd0f75a0c10d588ea45fccc048f3b10765/src%2Fanalyze%2FcommitAnalyzer.js",
-        "raw_url": "https://github.com/garvthakre/Post90/raw/b70d99dd0f75a0c10d588ea45fccc048f3b10765/src%2Fanalyze%2FcommitAnalyzer.js",
-        "contents_url": "https://api.github.com/repos/garvthakre/Post90/contents/src%2Fanalyze%2FcommitAnalyzer.js?ref=b70d99dd0f75a0c10d588ea45fccc048f3b10765",
-        "patch": "@@ -0,0 +1,50 @@\n+export function analyzeCommit(fileSummaries) {\n+  const signalCount = {};\n+  let totalWeight = 0;\n+\n+  for (const summary of fileSummaries) {\n+    totalWeight += summary.weight;\n+\n+    for (const signal of summary.signals) {\n+      signalCount[signal] = (signalCount[signal] || 0) + 1;\n+    }\n+  }\n+\n+  return {\n+    totalFilesChanged: fileSummaries.length,\n+    totalWeight,\n+    signals: signalCount,\n+    impact: classifyImpact(signalCount, totalWeight)\n+  };\n+}\n+\n+function classifyImpact(signals, weight) {\n+  if (\n+    signals.networking_change ||\n+    signals.env_variable_change\n+  ) {\n+    return 'HIGH_RISK';\n+  }\n+\n+  if (\n+    signals.async_change ||\n+    signals.error_handling_change ||\n+    signals.promise_change\n+  ) {\n+    return 'MEDIUM_RISK';\n+  }\n+\n+  if (\n+    signals.doc_image_change ||\n+    signals.doc_text_change ||\n+    signals.code_formatting_change ||\n+    signals.comment_change\n+  ) {\n+    return 'LOW_RISK';\n+  }\n+\n+  if (weight > 500) return 'HIGH_RISK';\n+  if (weight > 150) return 'MEDIUM_RISK';\n+\n+  return 'LOW_RISK';\n+}"
       }
     ]
   }
