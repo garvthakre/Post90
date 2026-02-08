@@ -254,6 +254,24 @@ function generateImpact(feature, signals, totalWeight, idea) {
       'Faster uploads with parallel chunk processing',
       'Better progress feedback during large uploads'
     ],
+    'Search Functionality': [
+      'Search results now appear in under 200ms',
+      'Users can find what they need with complex filters',
+      'Search stays responsive even with 10K+ queries per minute',
+      'Better relevance ranking shows the right results first'
+    ],
+    'Analytics Dashboard': [
+      'Dashboard loads 3x faster with lazy loading',
+      'Users see data even when some APIs are slow',
+      'Reduced bounce rate from slow dashboards',
+      'Better insights with real-time metric updates'
+    ],
+    'UI Components': [
+      'Smoother interactions without UI lag',
+      'Components work reliably across all screen sizes',
+      'Better accessibility for keyboard and screen reader users',
+      'Faster rendering on low-end devices'
+    ],
     'Performance Optimization': [
       'Page load time improved significantly',
       'Better handling of concurrent users',
@@ -370,6 +388,27 @@ function generateInsight(feature, signals, idea) {
       promise_change: 'Parallel operations are fast until one of them fails. Always have a rollback plan.',
       networking_change: 'Caching is great until the cache is stale. Invalidation is the hard part.',
       default: 'Performance optimization is finding the right balance between speed and reliability.'
+    },
+    'Search Functionality': {
+      async_change: 'Debouncing search prevents API spam, but makes the UX feel slower. Finding the sweet spot (200-300ms) is key.',
+      error_handling_change: 'Empty search results should show suggestions, not just "No results found". Guide users to success.',
+      networking_change: 'Elasticsearch downtime shouldn\'t break your app. Always have a fallback - even if it\'s basic filtering.',
+      function_change: 'Query optimization is 80% of search performance. Start there before throwing hardware at it.',
+      test_change: 'Test search with typos, edge cases, and nonsense queries. Users will do worse.',
+      promise_change: 'Cancel stale search requests when users type fast. Nobody cares about results from 3 keystrokes ago.',
+      default: 'Good search is invisible. Users only notice when it fails.'
+    },
+    'Analytics Dashboard': {
+      async_change: 'Lazy loading widgets prevents the "everything loads at once and crashes" problem.',
+      promise_change: 'Fetch metrics in parallel, but show partial results if some are slow. Don\'t make users wait for everything.',
+      error_handling_change: 'Missing data points should degrade gracefully. Show what you have, note what\'s missing.',
+      default: 'Dashboard performance is about perceived speed, not actual speed. Show skeletons early.'
+    },
+    'UI Components': {
+      async_change: 'React.memo and useMemo are powerful, but overuse them and debugging becomes hell.',
+      error_handling_change: 'Component error boundaries prevent the whole app from crashing when one widget fails.',
+      test_change: 'Test components with real user data - edge cases always live in production.',
+      default: 'Good components are boring. They work predictably every time.'
     },
     'API Development': {
       async_change: 'Async/await makes API code readable, but don\'t forget error handling on every await.',
@@ -503,6 +542,22 @@ function generateCTA(feature, idea) {
       'REST or GraphQL? What do you prefer?',
       'How do you version your APIs?'
     ],
+    'Search Functionality': [
+      'How do you handle search performance at scale?',
+      'What\'s your approach to search relevance?',
+      'Elasticsearch or something else? What works for you?',
+      'How do you balance search speed with accuracy?'
+    ],
+    'Analytics Dashboard': [
+      'How do you handle slow dashboard load times?',
+      'What\'s your approach to dashboard performance?',
+      'How do you decide what to lazy load?'
+    ],
+    'UI Components': [
+      'How do you prevent component re-render issues?',
+      'What\'s your component testing strategy?',
+      'How do you handle component performance?'
+    ],
     'default': [
       'What\'s your approach to handling this?',
       'Have you dealt with similar challenges?',
@@ -520,8 +575,21 @@ function generateCTA(feature, idea) {
 
 function extractContext(problem) {
   // Extract the core context from problem statement
-  const match = problem.match(/^(.*?)(without|while|when|during|in|with)/i);
-  return match ? match[1].trim() : problem.split('.')[0];
+  // Handle patterns like "Processing X without Y" → "processing X"
+  const match = problem.match(/^(.*?)\s+(without|while|when|during|in|with)\s+/i);
+  if (match) {
+    return match[1].trim();
+  }
+  
+  // If no match, take first meaningful phrase before comma or period
+  const firstPart = problem.split(/[,.]|$/)[0].trim();
+  
+  // Remove common prefixes to get to the meat
+  const cleaned = firstPart
+    .replace(/^(Managing|Handling|Processing|Ensuring|Preventing|Optimizing|Coordinating|Running|Sending|Testing|Building|Creating|Implementing)\s+/i, '')
+    .toLowerCase();
+  
+  return cleaned || firstPart.toLowerCase();
 }
 
 function extractTopic(feature) {
