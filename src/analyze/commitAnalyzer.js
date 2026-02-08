@@ -205,6 +205,27 @@ export function detectProblem(signals, commits, feature) {
       promise_change: 'Handling complex transaction logic',
       error_handling_change: 'Managing database connection failures',
       test_change: 'Testing database queries and migrations'
+    },
+    'Search Functionality': {
+      async_change: 'Processing thousands of search queries per second without blocking the UI',
+      error_handling_change: 'Handling empty results and failed searches gracefully',
+      networking_change: 'Managing Elasticsearch timeouts and connection failures',
+      promise_change: 'Coordinating parallel searches across multiple indexes',
+      function_change: 'Optimizing search query performance for complex filters',
+      test_change: 'Testing search relevance and ranking accuracy',
+      import_change: 'Integrating advanced search libraries and ranking algorithms'
+    },
+    'Analytics Dashboard': {
+      async_change: 'Loading dashboard data without freezing the UI',
+      promise_change: 'Fetching metrics from multiple sources in parallel',
+      networking_change: 'Handling slow analytics API responses',
+      error_handling_change: 'Gracefully degrading when metrics fail to load'
+    },
+    'UI Components': {
+      async_change: 'Preventing UI jank during heavy rendering',
+      error_handling_change: 'Handling edge cases in component state',
+      test_change: 'Testing components across different screen sizes and inputs',
+      function_change: 'Optimizing component re-rendering performance'
     }
   };
   
@@ -212,7 +233,7 @@ export function detectProblem(signals, commits, feature) {
   const featureProblems = problems[feature] || {};
   const dominantSignal = Object.keys(signals).sort((a,b) => signals[b] - signals[a])[0];
   
-  return featureProblems[dominantSignal] || 'Improving system reliability and user experience';
+  return featureProblems[dominantSignal] || 'Balancing feature development with code maintainability';
 }
 
 /**
@@ -231,7 +252,10 @@ export function extractSolution(signals, feature) {
       'Testing Infrastructure': 'Implemented proper async test utilities and helpers',
       'Notification System': 'Built a background job queue for notification delivery',
       'Database Architecture': 'Used transaction pooling and connection management',
-      'default': 'Refactored async flows with proper error handling and timeouts'
+      'Search Functionality': 'Implemented debounced search with result caching to prevent API overload',
+      'Analytics Dashboard': 'Added lazy loading for dashboard widgets with skeleton states',
+      'UI Components': 'Used React.memo and useMemo to prevent unnecessary re-renders',
+      'default': 'Optimized async operations with proper cancellation and cleanup'
     },
     error_handling_change: {
       'Authentication System': 'Added fallback authentication methods and clear error messages',
@@ -242,6 +266,8 @@ export function extractSolution(signals, feature) {
       'API Development': 'Created standardized error response format with helpful messages',
       'Testing Infrastructure': 'Added error scenario test coverage',
       'Notification System': 'Implemented fallback notification channels',
+      'Search Functionality': 'Added fallback to cached results when Elasticsearch is down',
+      'Analytics Dashboard': 'Show partial data when some metrics fail to load',
       'default': 'Enhanced error handling with user-friendly messages and recovery paths'
     },
     networking_change: {
@@ -252,7 +278,16 @@ export function extractSolution(signals, feature) {
       'Performance Optimization': 'Implemented request batching and connection pooling',
       'API Development': 'Added rate limiting and request throttling',
       'Notification System': 'Implemented webhook retry logic with exponential backoff',
+      'Search Functionality': 'Added circuit breaker pattern for Elasticsearch with automatic recovery',
+      'Analytics Dashboard': 'Implemented request coalescing to reduce API calls',
       'default': 'Improved API reliability with timeout handling and retry logic'
+    },
+    function_change: {
+      'Search Functionality': 'Refactored query building logic to support complex filters and facets',
+      'Performance Optimization': 'Extracted and memoized expensive calculations',
+      'API Development': 'Broke down monolithic endpoints into composable functions',
+      'UI Components': 'Split large components into smaller, reusable pieces',
+      'default': 'Refactored code for better readability and maintainability'
     },
     promise_change: {
       'Authentication System': 'Properly sequenced auth flows to prevent race conditions',
