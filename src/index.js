@@ -4,8 +4,8 @@ import { hideBin } from 'yargs/helpers';
 import { fetchCommit, fetchCommitsLast24Hours } from './fetch/github.js';
 import { extractCommitSignals } from './extract/index.js';
 import { analyzeCommit, analyzeMultipleCommits } from './analyze/commitAnalyzer.js';
-import { generateEnhancedPostIdeas } from './post/ideaGenerator.js';
-import { composePersonalizedPost } from './post/Composer.js';
+import { generatePostIdeas } from './post/ideaGenerator.js';
+import { composePost } from './post/Composer.js';
 import { rewritePost } from './ai/rewrite.js';
 
 dotenv.config();
@@ -131,7 +131,7 @@ const argv = yargs(hideBin(process.argv))
     console.log(JSON.stringify(aggregatedAnalysis, null, 2));
     
     // Generate enhanced post ideas
-    const postIdeas = generateEnhancedPostIdeas(aggregatedAnalysis);
+    const postIdeas = generatePostIdeas(aggregatedAnalysis);
     
     console.log('\n━━━ POST IDEAS (RANKED BY RELEVANCE) ━━━\n');
     
@@ -157,7 +157,7 @@ const argv = yargs(hideBin(process.argv))
       console.log(`\n┌─ POST ${i + 1}: ${idea.title} ─┐\n`);
       
       // Create personalized base post
-      const basePost = composePersonalizedPost(idea, aggregatedAnalysis);
+      const basePost = composePost(idea, aggregatedAnalysis);
       
       console.log('BASE POST (Ready to use):');
       console.log('─'.repeat(60));
