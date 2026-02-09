@@ -1,1 +1,126 @@
-[]
+[
+  {
+    "sha": "3a855ba0772cb326ee0330c98e673f10904816f6",
+    "node_id": "C_kwDORHedEdoAKDNhODU1YmEwNzcyY2IzMjZlZTAzMzBjOThlNjczZjEwOTA0ODE2ZjY",
+    "commit": {
+      "author": {
+        "name": "garv thakre",
+        "email": "garvthakre0@gmail.com",
+        "date": "2026-02-09T11:29:12Z"
+      },
+      "committer": {
+        "name": "garv thakre",
+        "email": "garvthakre0@gmail.com",
+        "date": "2026-02-09T11:29:12Z"
+      },
+      "message": "feat:add README.md",
+      "tree": {
+        "sha": "4c701bef0a0644849452b144a0d1c2fbc2d83f0a",
+        "url": "https://api.github.com/repos/garvthakre/Post90/git/trees/4c701bef0a0644849452b144a0d1c2fbc2d83f0a"
+      },
+      "url": "https://api.github.com/repos/garvthakre/Post90/git/commits/3a855ba0772cb326ee0330c98e673f10904816f6",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/garvthakre/Post90/commits/3a855ba0772cb326ee0330c98e673f10904816f6",
+    "html_url": "https://github.com/garvthakre/Post90/commit/3a855ba0772cb326ee0330c98e673f10904816f6",
+    "comments_url": "https://api.github.com/repos/garvthakre/Post90/commits/3a855ba0772cb326ee0330c98e673f10904816f6/comments",
+    "author": {
+      "login": "garvthakre",
+      "id": 157668392,
+      "node_id": "U_kgDOCWXUKA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/garvthakre",
+      "html_url": "https://github.com/garvthakre",
+      "followers_url": "https://api.github.com/users/garvthakre/followers",
+      "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+      "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+      "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+      "repos_url": "https://api.github.com/users/garvthakre/repos",
+      "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "garvthakre",
+      "id": 157668392,
+      "node_id": "U_kgDOCWXUKA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/157668392?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/garvthakre",
+      "html_url": "https://github.com/garvthakre",
+      "followers_url": "https://api.github.com/users/garvthakre/followers",
+      "following_url": "https://api.github.com/users/garvthakre/following{/other_user}",
+      "gists_url": "https://api.github.com/users/garvthakre/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/garvthakre/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/garvthakre/subscriptions",
+      "organizations_url": "https://api.github.com/users/garvthakre/orgs",
+      "repos_url": "https://api.github.com/users/garvthakre/repos",
+      "events_url": "https://api.github.com/users/garvthakre/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/garvthakre/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "6adc2e9f045f3fce18919aa4733d2850c3be6c2f",
+        "url": "https://api.github.com/repos/garvthakre/Post90/commits/6adc2e9f045f3fce18919aa4733d2850c3be6c2f",
+        "html_url": "https://github.com/garvthakre/Post90/commit/6adc2e9f045f3fce18919aa4733d2850c3be6c2f"
+      }
+    ],
+    "stats": {
+      "total": 3450,
+      "additions": 108,
+      "deletions": 3342
+    },
+    "files": [
+      {
+        "sha": "8558386712a69ce8ec3b68c3e6c4e4e753860ace",
+        "filename": "README.md",
+        "status": "modified",
+        "additions": 106,
+        "deletions": 1,
+        "changes": 107,
+        "blob_url": "https://github.com/garvthakre/Post90/blob/3a855ba0772cb326ee0330c98e673f10904816f6/README.md",
+        "raw_url": "https://github.com/garvthakre/Post90/raw/3a855ba0772cb326ee0330c98e673f10904816f6/README.md",
+        "contents_url": "https://api.github.com/repos/garvthakre/Post90/contents/README.md?ref=3a855ba0772cb326ee0330c98e673f10904816f6",
+        "patch": "@@ -1 +1,106 @@\n-# Post90\n\\ No newline at end of file\n+# Post90\n+\n+Transform your GitHub commits into authentic LinkedIn posts.\n+\n+## Overview\n+\n+Post90 analyzes your GitHub commit history and generates LinkedIn-ready posts that tell the real story behind your code. No corporate jargon—just authentic developer content.\n+\n+## Features\n+\n+- **Commit Analysis**: Extracts technical signals from your commit diffs (async patterns, error handling, networking, tests, etc.)\n+- **Smart Post Generation**: Creates context-aware posts based on what you actually built\n+- **Multiple Tones**: Professional, dev-life, fun, concise, detailed, optimistic\n+- **Daily Summaries**: Aggregate last 24 hours of commits into a single post\n+- **AI Polish** (optional): Uses Groq API to refine posts while keeping them authentic\n+\n+## Installation\n+\n+```bash\n+npm install\n+```\n+\n+## Configuration\n+\n+Create a `.env` file:\n+\n+```env\n+GITHUB_TOKEN=your_github_token\n+GROQ_API_KEY=your_groq_api_key  # Optional, for AI rewrite\n+```\n+\n+## Usage\n+\n+### Single Commit\n+```bash\n+npm start -- --repo owner/repo --sha abc123 --mode single\n+```\n+\n+### Daily Summary (Last 24 Hours)\n+```bash\n+npm start -- --repo owner/repo --mode daily\n+```\n+\n+### Filter by Author\n+```bash\n+npm start -- --repo owner/repo --author username --mode daily\n+```\n+\n+### Skip AI Rewrite (Faster)\n+```bash\n+npm start -- --repo owner/repo --mode daily --skip-ai\n+```\n+\n+### Custom Tone\n+```bash\n+npm start -- --repo owner/repo --mode daily --tone devlife\n+```\n+\n+Available tones: `pro`, `devlife`, `fun`, `concise`, `detailed`, `optimistic`\n+\n+## How It Works\n+\n+1. **Fetch**: Pulls commit data from GitHub API\n+2. **Extract**: Parses diffs to identify code change patterns\n+3. **Analyze**: Detects features, problems, and solutions from commits\n+4. **Generate**: Creates post ideas ranked by relevance\n+5. **Compose**: Builds LinkedIn-ready posts with hooks, insights, and CTAs\n+6. **Polish** (optional): AI refinement while maintaining authenticity\n+\n+## Example Output\n+\n+```\n+Built authentication system that handles concurrent login sessions without race conditions.\n+\n+The challenge: Managing concurrent login sessions without race conditions\n+\n+Implemented token refresh logic with automatic retry and race condition handling\n+\n+Impact: Users can now stay logged in reliably across devices\n+\n+Key learning: Token refresh is trickier than it looks - you need to handle edge cases \n+like expired refresh tokens and concurrent requests trying to refresh simultaneously.\n+\n+How do you handle session management in your apps?\n+\n+#WebDev #Auth #Security #JWT #OAuth\n+```\n+\n+## Project Structure\n+\n+```\n+src/\n+├── ai/           # AI providers and post rewriting\n+├── analyze/      # Commit analysis and feature extraction\n+├── extract/      # Diff parsing and signal classification\n+├── fetch/        # GitHub API integration\n+└── post/         # Post generation and composition\n+```\n+\n+## License\n+\n+MIT\n+\n+## Contributing\n+\n+Issues and PRs welcome. Keep it simple and authentic.\n\\ No newline at end of file"
+      },
+      {
+        "sha": "fe51488c7066f6687ef680d6bfaa4f7768ef205c",
+        "filename": "data/raw/garvthakre_Post90_last24h.json",
+        "status": "modified",
+        "additions": 1,
+        "deletions": 3340,
+        "changes": 3341,
+        "blob_url": "https://github.com/garvthakre/Post90/blob/3a855ba0772cb326ee0330c98e673f10904816f6/data%2Fraw%2Fgarvthakre_Post90_last24h.json",
+        "raw_url": "https://github.com/garvthakre/Post90/raw/3a855ba0772cb326ee0330c98e673f10904816f6/data%2Fraw%2Fgarvthakre_Post90_last24h.json",
+        "contents_url": "https://api.github.com/repos/garvthakre/Post90/contents/data%2Fraw%2Fgarvthakre_Post90_last24h.json?ref=3a855ba0772cb326ee0330c98e673f10904816f6"
+      },
+      {
+        "sha": "371f847397ae66b12ccefb9d0db1da4560e09a22",
+        "filename": "src/index.js",
+        "status": "modified",
+        "additions": 1,
+        "deletions": 1,
+        "changes": 2,
+        "blob_url": "https://github.com/garvthakre/Post90/blob/3a855ba0772cb326ee0330c98e673f10904816f6/src%2Findex.js",
+        "raw_url": "https://github.com/garvthakre/Post90/raw/3a855ba0772cb326ee0330c98e673f10904816f6/src%2Findex.js",
+        "contents_url": "https://api.github.com/repos/garvthakre/Post90/contents/src%2Findex.js?ref=3a855ba0772cb326ee0330c98e673f10904816f6",
+        "patch": "@@ -98,7 +98,7 @@ const argv = yargs(hideBin(process.argv))\n     const commits = await fetchCommitsLast24Hours(repo, author);\n     \n     if (commits.length === 0) {\n-      console.log('⚠ No commits found in the last 24 hours');\n+      console.log(' No commits found in the last 24 hours');\n       return;\n     }\n     "
+      }
+    ]
+  }
+]
