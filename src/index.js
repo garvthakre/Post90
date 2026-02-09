@@ -98,7 +98,7 @@ const argv = yargs(hideBin(process.argv))
     const commits = await fetchCommitsLast24Hours(repo, author);
     
     if (commits.length === 0) {
-      console.log('⚠ No commits found in the last 24 hours');
+      console.log(' No commits found in the last 24 hours');
       return;
     }
     
