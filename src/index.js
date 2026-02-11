@@ -213,7 +213,7 @@ const argv = yargs(hideBin(process.argv))
         // Add stats at the beginning or after first line
         const lines = basePost.split('\n');
         if (statsStyle === 'compact' && useEmojis) {
-          lines.splice(1, 0, `\n📊 ${inlineStats}`);
+          lines.splice(1, 0, `\n ${inlineStats}`);
         }
         basePost = lines.join('\n');
       }
@@ -239,7 +239,7 @@ const argv = yargs(hideBin(process.argv))
       console.log('─'.repeat(60));
       
       // Character count
-      console.log(`\n📏 Length: ${basePost.length} characters`);
+      console.log(`\n Length: ${basePost.length} characters`);
       
       // Only rewrite with AI if not skipped
       if (!skipAi) {
@@ -268,10 +268,10 @@ const argv = yargs(hideBin(process.argv))
           console.log('─'.repeat(60));
           console.log(finalPost);
           console.log('─'.repeat(60));
-          console.log(`\n📏 Length: ${finalPost.length} characters`);
+          console.log(`\n Length: ${finalPost.length} characters`);
         } catch (error) {
-          console.log('\n⚠️  AI rewrite failed (likely token limit). Using base post instead.');
-          console.log('💡 Tip: Use --skip-ai flag to avoid this, or the base post is often better anyway!');
+          console.log('\n  AI rewrite failed (likely token limit). Using base post instead.');
+          console.log(' Tip: Use --skip-ai flag to avoid this, or the base post is often better anyway!');
           console.log('Error:', error.message);
         }
       } else {
@@ -291,7 +291,7 @@ const argv = yargs(hideBin(process.argv))
   
   console.log('\n✓ Done\n');
   
-  console.log('💡 TIPS:');
+  console.log(' TIPS:');
   console.log('  • Try --variations 5 to generate more options');
   console.log('  • Use --tones "pro,fun,concise" for different styles');
   console.log('  • Add --stats-style detailed for more GitHub stats');
