@@ -9,12 +9,18 @@ const __dirname = path.dirname(__filename);
 
 async function fetchCommit(repo,sha) {
     const url = `https://api.github.com/repos/${repo}/commits/${sha}`;
-    const res = await axios.get(url, {
-        headers: {
-            'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
-            'Accept': 'application/vnd.github.v3+json'
-        }
-    });
+    
+    const headers = {
+        'Accept': 'application/vnd.github.v3+json'
+    };
+    
+    // Add auth if token available (optional for public repos)
+    if (process.env.GITHUB_TOKEN) {
+        headers['Authorization'] = `Bearer ${process.env.GITHUB_TOKEN}`;
+    }
+    
+    const res = await axios.get(url, { headers });
+    
     const outputDir = path.join(__dirname,'../../data/raw');
     await fs.ensureDir(outputDir);
     const filepath = path.join(outputDir,`${repo.replace('/','_')}_${sha}.json`);
@@ -39,11 +45,17 @@ async function fetchCommitsLast24Hours(repo, author = null) {
     
     console.log(`Fetching commits from ${repo} since ${since}${author ? ` by ${author}` : ''}`);
     
+    const headers = {
+        'Accept': 'application/vnd.github.v3+json'
+    };
+    
+    // Add auth if token available (optional for public repos)
+    if (process.env.GITHUB_TOKEN) {
+        headers['Authorization'] = `Bearer ${process.env.GITHUB_TOKEN}`;
+    }
+    
     const res = await axios.get(url, {
-        headers: {
-            'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
-            'Accept': 'application/vnd.github.v3+json'
-        },
+        headers,
         params
     });
     
@@ -54,12 +66,7 @@ async function fetchCommitsLast24Hours(repo, author = null) {
     const detailedCommits = [];
     for (const commit of commits) {
         const detailUrl = `https://api.github.com/repos/${repo}/commits/${commit.sha}`;
-        const detailRes = await axios.get(detailUrl, {
-            headers: {
-                'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
-                'Accept': 'application/vnd.github.v3+json'
-            }
-        });
+        const detailRes = await axios.get(detailUrl, { headers });
         detailedCommits.push(detailRes.data);
         
         // Save individual commit
@@ -79,4 +86,35 @@ async function fetchCommitsLast24Hours(repo, author = null) {
     return detailedCommits;
 }
 
-export { fetchCommit, fetchCommitsLast24Hours };
+async function fetchUserRepos(username) {
+    const url = `https://api.github.com/users/${username}/repos`;
+    const params = {
+        type: 'owner',  // Only repos owned by user
+        sort: 'updated',
+        per_page: 100
+    };
+    
+    const headers = {
+        'Accept': 'application/vnd.github.v3+json'
+    };
+    
+    // Add auth if token available (optional for public repos)
+    if (process.env.GITHUB_TOKEN) {
+        headers['Authorization'] = `Bearer ${process.env.GITHUB_TOKEN}`;
+    }
+    
+    console.log(`Fetching repositories for user ${username}...`);
+    
+    const res = await axios.get(url, {
+        headers,
+        params
+    });
+    
+    // Return array of repo full names (e.g., "username/repo-name")
+    const repos = res.data.map(repo => repo.full_name);
+    console.log(`Found ${repos.length} repositories`);
+    
+    return repos;
+}
+
+export { fetchCommit, fetchCommitsLast24Hours, fetchUserRepos };
