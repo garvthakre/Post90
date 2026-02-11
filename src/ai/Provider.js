@@ -4,14 +4,14 @@ const GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions";
 
 const MODELS = {
   MIXTRAL: "mixtral-8x7b-32768",
-  LLAMA3_70: "llama3-70b-8192",
-  LLAMA3_8: "llama3-8b-8192",
+  
+   
   LLAMA_90: "llama-3.3-70b-versatile",
   GEMMA_7: "gemma-7b-it",
 };
 
 // Use smaller model for simple rewrites (faster + cheaper)
-const DEFAULT_MODEL = MODELS.LLAMA3_8; // Changed from LLAMA_90
+const DEFAULT_MODEL = MODELS.LLAMA_90; // Changed from LLAMA_90
 
 // System message - sent once, not repeated in every call
 const SYSTEM_MESSAGE = "You polish LinkedIn posts for developers. Keep them authentic, conversational, and concise. Never add new information.";
