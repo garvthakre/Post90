@@ -6,8 +6,65 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+/**
+ *  Fetch user's recent activity events (pushes, commits)
+ * This is WAY more efficient than scanning all repos!
+ * GitHub Events API shows what the user actually did in last 24h
+ */
+async function fetchUserRecentActivity(username) {
+    const url = `https://api.github.com/users/${username}/events`;
+    const params = {
+        per_page: 100  // Last 100 events (covers way more than 24h)
+    };
+    
+    const headers = {
+        'Accept': 'application/vnd.github.v3+json'
+    };
+    
+    // Add auth if token available (optional for public repos)
+    if (process.env.GITHUB_TOKEN) {
+        headers['Authorization'] = `Bearer ${process.env.GITHUB_TOKEN}`;
+    }
+    
+    console.log(`📡 Fetching recent activity for @${username}...`);
+    
+    const res = await axios.get(url, {
+        headers,
+        params
+    });
+    
+    const events = res.data;
+    
+    // Filter to last 24 hours
+    const oneDayAgo = Date.now() - (24 * 60 * 60 * 1000);
+    const recentEvents = events.filter(event => {
+        const eventTime = new Date(event.created_at).getTime();
+        return eventTime > oneDayAgo;
+    });
+    
+    // Extract repos where user pushed commits
+    const reposWithActivity = new Set();
+    
+    for (const event of recentEvents) {
+        // PushEvent = commits pushed
+        if (event.type === 'PushEvent') {
+            reposWithActivity.add(event.repo.name);
+        }
+        // CreateEvent with commits
+        else if (event.type === 'CreateEvent' && event.payload.ref_type === 'repository') {
+            reposWithActivity.add(event.repo.name);
+        }
+    }
+    
+    const repos = Array.from(reposWithActivity);
+    
+    console.log(`✅ Found activity in ${repos.length} repositories in last 24h`);
+    console.log(`   (Scanned ${recentEvents.length} events instead of all repos)`);
+    
+    return repos;
+}
 
-async function fetchCommit(repo,sha) {
+async function fetchCommit(repo, sha) {
     const url = `https://api.github.com/repos/${repo}/commits/${sha}`;
     
     const headers = {
@@ -43,7 +100,7 @@ async function fetchCommitsLast24Hours(repo, author = null) {
         params.author = author;
     }
     
-    console.log(`Fetching commits from ${repo} since ${since}${author ? ` by ${author}` : ''}`);
+    console.log(`Fetching commits from ${repo}${author ? ` by @${author}` : ''}...`);
     
     const headers = {
         'Accept': 'application/vnd.github.v3+json'
@@ -60,7 +117,13 @@ async function fetchCommitsLast24Hours(repo, author = null) {
     });
     
     const commits = res.data;
-    console.log(`Found ${commits.length} commits in the last 24 hours`);
+    
+    if (commits.length === 0) {
+        console.log(`     ⊘ No commits found`);
+        return [];
+    }
+    
+    console.log(`     ✓ Found ${commits.length} commits`);
     
     // Fetch detailed info for each commit
     const detailedCommits = [];
@@ -81,15 +144,18 @@ async function fetchCommitsLast24Hours(repo, author = null) {
     await fs.ensureDir(outputDir);
     const aggregatedPath = path.join(outputDir, `${repo.replace('/','_')}_last24h.json`);
     await fs.writeJson(aggregatedPath, detailedCommits, {spaces:2});
-    console.log(`Aggregated commits saved to ${aggregatedPath}`);
     
     return detailedCommits;
 }
 
+/**
+ * OLD METHOD: Fetch all user repos (kept for backward compatibility)
+ * This is slower - prefer fetchUserRecentActivity() instead
+ */
 async function fetchUserRepos(username) {
     const url = `https://api.github.com/users/${username}/repos`;
     const params = {
-        type: 'owner',  // Only repos owned by user
+        type: 'owner',
         sort: 'updated',
         per_page: 100
     };
@@ -98,23 +164,26 @@ async function fetchUserRepos(username) {
         'Accept': 'application/vnd.github.v3+json'
     };
     
-    // Add auth if token available (optional for public repos)
     if (process.env.GITHUB_TOKEN) {
         headers['Authorization'] = `Bearer ${process.env.GITHUB_TOKEN}`;
     }
     
-    console.log(`Fetching repositories for user ${username}...`);
+    console.log(`Fetching all repositories for user ${username}...`);
     
     const res = await axios.get(url, {
         headers,
         params
     });
     
-    // Return array of repo full names (e.g., "username/repo-name")
     const repos = res.data.map(repo => repo.full_name);
     console.log(`Found ${repos.length} repositories`);
     
     return repos;
 }
 
-export { fetchCommit, fetchCommitsLast24Hours, fetchUserRepos };
+export { 
+    fetchCommit, 
+    fetchCommitsLast24Hours, 
+    fetchUserRepos,
+    fetchUserRecentActivity   
+};
