@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import { fetchCommit, fetchCommitsLast24Hours, fetchUserRepos } from './fetch/github.js';
+import { fetchCommit, fetchCommitsLast24Hours, fetchUserRecentActivity } from './fetch/github.js';
 import { extractCommitSignals } from './extract/index.js';
 import { analyzeCommit, analyzeMultipleCommits } from './analyze/commitAnalyzer.js';
 import { generatePostIdeas } from './post/ideaGenerator.js';
@@ -23,7 +23,7 @@ const argv = yargs(hideBin(process.argv))
   })
   .option('author', {
     type: 'string',
-    describe: 'GitHub username - automatically fetches ALL their public repos and commits'
+    describe: 'GitHub username - fetches only repos with activity in last 24h'
   })
   .option('mode', {
     type: 'string',
@@ -62,15 +62,14 @@ const argv = yargs(hideBin(process.argv))
     describe: 'Style of stats widget to include'
   })
   .check((argv) => {
-    // Validation: need either --repo or --author
     if (!argv.repo && !argv.author) {
       throw new Error('Must specify either --repo or --author');
     }
     return true;
   })
   .help()
-  .example('$0 --author garvthakre', 'Fetch all commits from all repos by garvthakre')
-  .example('$0 --repo garvthakre/Post90 --author garvthakre', 'Fetch only from specific repo')
+  .example('$0 --author garvthakre', 'Smart: Only scans repos with activity today')
+  .example('$0 --repo owner/repo --author username', 'Specific repo only')
   .parse();
 
 (async () => {
@@ -88,7 +87,7 @@ const argv = yargs(hideBin(process.argv))
   if (mode === 'single' && sha) {
     // Single commit mode - requires specific repo
     if (!repo) {
-      console.log('⚠ Single commit mode requires --repo');
+      console.log(' Single commit mode requires --repo');
       return;
     }
     
@@ -134,7 +133,7 @@ const argv = yargs(hideBin(process.argv))
       console.log(finalPost);
     }
   } else {
-    // Daily mode - fetch from all repos
+    // Daily mode with smart activity detection
     console.log(`\n━━━ DAILY MODE (LAST 24 HOURS) ━━━`);
     
     let repos;
@@ -145,23 +144,25 @@ const argv = yargs(hideBin(process.argv))
       console.log(`Repository: ${repo}`);
       console.log(`Filtering by author: @${author}\n`);
     } else if (author && !repo) {
-      // Fetch ALL user's repos
-      console.log(`Fetching all public repos for @${author}...\n`);
-      repos = await fetchUserRepos(author);
+      // OPTIMIZED: Use GitHub Events API to find active repos only!
+      console.log(` Smart Mode: Checking recent activity for @${author}\n`);
+      repos = await fetchUserRecentActivity(author);
       
       if (repos.length === 0) {
-        console.log('⚠ No public repositories found');
+        console.log('\n No push activity found in the last 24 hours');
+        console.log(' Tip: This only checks public repos. Add GITHUB_TOKEN to .env for private repos.\n');
         return;
       }
       
-      console.log(`Found ${repos.length} repositories\n`);
+      console.log(`\n Found activity in ${repos.length} ${repos.length === 1 ? 'repository' : 'repositories'}`);
+      console.log(`   Much faster than scanning all repos! 🚀\n`);
     } else {
       // Just repo, no author filter
       repos = [repo];
       console.log(`Repository: ${repo}\n`);
     }
     
-    // Fetch commits from all repos
+    // Fetch commits from active repos only
     console.log('━━━ FETCHING COMMITS ━━━\n');
     const allCommits = [];
     const repoStats = {};
@@ -177,7 +178,7 @@ const argv = yargs(hideBin(process.argv))
           repoStats[currentRepo] = commits.length;
         }
       } catch (error) {
-        console.log(`✗ Error fetching ${currentRepo}: ${error.message}`);
+        console.log(`     Error fetching ${currentRepo}: ${error.message}`);
       }
     }
     
@@ -187,25 +188,31 @@ const argv = yargs(hideBin(process.argv))
     }
     
     // Show summary
-    console.log(`\n━━━ SUMMARY ━━━`);
+    console.log(`\n━━━ COMMIT SUMMARY ━━━`);
     console.log(`✓ Total commits: ${allCommits.length}`);
-    console.log(`✓ Repositories with commits: ${Object.keys(repoStats).length}\n`);
+    console.log(`✓ Active repositories: ${Object.keys(repoStats).length}`);
+    
+    if (author && !repo) {
+      console.log(` API efficiency: Checked ${repos.length} repos with activity instead of scanning all repos`);
+    }
+    console.log('');
     
     if (Object.keys(repoStats).length > 1) {
       console.log('Per-repository breakdown:');
       for (const [repoName, count] of Object.entries(repoStats)) {
-        console.log(`  • ${repoName}: ${count} commits`);
+        console.log(`  • ${repoName}: ${count} commit${count === 1 ? '' : 's'}`);
       }
       console.log('');
     }
     
     // Process each commit
     const commitAnalyses = [];
+    console.log('━━━ ANALYZING COMMITS ━━━\n');
+    
     for (let i = 0; i < allCommits.length; i++) {
       const commit = allCommits[i];
-      console.log(`\n--- Processing commit ${i + 1}/${allCommits.length}: ${commit.sha.substring(0, 7)} ---`);
-      console.log(`Repo: ${commit._repo}`);
-      console.log(`Message: ${commit.commit.message.split('\n')[0]}`);
+      console.log(`[${i + 1}/${allCommits.length}] ${commit._repo} - ${commit.sha.substring(0, 7)}`);
+      console.log(`    ${commit.commit.message.split('\n')[0].substring(0, 60)}...`);
       
       const signals = await extractCommitSignals(commit);
       const analysis = analyzeCommit(signals);
@@ -229,11 +236,14 @@ const argv = yargs(hideBin(process.argv))
     aggregatedAnalysis.repos = Object.keys(repoStats);
     
     console.log('\n━━━ AGGREGATED ANALYSIS ━━━\n');
-    console.log(JSON.stringify(aggregatedAnalysis, null, 2));
+    console.log(`Total files changed: ${aggregatedAnalysis.totalFilesChanged}`);
+    console.log(`Total weight: ${aggregatedAnalysis.totalWeight}`);
+    console.log(`Top signals: ${Object.keys(aggregatedAnalysis.signals).slice(0, 3).join(', ')}`);
+    console.log('');
     
     // Generate stats widget
     if (statsStyle !== 'none') {
-      console.log('\n━━━ GITHUB STATS ━━━\n');
+      console.log('━━━ GITHUB STATS ━━━\n');
       const statsWidget = generateStatsWidget(aggregatedAnalysis, { 
         style: statsStyle, 
         useEmojis 
@@ -250,17 +260,13 @@ const argv = yargs(hideBin(process.argv))
     // Generate enhanced post ideas
     const postIdeas = generatePostIdeas(aggregatedAnalysis);
     
-    console.log('\n━━━ POST IDEAS (RANKED BY RELEVANCE) ━━━\n');
+    console.log('━━━ POST IDEAS (RANKED BY RELEVANCE) ━━━\n');
     
     for (let i = 0; i < Math.min(postIdeas.length, 5); i++) {
       const idea = postIdeas[i];
-      console.log(`\n${i + 1}. ${idea.title} [Score: ${idea.relevanceScore}]`);
-      console.log(`   Type: ${idea.type} | Angle: ${idea.angle}`);
+      console.log(`${i + 1}. ${idea.title} [Score: ${idea.relevanceScore}]`);
       console.log(`   ${idea.description}`);
-      if (idea.personalizedHooks) {
-        console.log(`   Hooks: ${idea.personalizedHooks.slice(0, 2).join(' / ')}`);
-      }
-      console.log('   ---');
+      if (i < postIdeas.length - 1) console.log('');
     }
     
     // Generate actual posts for top ideas with variations
@@ -274,7 +280,7 @@ const argv = yargs(hideBin(process.argv))
       // Determine tone for this variation
       const currentTone = toneList[i % toneList.length] || 'pro';
       
-      console.log(`\n┌─ VARIATION ${i + 1}/${numVariations}: ${idea.title} (Tone: ${currentTone}) ─┐\n`);
+      console.log(`┌─ VARIATION ${i + 1}/${numVariations}: ${idea.title} (Tone: ${currentTone}) ─┐\n`);
       
       // Create personalized base post
       let basePost = composePost(idea, aggregatedAnalysis);
@@ -319,14 +325,12 @@ const argv = yargs(hideBin(process.argv))
       console.log('─'.repeat(60));
       console.log(basePost);
       console.log('─'.repeat(60));
-      
-      // Character count
-      console.log(`\n Length: ${basePost.length} characters`);
+      console.log(`Length: ${basePost.length} characters\n`);
       
       // Only rewrite with AI if not skipped
       if (!skipAi) {
         try {
-          console.log(`\n Rewriting with AI (tone: ${currentTone})...`);
+          console.log(` Rewriting with AI (tone: ${currentTone})...\n`);
           
           const finalPost = await rewritePost({
             basePost,
@@ -344,39 +348,39 @@ const argv = yargs(hideBin(process.argv))
             }
           });
           
-          console.log('\nAI REWRITTEN VERSION:');
+          console.log('AI REWRITTEN VERSION:');
           console.log('─'.repeat(60));
           console.log(finalPost);
           console.log('─'.repeat(60));
-          console.log(`\n Length: ${finalPost.length} characters`);
+          console.log(`Length: ${finalPost.length} characters`);
         } catch (error) {
-          console.log('\n  AI rewrite failed (likely token limit). Using base post instead.');
-          console.log(' Tip: Use --skip-ai flag to avoid this');
+          console.log('  AI rewrite failed. Using base post.');
           console.log(`Error: ${error.message}`);
         }
       } else {
-        console.log('\n✓ Skipped AI rewrite (--skip-ai flag enabled)');
+        console.log(' Skipped AI rewrite (--skip-ai flag)');
       }
       
       console.log('\n└' + '─'.repeat(58) + '┘\n');
     }
     
     // Summary
-    console.log('\n━━━ SUMMARY ━━━\n');
-    console.log(` Generated ${topIdeas.length} post variation${topIdeas.length > 1 ? 's' : ''}`);
-    console.log(` Used tone${toneList.length > 1 ? 's' : ''}: ${toneList.join(', ')}`);
-    console.log(` Commits analyzed: ${allCommits.length}`);
-    console.log(` Repositories: ${aggregatedAnalysis.repoCount}`);
-    console.log(` Stats style: ${statsStyle}`);
-    console.log(` Emojis: ${useEmojis ? 'enabled' : 'disabled'}`);
+    console.log('━━━ SUMMARY ━━━\n');
+    console.log(`✓ Generated ${topIdeas.length} post variation${topIdeas.length > 1 ? 's' : ''}`);
+    console.log(`✓ Commits analyzed: ${allCommits.length}`);
+    console.log(`✓ Repositories: ${aggregatedAnalysis.repoCount}`);
+    console.log(`✓ Tones: ${toneList.join(', ')}`);
+    
+    if (author && !repo) {
+      console.log(`\n Performance: Only scanned ${repos.length} repos with activity (not all repos)`);
+    }
   }
   
-  console.log('\n✓ Done\n');
+  console.log('\n Done!\n');
   
-  console.log(' USAGE TIPS:');
-  console.log('   Simplest: --author garvthakre (fetches ALL your repos)');
-  console.log('   Specific repo: --repo owner/repo --author username');
-  console.log('   Try --variations 5 for more options');
-  console.log('   Use --tones "pro,fun,concise" for different styles');
-  console.log('   Use --skip-ai for faster generation\n');
+  console.log(' TIPS:');
+  console.log('  • --author username = Smart scan (only active repos)');
+  console.log('  • --variations 5 = More post options');
+  console.log('  • --skip-ai = Faster generation');
+  console.log('  • --tones "pro,fun" = Multiple styles\n');
 })();
