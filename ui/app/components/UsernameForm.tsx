@@ -135,7 +135,7 @@ export default function UsernameForm({ onGenerate }: UsernameFormProps) {
         {/* Repository (Optional) */}
         <div className="mb-6">
           <label htmlFor="repo" className="block text-sm font-semibold text-slate-900 mb-2">
-            Specific Repository (Optional)
+            Specific Repository <span className="text-slate-400 font-normal">(Optional)</span>
           </label>
           <input
             id="repo"
@@ -145,7 +145,7 @@ export default function UsernameForm({ onGenerate }: UsernameFormProps) {
               setRepo(e.target.value)
               setErrors({ ...errors, repo: undefined })
             }}
-            placeholder="e.g., username/repo-name"
+            placeholder="Leave blank for all repos from last 24h"
             className={`w-full px-4 py-3 rounded-lg border ${
               errors.repo ? 'border-red-500' : 'border-slate-300'
             } focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent`}
@@ -153,9 +153,16 @@ export default function UsernameForm({ onGenerate }: UsernameFormProps) {
           {errors.repo && (
             <p className="mt-2 text-sm text-red-600">{errors.repo}</p>
           )}
-          <p className="mt-2 text-sm text-slate-500">
-            Leave blank to analyze all repos with activity in the last 24h
-          </p>
+          <div className="mt-2 p-3 bg-blue-50 rounded-lg border border-blue-100">
+            <div className="flex items-start gap-2">
+              <span className="text-lg">💡</span>
+              <div className="text-sm text-blue-900">
+                <strong>Leave blank:</strong> Analyzes all repos with commits in last 24 hours
+                <br />
+                <strong>Specify repo:</strong> Analyzes only that repo (format: username/repo-name)
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Tone Selection */}
