@@ -14,6 +14,7 @@ export async function generate(req, res) {
     tones = ['pro', 'fun', 'concise'],
     useEmojis = true,
     statsStyle = 'compact',
+    seed = Date.now(),  
   } = req.body;
 
   if (!username) {
@@ -24,8 +25,10 @@ export async function generate(req, res) {
     // ── 1. Resolve repos to scan ──────────────────────────────
     let repos = [];
     if (repo) {
+      // User specified a repo → analyze ONLY that repo
       repos = [repo];
     } else {
+      // No repo specified → analyze ALL repos with activity (last 24h)
       repos = await fetchUserRecentActivity(username);
       if (repos.length === 0) {
         return res.status(404).json({
@@ -124,6 +127,7 @@ export async function generate(req, res) {
           },
           tone,
           constraints: { platform: 'linkedin', maxLength: 3000, emoji: useEmojis },
+          seed, // NEW: Pass seed for variation
         });
       } catch (err) {
         console.warn(`AI rewrite failed for tone "${tone}", using base post: ${err.message}`);
