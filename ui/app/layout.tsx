@@ -15,6 +15,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "POST90",
   description: "web-based AI bot that rewrites, analyzes, and enhances text through a simple, developer-friendly interface—no paid platforms required",
+   icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
