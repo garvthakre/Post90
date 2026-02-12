@@ -9,6 +9,7 @@ interface UsernameFormProps {
     tones: string[]
     useEmojis: boolean
     statsStyle: string
+    postLength: 'quick' | 'standard' | 'detailed'
   }) => void
 }
 
@@ -18,6 +19,7 @@ export default function UsernameForm({ onGenerate }: UsernameFormProps) {
   const [selectedTones, setSelectedTones] = useState<string[]>(['pro', 'fun', 'concise'])
   const [useEmojis, setUseEmojis] = useState(true)
   const [statsStyle, setStatsStyle] = useState('compact')
+  const [postLength, setPostLength] = useState<'quick' | 'standard' | 'detailed'>('standard')
   const [showAdvanced, setShowAdvanced] = useState(false)
   const [errors, setErrors] = useState<{ username?: string; repo?: string }>({})
 
@@ -28,6 +30,33 @@ export default function UsernameForm({ onGenerate }: UsernameFormProps) {
     { value: 'devlife', label: 'DevLife', description: 'Casual developer tone' },
     { value: 'detailed', label: 'Detailed', description: 'Explanatory with context' },
     { value: 'optimistic', label: 'Optimistic', description: 'Positive and upbeat' }
+  ]
+
+  const lengthOptions = [
+    { 
+      value: 'quick' as const, 
+      label: 'Quick', 
+      description: 'Punchy & concise',
+      range: '300-600 chars',
+      icon: '⚡',
+      color: 'green'
+    },
+    { 
+      value: 'standard' as const, 
+      label: 'Standard', 
+      description: 'Balanced detail',
+      range: '800-1200 chars',
+      icon: '📝',
+      color: 'blue'
+    },
+    { 
+      value: 'detailed' as const, 
+      label: 'Detailed', 
+      description: 'Deep dive',
+      range: '1500-2500 chars',
+      icon: '📚',
+      color: 'purple'
+    }
   ]
 
   const exampleUsernames = ['garvthakre', 'torvalds', 'defunkt']
@@ -58,7 +87,8 @@ export default function UsernameForm({ onGenerate }: UsernameFormProps) {
         repo: repo.trim() || undefined,
         tones: selectedTones,
         useEmojis,
-        statsStyle
+        statsStyle,
+        postLength
       })
     }
   }
@@ -78,6 +108,28 @@ export default function UsernameForm({ onGenerate }: UsernameFormProps) {
   const fillExample = (exampleUsername: string) => {
     setUsername(exampleUsername)
     setErrors({})
+  }
+
+  const getLengthColor = (value: string) => {
+    if (value === 'quick') return 'green'
+    if (value === 'standard') return 'blue'
+    return 'purple'
+  }
+
+  const getLengthColorClasses = (value: string, isSelected: boolean) => {
+    const color = getLengthColor(value)
+    const colors = {
+      green: isSelected 
+        ? 'border-green-600 bg-green-50' 
+        : 'border-slate-200 hover:border-green-300',
+      blue: isSelected 
+        ? 'border-blue-600 bg-blue-50' 
+        : 'border-slate-200 hover:border-blue-300',
+      purple: isSelected 
+        ? 'border-purple-600 bg-purple-50' 
+        : 'border-slate-200 hover:border-purple-300',
+    }
+    return colors[color as keyof typeof colors] || colors.blue
   }
 
   return (
@@ -160,6 +212,57 @@ export default function UsernameForm({ onGenerate }: UsernameFormProps) {
                 <strong>Leave blank:</strong> Analyzes all repos with commits in last 24 hours
                 <br />
                 <strong>Specify repo:</strong> Analyzes only that repo (format: username/repo-name)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Post Length Selector - NEW! */}
+        <div className="mb-6">
+          <label className="block text-sm font-semibold text-slate-900 mb-3">
+            Post Length
+          </label>
+          <div className="grid grid-cols-3 gap-3">
+            {lengthOptions.map((option) => (
+              <button
+                key={option.value}
+                type="button"
+                onClick={() => setPostLength(option.value)}
+                className={`p-4 rounded-lg border-2 transition-all ${
+                  getLengthColorClasses(option.value, postLength === option.value)
+                }`}
+              >
+                <div className="flex flex-col items-center text-center gap-2">
+                  <span className="text-3xl">{option.icon}</span>
+                  <div>
+                    <div className="font-semibold text-slate-900 text-sm">
+                      {option.label}
+                    </div>
+                    <div className="text-xs text-slate-600 mt-1">
+                      {option.description}
+                    </div>
+                    <div className="text-xs text-slate-500 mt-1 font-mono">
+                      {option.range}
+                    </div>
+                  </div>
+                  {postLength === option.value && (
+                    <svg className="w-5 h-5 text-current" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                  )}
+                </div>
+              </button>
+            ))}
+          </div>
+          <div className="mt-3 p-3 bg-slate-50 rounded-lg border border-slate-200">
+            <div className="flex items-start gap-2 text-sm text-slate-700">
+              <span className="text-lg">ℹ️</span>
+              <div>
+                <strong>Quick:</strong> Twitter-like, punchy posts for high engagement
+                <br />
+                <strong>Standard:</strong> Balanced posts with enough detail
+                <br />
+                <strong>Detailed:</strong> In-depth posts showing technical depth
               </div>
             </div>
           </div>
