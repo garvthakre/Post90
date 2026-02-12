@@ -15,12 +15,22 @@ export async function generate(req, res) {
     tones = ['pro', 'fun', 'concise'],
     useEmojis = true,
     statsStyle = 'compact',
+    postLength = 'standard',  // NEW: quick | standard | detailed
     seed = Date.now(),  
   } = req.body;
 
   if (!username) {
     return res.status(400).json({ success: false, error: 'GitHub username is required' });
   }
+
+  // Map postLength to character limits
+  const lengthLimits = {
+    quick: { min: 300, max: 600 },
+    standard: { min: 800, max: 1200 },
+    detailed: { min: 1500, max: 2500 }
+  };
+  
+  const maxLength = lengthLimits[postLength]?.max || 1200;
 
   try {
     // ── 1. Resolve repos to scan ──────────────────────────────
@@ -65,7 +75,7 @@ export async function generate(req, res) {
 
     // ── 3. Extract specific context (NEW!) ────────────────────
     const specificContext = extractSpecificContext(allCommits);
-    console.log(' Extracted specific context:', specificContext);
+    console.log('📊 Extracted specific context:', specificContext);
 
     // ── 4. Analyse commits ────────────────────────────────────
     const commitAnalyses = [];
@@ -100,7 +110,7 @@ export async function generate(req, res) {
       const tone = tones[i];
       const idea = topIdeas[i % topIdeas.length];
 
-      let basePost = composePost(idea, aggregatedAnalysis);
+      let basePost = composePost(idea, aggregatedAnalysis, postLength); // Pass postLength
 
       if (statsStyle !== 'none' && aggregatedAnalysis.repoCount > 1) {
         const inlineStats = generateInlineStats(
@@ -134,8 +144,12 @@ export async function generate(req, res) {
             filesChanged: aggregatedAnalysis.totalFilesChanged,
           },
           tone,
-          constraints: { platform: 'linkedin', maxLength: 3000, emoji: useEmojis },
-          seed, // NEW: Pass seed for variation
+          constraints: { 
+            platform: 'linkedin', 
+            maxLength: maxLength,  // Use dynamic length based on postLength setting
+            emoji: useEmojis 
+          },
+          seed,
         });
       } catch (err) {
         console.warn(`AI rewrite failed for tone "${tone}", using base post: ${err.message}`);
