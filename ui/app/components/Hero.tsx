@@ -1,9 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 export default function Hero() {
-  const [email, setEmail] = useState('')
+  const router = useRouter()
 
   const stats = [
     { value: "10+", label: "Feature Patterns" },
@@ -31,25 +31,27 @@ export default function Hero() {
           </h1>
 
           <p className="text-xl text-slate-600 mb-12 leading-relaxed">
-            Automatically generate authentic, engaging LinkedIn posts from your daily commits. 
+            Automatically generate authentic, engaging LinkedIn posts from your daily commits.
             No more staring at blank screens.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full sm:w-80 px-6 py-4 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-            />
-            <button className="w-full sm:w-auto px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all font-medium shadow-lg shadow-blue-600/30 hover:shadow-xl hover:shadow-blue-600/40 hover:scale-105">
-              Start Free Trial
+            <button
+              onClick={() => router.push('/Post')}
+              className="w-full sm:w-auto px-10 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all font-semibold text-lg shadow-lg shadow-blue-600/30 hover:shadow-xl hover:shadow-blue-600/40 hover:scale-105"
+            >
+              Try It Free →
             </button>
+            <a
+              href="#how-it-works"
+              className="w-full sm:w-auto px-10 py-4 bg-white text-slate-700 rounded-lg border-2 border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-all font-semibold text-lg"
+            >
+              See How It Works
+            </a>
           </div>
 
           <p className="text-sm text-slate-500 mt-4">
-            No credit card required • Free forever
+            No sign-up required · Works with public GitHub repos
           </p>
         </div>
 
