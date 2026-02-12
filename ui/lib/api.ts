@@ -11,6 +11,7 @@ export interface GeneratePostsRequest {
   tones: string[];
   useEmojis: boolean;
   statsStyle: string;
+  seed?: number;  
 }
 
 export interface Post {
