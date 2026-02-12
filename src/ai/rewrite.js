@@ -9,7 +9,7 @@ export async function rewritePost({
   analysis,
   tone= "pro",
   constraints,
-  seed = Date.now() // NEW: for controlled variation
+  seed = Date.now()
 }) {
   const tonePrompts = TONES[tone] || TONES.pro;
   
@@ -17,8 +17,42 @@ export async function rewritePost({
   const seedVariation = seed % 3; // 0, 1, or 2
   const temperature = 0.6 + (seedVariation * 0.15); // 0.6, 0.75, or 0.9
   
+  // Determine length style based on maxLength
+  let lengthStyle = 'balanced';
+  let lengthGuidance = '';
+  
+  if (constraints.maxLength <= 600) {
+    lengthStyle = 'quick';
+    lengthGuidance = `
+TARGET LENGTH: ${constraints.maxLength} characters (QUICK/PUNCHY)
+- Keep it Twitter-like and impactful
+- One main point, one insight
+- Skip the lengthy explanations
+- Get straight to the value
+- Think: "What's the ONE takeaway?"`;
+  } else if (constraints.maxLength <= 1200) {
+    lengthStyle = 'standard';
+    lengthGuidance = `
+TARGET LENGTH: ${constraints.maxLength} characters (STANDARD)
+- Balanced detail and readability
+- Include: problem → solution → impact → insight
+- Keep paragraphs short (2-3 sentences)
+- One CTA question at the end`;
+  } else {
+    lengthStyle = 'detailed';
+    lengthGuidance = `
+TARGET LENGTH: ${constraints.maxLength} characters (DETAILED)
+- Tell the full story with context
+- Include: background → challenge → approach → results → learning
+- Add specific technical details
+- Can use multiple paragraphs
+- Show your thought process`;
+  }
+  
   const prompt = `
-You are rewriting a LinkedIn post for a developer. The base post is already good - your job is to make it slightly more polished while keeping it authentic.
+You are rewriting a LinkedIn post for a developer. The base post is already good - your job is to make it ${lengthStyle} while keeping it authentic.
+
+${lengthGuidance}
 
 CRITICAL RULES:
 - Keep the EXACT same meaning and facts
@@ -26,8 +60,9 @@ CRITICAL RULES:
 - Do NOT make it sound corporate or fake
 - Keep it conversational and authentic
 - The post should sound like a real developer, not a marketer
-- Keep all specific technical details exactly as they are
+- Keep all specific technical details exactly as they are (library names, function names, etc.)
 - Do NOT remove hashtags or the call-to-action question
+- IMPORTANT: Your response should be APPROXIMATELY ${constraints.maxLength} characters
 
 Base Post:
 """
@@ -35,19 +70,19 @@ ${basePost}
 """
 
 Your task:
+- ${lengthStyle === 'quick' ? 'Condense to the most impactful points' : lengthStyle === 'detailed' ? 'Expand with more context and details' : 'Polish while keeping current length'}
 - Fix any awkward phrasing
 - Make sentences flow naturally
-- Keep the same structure (problem → solution → impact → learning → question → hashtags)
-- Keep it under ${constraints.maxLength} characters
+- ${lengthStyle === 'quick' ? 'Focus on ONE key message' : lengthStyle === 'detailed' ? 'Include background and technical depth' : 'Keep balanced structure'}
 - Tone: ${tonePrompts}
-- Variation seed: ${seed} (use this to create a slightly different angle)
+- Variation seed: ${seed}
 
 Respond with ONLY the rewritten post, no preamble or explanation:
 `;
 
   return await callHuggingFace(prompt, {
-    temperature, // Vary based on seed
-    maxTokens: 300,
+    temperature,
+    maxTokens: lengthStyle === 'quick' ? 200 : lengthStyle === 'detailed' ? 800 : 400,
   });
 }
 
@@ -58,7 +93,7 @@ Respond with ONLY the rewritten post, no preamble or explanation:
 export async function batchRewritePost({
   basePost,
   tones = ["pro", "fun", "concise"],
-  maxLength = 300,
+  maxLength = 1200,
   seed = Date.now()
 }) {
   const toneList = tones.join(", ");
@@ -124,14 +159,19 @@ export function needsRewrite(basePost) {
 const rewriteCache = new Map();
 
 export async function rewriteWithCache(basePost, tone, maxLength, seed) {
-  const cacheKey = `${basePost.slice(0, 50)}-${tone}-${seed}`;
+  const cacheKey = `${basePost.slice(0, 50)}-${tone}-${maxLength}-${seed}`;
   
   if (rewriteCache.has(cacheKey)) {
     console.log('✓ Using cached rewrite');
     return rewriteCache.get(cacheKey);
   }
   
-  const result = await rewritePost({ basePost, tone, maxLength, seed });
+  const result = await rewritePost({ 
+    basePost, 
+    tone, 
+    constraints: { maxLength },
+    seed 
+  });
   
   // Keep cache size reasonable
   if (rewriteCache.size > 100) {
