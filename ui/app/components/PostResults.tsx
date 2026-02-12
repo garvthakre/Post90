@@ -14,13 +14,16 @@ interface PostResultsProps {
     stats: any
   }
   onBack: () => void
+  onRegenerate: () => void
+  isRegenerating?: boolean
 }
 
-export default function PostResults({ data, onBack }: PostResultsProps) {
+export default function PostResults({ data, onBack, onRegenerate, isRegenerating = false }: PostResultsProps) {
   const [selectedPostIndex, setSelectedPostIndex] = useState(0)
   const [viewMode, setViewMode] = useState<'single' | 'compare'>('single')
   const [compareIndices, setCompareIndices] = useState<[number, number]>([0, 1])
   const [showStats, setShowStats] = useState(true)
+  const [regenerateStatus, setRegenerateStatus] = useState<'idle' | 'loading' | 'success'>('idle')
 
   const selectedPost = data.posts[selectedPostIndex]
 
@@ -28,6 +31,17 @@ export default function PostResults({ data, onBack }: PostResultsProps) {
     const newIndices: [number, number] = [...compareIndices]
     newIndices[position] = index
     setCompareIndices(newIndices)
+  }
+
+  const handleRegenerate = async () => {
+    setRegenerateStatus('loading')
+    await onRegenerate()
+    setRegenerateStatus('success')
+    
+    // Flash success state for 2 seconds
+    setTimeout(() => {
+      setRegenerateStatus('idle')
+    }, 2000)
   }
 
   return (
@@ -42,18 +56,56 @@ export default function PostResults({ data, onBack }: PostResultsProps) {
             <p className="text-slate-600">
               From <span className="font-semibold">@{data.username}</span>
               {data.repo && <span className="text-slate-400"> / {data.repo}</span>}
+              {!data.repo && <span className="text-slate-400"> (last 24 hours)</span>}
             </p>
           </div>
-          <button
-            onClick={onBack}
-            className="px-4 py-2 text-slate-600 hover:text-slate-900 border border-slate-300 rounded-lg hover:border-slate-400 transition-colors"
-          >
-            ← New Generation
-          </button>
+          <div className="flex gap-3">
+            <button
+              onClick={onBack}
+              className="px-4 py-2 text-slate-600 hover:text-slate-900 border border-slate-300 rounded-lg hover:border-slate-400 transition-colors"
+            >
+              ← New
+            </button>
+            <button
+              onClick={handleRegenerate}
+              disabled={regenerateStatus === 'loading' || isRegenerating}
+              className={`px-4 py-2 rounded-lg font-semibold transition-all ${
+                regenerateStatus === 'success'
+                  ? 'bg-green-600 text-white'
+                  : regenerateStatus === 'loading' || isRegenerating
+                  ? 'bg-slate-300 text-slate-500 cursor-not-allowed'
+                  : 'bg-blue-600 text-white hover:bg-blue-700'
+              }`}
+            >
+              {(regenerateStatus === 'loading' || isRegenerating) && (
+                <span className="flex items-center gap-2">
+                  <svg className="animate-spin h-4 w-4" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                  </svg>
+                  Regenerating...
+                </span>
+              )}
+              {regenerateStatus === 'success' && '✨ Regenerated!'}
+              {regenerateStatus === 'idle' && !isRegenerating && '🔄 Regenerate'}
+            </button>
+          </div>
+        </div>
+
+        {/* Info Banner */}
+        <div className="p-3 bg-blue-50 rounded-lg border border-blue-100">
+          <div className="flex items-start gap-2 text-sm text-blue-900">
+            <svg className="w-5 h-5 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+            </svg>
+            <div>
+              <strong>💡 Not feeling these?</strong> Click Regenerate to get new variations with different angles and wording.
+            </div>
+          </div>
         </div>
 
         {/* View Mode Toggle */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 mt-4">
           <div className="flex bg-slate-100 rounded-lg p-1">
             <button
               onClick={() => setViewMode('single')}
