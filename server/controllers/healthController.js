@@ -1,5 +1,18 @@
+import { logger } from '../utils/logger.js';
+import { config } from '../config/index.js';
+
 export function health(_req, res) {
-  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+  const healthData = {
+    status: 'ok',
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+    environment: config.env,
+    memory: process.memoryUsage(),
+    version: process.env.npm_package_version || '1.0.0'
+  };
+  
+  logger.info('Health check performed');
+  res.json(healthData);
 }
 
 export async function validateUsername(req, res) {
