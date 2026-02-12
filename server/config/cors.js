@@ -1,12 +1,23 @@
+ 
 import cors from 'cors';
-import dotenv from 'dotenv';
+import { config } from './index.js';
 
-dotenv.config();
-
-export const PORT = process.env.PORT || 3001;
+export const PORT = config.port;
 
 export const corsMiddleware = cors({
-  origin: ['http://localhost:3000', 'http://localhost:3001'],
+  origin: (origin, callback) => {
+    // Allow requests with no origin (mobile apps, Postman, etc.)
+     
+    if (!origin) return callback(null, true);
+    
+    if (config.corsOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+  maxAge: 86400 
 });
