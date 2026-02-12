@@ -8,9 +8,14 @@ export async function rewritePost({
   facts,
   analysis,
   tone= "pro",
-  constraints
+  constraints,
+  seed = Date.now() // NEW: for controlled variation
 }) {
   const tonePrompts = TONES[tone] || TONES.pro;
+  
+  // Use seed to vary temperature slightly for different outputs
+  const seedVariation = seed % 3; // 0, 1, or 2
+  const temperature = 0.6 + (seedVariation * 0.15); // 0.6, 0.75, or 0.9
   
   const prompt = `
 You are rewriting a LinkedIn post for a developer. The base post is already good - your job is to make it slightly more polished while keeping it authentic.
@@ -35,12 +40,17 @@ Your task:
 - Keep the same structure (problem → solution → impact → learning → question → hashtags)
 - Keep it under ${constraints.maxLength} characters
 - Tone: ${tonePrompts}
+- Variation seed: ${seed} (use this to create a slightly different angle)
 
 Respond with ONLY the rewritten post, no preamble or explanation:
 `;
 
-  return await callHuggingFace(prompt);
+  return await callHuggingFace(prompt, {
+    temperature, // Vary based on seed
+    maxTokens: 300,
+  });
 }
+
 /**
  * batch rewrite - generate multiple tone variations in one call
  * Saves 66% of API calls
@@ -48,12 +58,14 @@ Respond with ONLY the rewritten post, no preamble or explanation:
 export async function batchRewritePost({
   basePost,
   tones = ["pro", "fun", "concise"],
-  maxLength = 300
+  maxLength = 300,
+  seed = Date.now()
 }) {
   const toneList = tones.join(", ");
   
   const prompt = `Rewrite this LinkedIn post in ${tones.length} different tones: ${toneList}.
 Keep the same meaning. Max ${maxLength} chars each.
+Variation seed: ${seed}
 
 Original:
 ${basePost}
@@ -72,7 +84,7 @@ Start now:`;
 
   const response = await callHuggingFace(prompt, {
     maxTokens: 250 * tones.length,
-    temperature: 0.6
+    temperature: 0.6 + ((seed % 3) * 0.1)
   });
   
   // Parse the response into separate posts
@@ -111,15 +123,15 @@ export function needsRewrite(basePost) {
  */
 const rewriteCache = new Map();
 
-export async function rewriteWithCache(basePost, tone, maxLength) {
-  const cacheKey = `${basePost.slice(0, 50)}-${tone}`;
+export async function rewriteWithCache(basePost, tone, maxLength, seed) {
+  const cacheKey = `${basePost.slice(0, 50)}-${tone}-${seed}`;
   
   if (rewriteCache.has(cacheKey)) {
     console.log('✓ Using cached rewrite');
     return rewriteCache.get(cacheKey);
   }
   
-  const result = await rewritePost({ basePost, tone, maxLength });
+  const result = await rewritePost({ basePost, tone, maxLength, seed });
   
   // Keep cache size reasonable
   if (rewriteCache.size > 100) {
@@ -149,6 +161,7 @@ function parseMultiplePosts(response, tones) {
   
   return posts;
 }
+
 function extractEssentialFacts(facts, analysis) {
   // Only extract the most important facts to keep prompt small
   const essential = {};
