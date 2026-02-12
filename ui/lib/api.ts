@@ -3,8 +3,12 @@
  * Handles all communication with the Node.js backend
  */
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api';
+const  API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 
+  (process.env.NODE_ENV === 'production' 
+    ? 'https://your-api-domain.com/api' 
+    : 'http://localhost:3001/api');
 
+const TIMEOUT_MS = 30000; 
 export interface GeneratePostsRequest {
   username: string;
   repo?: string;
@@ -49,13 +53,30 @@ export interface GeneratePostsResponse {
   error?: string;
 }
 
-/**
- * Generate LinkedIn posts from GitHub commits
- */
+async function fetchWithTimeout(url: string, options: RequestInit = {}) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), TIMEOUT_MS);
+  
+  try {
+    const response = await fetch(url, {
+      ...options,
+      signal: controller.signal
+    });
+    clearTimeout(timeout);
+    return response;
+  } catch (error) {
+    clearTimeout(timeout);
+    if (error.name === 'AbortError') {
+      throw new Error('Request timeout - please try again');
+    }
+    throw error;
+  }
+}
+
 export async function generatePosts(
   request: GeneratePostsRequest
 ): Promise<GeneratePostsResponse> {
-  const response = await fetch(`${API_BASE_URL}/generate`, {
+  const response = await fetchWithTimeout(`${API_BASE_URL}/generate`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -104,3 +125,4 @@ export async function validateGitHubUsername(
   
   return response.json();
 }
+
