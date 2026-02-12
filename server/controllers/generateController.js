@@ -1,4 +1,5 @@
 import { fetchCommitsLast24Hours, fetchUserRecentActivity } from '../../src/fetch/github.js';
+import {   extractSpecificContext, formatSpecificContext, getPrimaryTech } from '../../src/extract/Specificextractor.js';
 import { extractCommitSignals } from '../../src/extract/index.js';
 import { analyzeCommit, analyzeMultipleCommits, extractFeatureFromCommits } from '../../src/analyze/commitAnalyzer.js';
 import { generatePostIdeas } from '../../src/post/ideaGenerator.js';
@@ -62,7 +63,11 @@ export async function generate(req, res) {
       });
     }
 
-    // ── 3. Analyse commits ────────────────────────────────────
+    // ── 3. Extract specific context (NEW!) ────────────────────
+    const specificContext = extractSpecificContext(allCommits);
+    console.log(' Extracted specific context:', specificContext);
+
+    // ── 4. Analyse commits ────────────────────────────────────
     const commitAnalyses = [];
     for (const commit of allCommits) {
       const signals = await extractCommitSignals(commit);
@@ -81,12 +86,15 @@ export async function generate(req, res) {
     const aggregatedAnalysis = analyzeMultipleCommits(commitAnalyses);
     aggregatedAnalysis.repoCount = Object.keys(repoStats).length;
     aggregatedAnalysis.repos = Object.keys(repoStats);
+    
+    // Add specific context to analysis (NEW!)
+    aggregatedAnalysis.specificContext = specificContext;
 
-    // ── 4. Generate post ideas ────────────────────────────────
+    // ── 5. Generate post ideas ────────────────────────────────
     const postIdeas = generatePostIdeas(aggregatedAnalysis);
     const topIdeas = postIdeas.slice(0, Math.min(tones.length, postIdeas.length));
 
-    // ── 5. Build one post per tone ────────────────────────────
+    // ── 6. Build one post per tone ────────────────────────────
     const posts = [];
     for (let i = 0; i < tones.length; i++) {
       const tone = tones[i];
@@ -142,7 +150,7 @@ export async function generate(req, res) {
       });
     }
 
-    // ── 6. Build stats payload ────────────────────────────────
+    // ── 7. Build stats payload ────────────────────────────────
     const feature = extractFeatureFromCommits(
       commitAnalyses.map((c) => ({ message: c.message })),
     );
@@ -163,6 +171,8 @@ export async function generate(req, res) {
           feature,
           repoCount: aggregatedAnalysis.repoCount,
           repos: aggregatedAnalysis.repos,
+          // NEW: Include specific context in stats
+          specificContext: specificContext,
         },
       },
     });
