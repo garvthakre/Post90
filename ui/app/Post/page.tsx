@@ -5,22 +5,13 @@ import UsernameForm from '../components/UsernameForm'
 import LoadingState from '../components/LoadingState'
 import PostResults from '../components/PostResults'
 import ErrorState from '../components/ErrorState'
+import { useGeneratePosts } from '@/lib/hooks'
 
 type GenerateState = 'input' | 'loading' | 'results' | 'error'
 
-interface GenerationData {
-  username: string
-  repo?: string
-  tones: string[]
-  posts: any[]
-  stats: any
-}
-
 export default function GeneratePage() {
   const [state, setState] = useState<GenerateState>('input')
-  const [generationData, setGenerationData] = useState<GenerationData | null>(null)
-  const [error, setError] = useState<string | null>(null)
-  const [progress, setProgress] = useState(0)
+  const generateMutation = useGeneratePosts()
 
   const handleGenerate = async (formData: {
     username: string
@@ -30,128 +21,36 @@ export default function GeneratePage() {
     statsStyle: string
   }) => {
     setState('loading')
-    setProgress(0)
-    setError(null)
 
     try {
-      // Step 1: Fetch commits (25%)
-      setProgress(25)
-      await new Promise(resolve => setTimeout(resolve, 1000)) // Simulated delay
-
-      // Step 2: Analyze changes (50%)
-      setProgress(50)
-      await new Promise(resolve => setTimeout(resolve, 1000))
-
-      // Step 3: Detect features (75%)
-      setProgress(75)
-      await new Promise(resolve => setTimeout(resolve, 1000))
-
-      // Step 4: Generate posts (100%)
-      setProgress(100)
+      const result = await generateMutation.mutateAsync(formData)
       
-      // TODO: Replace with actual API call
-      const mockPosts = [
-        {
-          id: 1,
-          tone: 'pro',
-          content: `Built authentication system that handles concurrent login sessions without race conditions.
-
-The challenge: Managing concurrent login sessions without race conditions
-
-Implemented token refresh logic with automatic retry and race condition handling
-
-Impact: Users can now stay logged in reliably across devices
-
-Key learning: Token refresh is trickier than it looks - you need to handle edge cases like expired refresh tokens and concurrent requests trying to refresh simultaneously.
-
-How do you handle session management in your apps?
-
-#WebDev #SoftwareEngineering #DevLife #Auth #Security`,
-          length: 456,
-          hashtags: ['#WebDev', '#SoftwareEngineering', '#DevLife', '#Auth', '#Security']
-        },
-        {
-          id: 2,
-          tone: 'fun',
-          content: `Just wrapped up some auth magic ✨
-
-Ever tried to handle multiple login sessions at once? It's like herding cats 🐱
-
-Built a token refresh system that actually works (after many tries 😅)
-
-The best part? Users don't even notice it's there. That's the dream, right?
-
-Pro tip: Edge cases are called that for a reason. They'll find you.
-
-What's your most challenging auth bug story?
-
-#WebDev #Auth #DevLife #JavaScript #Coding`,
-          length: 398,
-          hashtags: ['#WebDev', '#Auth', '#DevLife', '#JavaScript', '#Coding']
-        },
-        {
-          id: 3,
-          tone: 'concise',
-          content: `Shipped: Concurrent session handling for auth system
-
-Problem: Race conditions on token refresh
-Solution: Automatic retry with request queuing
-Result: Reliable cross-device login
-
-Token refresh is harder than it looks.
-
-Thoughts on handling auth at scale?
-
-#Auth #WebDev #Engineering`,
-          length: 267,
-          hashtags: ['#Auth', '#WebDev', '#Engineering']
-        }
-      ]
-
-      const mockStats = {
-        totalCommits: 8,
-        totalFilesChanged: 15,
-        totalWeight: 342,
-        signals: {
-          async_change: 5,
-          error_handling_change: 3,
-          networking_change: 2,
-          test_change: 4
-        },
-        impacts: {
-          HIGH_RISK: 1,
-          MEDIUM_RISK: 4,
-          LOW_RISK: 3
-        },
-        feature: 'Authentication System',
-        repoCount: 1,
-        repos: [formData.repo || `${formData.username}/repo`]
+      if (result.success) {
+        setState('results')
+      } else {
+        throw new Error(result.error || 'Failed to generate posts')
       }
-
-      setGenerationData({
-        username: formData.username,
-        repo: formData.repo,
-        tones: formData.tones,
-        posts: mockPosts,
-        stats: mockStats
-      })
-
-      setState('results')
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to generate posts')
       setState('error')
     }
   }
 
   const handleRetry = () => {
     setState('input')
-    setError(null)
-    setGenerationData(null)
+    generateMutation.reset()
   }
 
   const handleBack = () => {
     setState('input')
-    setGenerationData(null)
+    generateMutation.reset()
+  }
+
+  const getProgress = () => {
+    if (generateMutation.isPending) {
+      // Simulate progress based on time
+      return 75
+    }
+    return 0
   }
 
   return (
@@ -188,15 +87,18 @@ Thoughts on handling auth at scale?
         )}
 
         {state === 'loading' && (
-          <LoadingState progress={progress} />
+          <LoadingState progress={getProgress()} />
         )}
 
-        {state === 'results' && generationData && (
-          <PostResults data={generationData} onBack={handleBack} />
+        {state === 'results' && generateMutation.data && (
+          <PostResults data={generateMutation.data.data} onBack={handleBack} />
         )}
 
         {state === 'error' && (
-          <ErrorState error={error || 'Unknown error'} onRetry={handleRetry} />
+          <ErrorState 
+            error={generateMutation.error?.message || 'Unknown error'} 
+            onRetry={handleRetry} 
+          />
         )}
       </main>
     </div>
