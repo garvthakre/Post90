@@ -1,22 +1,20 @@
 import { extractFeatureFromCommits, detectProblem, extractSolution } from '../analyze/commitAnalyzer.js';
+import { formatSpecificContext, getPrimaryTech } from '../extract/Specificextractor.js';
 
 /**
- * Enhanced Post Composer - LinkedIn-Ready Version
- * Generates specific, copy-paste ready posts with:
- * - Clear feature/topic
- * - Specific problem solved
- * - Solution approach
- * - Impact/results
- * - Actionable insights
- * - Relevant hashtags
- * - Call-to-action
+ * Enhanced Post Composer - LinkedIn-Ready Version with SPECIFIC CONTEXT
+ * Now includes: actual libraries used, functions built, modules touched
  */
 
 export function composePost(idea, aggregatedAnalysis) {
-  const { commits, signals, totalWeight, totalFilesChanged } = aggregatedAnalysis;
+  const { commits, signals, totalWeight, totalFilesChanged, specificContext } = aggregatedAnalysis;
   
   // Extract the actual feature being worked on
   const feature = extractFeatureFromCommits(commits);
+  
+  // Get specific tech details (NEW!)
+  const techContext = formatSpecificContext(specificContext || {});
+  const primaryTech = getPrimaryTech(specificContext || {});
   
   // Detect the specific problem
   const problem = detectProblem(signals, commits, feature);
@@ -30,8 +28,8 @@ export function composePost(idea, aggregatedAnalysis) {
   // Generate key insight/learning
   const insight = generateInsight(feature, signals, idea);
   
-  // Generate hashtags
-  const hashtags = generateHashtags(feature, signals);
+  // Generate hashtags (now includes tech-specific ones)
+  const hashtags = generateHashtags(feature, signals, specificContext);
   
   // Generate call-to-action
   const cta = generateCTA(feature, idea);
@@ -48,51 +46,97 @@ export function composePost(idea, aggregatedAnalysis) {
     idea,
     commits,
     signals,
-    totalWeight
+    totalWeight,
+    techContext,    // NEW: formatted tech context
+    primaryTech,    // NEW: main tech to emphasize
+    specificContext // NEW: raw context data
   });
 }
 
 /**
- * Build the actual LinkedIn post
- * Structure: Hook → Problem → Solution → Impact → Insight → CTA → Hashtags
+ * Build the actual LinkedIn post with SPECIFIC TECH DETAILS
  */
-function buildLinkedInPost({ feature, problem, solution, impact, insight, hashtags, cta, idea, commits, signals, totalWeight }) {
+function buildLinkedInPost({ 
+  feature, problem, solution, impact, insight, hashtags, cta, idea, 
+  commits, signals, totalWeight, techContext, primaryTech, specificContext 
+}) {
   
   // Different post styles based on idea type
   if (idea.type === 'focused_technical') {
-    return buildFocusedTechnicalPost({ feature, problem, solution, impact, insight, hashtags, cta, idea });
+    return buildFocusedTechnicalPost({ 
+      feature, problem, solution, impact, insight, hashtags, cta, idea,
+      techContext, primaryTech, specificContext 
+    });
   }
   
   if (idea.type === 'learning') {
-    return buildLearningPost({ feature, problem, solution, impact, insight, hashtags, cta, idea });
+    return buildLearningPost({ 
+      feature, problem, solution, impact, insight, hashtags, cta, idea,
+      techContext, primaryTech, specificContext 
+    });
   }
   
   if (idea.type === 'build_in_public') {
-    return buildDocumentationPost({ feature, problem, solution, impact, insight, hashtags, cta, idea });
+    return buildDocumentationPost({ 
+      feature, problem, solution, impact, insight, hashtags, cta, idea,
+      techContext, primaryTech, specificContext 
+    });
   }
   
   if (idea.type === 'technical_decision') {
-    return buildTechnicalDecisionPost({ feature, problem, solution, impact, insight, hashtags, cta, idea });
+    return buildTechnicalDecisionPost({ 
+      feature, problem, solution, impact, insight, hashtags, cta, idea,
+      techContext, primaryTech, specificContext 
+    });
   }
   
   if (idea.type === 'engineering_practice') {
-    return buildRefactorPost({ feature, problem, solution, impact, insight, hashtags, cta, totalWeight, commits });
+    return buildRefactorPost({ 
+      feature, problem, solution, impact, insight, hashtags, cta, totalWeight, commits,
+      techContext, primaryTech, specificContext 
+    });
   }
   
   if (idea.type === 'quality') {
-    return buildTestingPost({ feature, problem, solution, impact, insight, hashtags, cta, idea });
+    return buildTestingPost({ 
+      feature, problem, solution, impact, insight, hashtags, cta, idea,
+      techContext, primaryTech, specificContext 
+    });
   }
   
   if (idea.type === 'variety') {
-    return buildFullStackPost({ feature, problem, solution, impact, insight, hashtags, cta, signals });
+    return buildFullStackPost({ 
+      feature, problem, solution, impact, insight, hashtags, cta, signals,
+      techContext, primaryTech, specificContext 
+    });
   }
   
   // Default: daily summary style
-  return buildDailySummaryPost({ feature, problem, solution, impact, insight, hashtags, cta, commits, totalWeight });
+  return buildDailySummaryPost({ 
+    feature, problem, solution, impact, insight, hashtags, cta, commits, totalWeight,
+    techContext, primaryTech, specificContext 
+  });
 }
 
-function buildFocusedTechnicalPost({ feature, problem, solution, impact, insight, hashtags, cta, idea }) {
-  return `Built ${feature.toLowerCase()} that handles ${extractContext(problem)}.
+function buildFocusedTechnicalPost({ 
+  feature, problem, solution, impact, insight, hashtags, cta, 
+  techContext, primaryTech, specificContext 
+}) {
+  // Add specific tech details to the opening
+  let opening = `Built ${feature.toLowerCase()}`;
+  
+  if (primaryTech) {
+    opening += ` with ${primaryTech}`;
+  }
+  
+  if (specificContext.functions && specificContext.functions.length > 0) {
+    const mainFunc = specificContext.functions[0];
+    opening += ` (${mainFunc})`;
+  }
+  
+  opening += ` that handles ${extractContext(problem)}.`;
+  
+  return `${opening}
 
 The challenge: ${problem}
 
@@ -107,8 +151,21 @@ ${cta}
 ${hashtags}`.trim();
 }
 
-function buildLearningPost({ feature, problem, solution, impact, insight, hashtags, cta, idea }) {
-  return `Worked on ${feature.toLowerCase()} today.
+function buildLearningPost({ 
+  feature, problem, solution, impact, insight, hashtags, cta,
+  techContext, primaryTech, specificContext 
+}) {
+  let opening = `Worked on ${feature.toLowerCase()}`;
+  
+  // Add tech stack if available
+  if (specificContext.libraries && specificContext.libraries.length > 0) {
+    const libs = specificContext.libraries.slice(0, 2).join(' and ');
+    opening += ` using ${libs}`;
+  }
+  
+  opening += ` today.`;
+  
+  return `${opening}
 
 Hit a learning curve with ${extractContext(problem)}.
 
@@ -123,10 +180,21 @@ ${cta}
 ${hashtags}`.trim();
 }
 
-function buildDocumentationPost({ feature, problem, solution, impact, insight, hashtags, cta, idea }) {
+function buildDocumentationPost({ 
+  feature, problem, solution, impact, insight, hashtags, cta,
+  techContext, primaryTech, specificContext 
+}) {
   const docCount = idea.metadata?.doc_changes || 'several';
   
-  return `Took a break from features today to focus on documentation.
+  let opening = `Took a break from features today to focus on documentation`;
+  
+  if (specificContext.modules && specificContext.modules.length > 0) {
+    opening += ` for ${specificContext.modules.join(' and ')}`;
+  }
+  
+  opening += `.`;
+  
+  return `${opening}
 
 ${solution}
 
@@ -139,8 +207,17 @@ ${cta}
 ${hashtags}`.trim();
 }
 
-function buildTechnicalDecisionPost({ feature, problem, solution, impact, insight, hashtags, cta, idea }) {
-  return `Made some technical decisions today that needed extra thought.
+function buildTechnicalDecisionPost({ 
+  feature, problem, solution, impact, insight, hashtags, cta,
+  techContext, primaryTech, specificContext 
+}) {
+  let techDetail = '';
+  if (primaryTech || (specificContext.libraries && specificContext.libraries.length > 0)) {
+    const tech = primaryTech || specificContext.libraries[0];
+    techDetail = ` involving ${tech}`;
+  }
+  
+  return `Made some technical decisions${techDetail} today that needed extra thought.
 
 Working on ${feature.toLowerCase()}: ${problem}
 
@@ -155,8 +232,16 @@ ${cta}
 ${hashtags}`.trim();
 }
 
-function buildRefactorPost({ feature, problem, solution, impact, insight, hashtags, cta, totalWeight, commits }) {
-  return `${totalWeight} lines changed across ${commits.length} commits today.
+function buildRefactorPost({ 
+  feature, problem, solution, impact, insight, hashtags, cta, totalWeight, commits,
+  techContext, primaryTech, specificContext 
+}) {
+  let modulesAffected = '';
+  if (specificContext.modules && specificContext.modules.length > 0) {
+    modulesAffected = ` in ${specificContext.modules.slice(0, 2).join(' and ')}`;
+  }
+  
+  return `${totalWeight} lines changed${modulesAffected} across ${commits.length} commits today.
 
 What started as a small cleanup in ${feature.toLowerCase()} turned into a proper refactor.
 
@@ -173,10 +258,23 @@ ${cta}
 ${hashtags}`.trim();
 }
 
-function buildTestingPost({ feature, problem, solution, impact, insight, hashtags, cta, idea }) {
+function buildTestingPost({ 
+  feature, problem, solution, impact, insight, hashtags, cta,
+  techContext, primaryTech, specificContext 
+}) {
   const testCount = idea.metadata?.testChanges || 'multiple';
   
-  return `Testing day. Added and updated ${testCount} tests for ${feature.toLowerCase()}.
+  let testingTech = '';
+  if (specificContext.keywords) {
+    const testLibs = specificContext.keywords.filter(k => 
+      ['jest', 'mocha', 'vitest', 'cypress', 'playwright'].includes(k.toLowerCase())
+    );
+    if (testLibs.length > 0) {
+      testingTech = ` with ${testLibs[0]}`;
+    }
+  }
+  
+  return `Testing day${testingTech}. Added and updated ${testCount} tests for ${feature.toLowerCase()}.
 
 Not the most glamorous work, but necessary.
 
@@ -191,12 +289,20 @@ ${cta}
 ${hashtags}`.trim();
 }
 
-function buildFullStackPost({ feature, problem, solution, impact, insight, hashtags, cta, signals }) {
+function buildFullStackPost({ 
+  feature, problem, solution, impact, insight, hashtags, cta, signals,
+  techContext, primaryTech, specificContext 
+}) {
   const areas = Object.keys(signals).slice(0, 4).map(formatSignalForReading).join(', ');
+  
+  let techStack = '';
+  if (specificContext.libraries && specificContext.libraries.length > 0) {
+    techStack = `\n\nTech: ${specificContext.libraries.slice(0, 3).join(', ')}`;
+  }
   
   return `Full-stack kind of day.
 
-Jumped between ${areas} while working on ${feature.toLowerCase()}.
+Jumped between ${areas} while working on ${feature.toLowerCase()}.${techStack}
 
 The challenge: ${problem}
 
@@ -211,8 +317,16 @@ ${cta}
 ${hashtags}`.trim();
 }
 
-function buildDailySummaryPost({ feature, problem, solution, impact, insight, hashtags, cta, commits, totalWeight }) {
-  return `Wrapped up today with ${commits.length} commits on ${feature.toLowerCase()}.
+function buildDailySummaryPost({ 
+  feature, problem, solution, impact, insight, hashtags, cta, commits, totalWeight,
+  techContext, primaryTech, specificContext 
+}) {
+  let techMention = '';
+  if (techContext) {
+    techMention = ` (${techContext})`;
+  }
+  
+  return `Wrapped up today with ${commits.length} commits on ${feature.toLowerCase()}${techMention}.
 
 ${solution}
 
@@ -296,18 +410,6 @@ function generateImpact(feature, signals, totalWeight, idea) {
       'Reduced notification delays',
       'More consistent notification experience'
     ],
-    'Search Functionality': [
-      'Search results appear faster',
-      'More relevant search results',
-      'Better handling of complex queries',
-      'Improved search experience overall'
-    ],
-    'UI Components': [
-      'Cleaner, more consistent UI',
-      'Better mobile experience',
-      'Improved accessibility for all users',
-      'Faster rendering on slower devices'
-    ],
     'Database Architecture': [
       'Faster query performance',
       'Better data consistency',
@@ -351,7 +453,6 @@ function generateImpact(feature, signals, totalWeight, idea) {
 
 /**
  * Generate actionable, specific insights
- * These are the "key learnings" that make posts valuable
  */
 function generateInsight(feature, signals, idea) {
   const insights = {
@@ -452,54 +553,66 @@ function generateInsight(feature, signals, idea) {
 }
 
 /**
- * Generate relevant hashtags based on feature and signals
+ * Generate relevant hashtags (now includes tech-specific ones)
  */
-function generateHashtags(feature, signals) {
-  const baseHashtags = ['#WebDev', '#SoftwareEngineering', '#DevLife', '#CodingLife', '#TechTwitter'];
+function generateHashtags(feature, signals, specificContext) {
+  const baseHashtags = ['#WebDev', '#SoftwareEngineering', '#DevLife', '#CodingLife'];
+  const hashtags = new Set(baseHashtags);
   
-  const featureHashtags = {
-    'Authentication System': ['#Auth', '#Security', '#JWT', '#OAuth', '#WebSecurity'],
-    'Payment Processing': ['#Payments', '#Fintech', '#Stripe', '#Ecommerce', '#WebDev'],
-    'Real-time Chat': ['#WebSockets', '#RealTime', '#Chat', '#JavaScript', '#NodeJS'],
-    'File Management': ['#FileUpload', '#CloudStorage', '#AWS', '#S3', '#Backend'],
-    'Performance Optimization': ['#Performance', '#WebPerf', '#Optimization', '#Speed', '#Engineering'],
-    'API Development': ['#API', '#Backend', '#NodeJS', '#RestAPI', '#GraphQL'],
-    'Testing Infrastructure': ['#Testing', '#QA', '#TDD', '#Jest', '#Automation'],
-    'DevOps Pipeline': ['#DevOps', '#CI', '#Docker', '#Kubernetes', '#GitHubActions'],
-    'Database Architecture': ['#Database', '#SQL', '#PostgreSQL', '#MongoDB', '#DataEngineering'],
-    'UI Components': ['#React', '#Frontend', '#JavaScript', '#CSS', '#WebDesign'],
-    'Search Functionality': ['#Search', '#Elasticsearch', '#Algolia', '#Backend', '#Performance'],
-    'Notification System': ['#Notifications', '#WebHooks', '#Backend', '#RealTime', '#NodeJS'],
-    'Security Hardening': ['#CyberSecurity', '#WebSecurity', '#InfoSec', '#AppSec', '#Security'],
-    'Accessibility': ['#A11y', '#Accessibility', '#WebAccessibility', '#InclusiveDesign', '#WebDev'],
-    'Analytics Dashboard': ['#DataViz', '#Analytics', '#Dashboard', '#Charts', '#Frontend'],
-    'State Management': ['#Redux', '#StateManagement', '#React', '#JavaScript', '#Frontend'],
-    'Responsive Design': ['#ResponsiveDesign', '#MobileFirst', '#CSS', '#WebDesign', '#Frontend'],
-    'Internationalization': ['#i18n', '#Internationalization', '#Localization', '#WebDev', '#Frontend']
-  };
+  // Add tech-specific hashtags from libraries
+  if (specificContext && specificContext.libraries) {
+    const techHashtags = {
+      'next-auth': '#NextAuth',
+      'nextauth': '#NextAuth',
+      'prisma': '#Prisma',
+      'stripe': '#Stripe',
+      'react': '#React',
+      'next': '#NextJS',
+      'express': '#ExpressJS',
+      'fastify': '#Fastify',
+      'postgresql': '#PostgreSQL',
+      'postgres': '#PostgreSQL',
+      'mongodb': '#MongoDB',
+      'redis': '#Redis',
+      'jwt': '#JWT',
+      'bcrypt': '#Security',
+      'jest': '#Testing',
+      'cypress': '#Testing',
+      'docker': '#Docker',
+      'kubernetes': '#Kubernetes'
+    };
+    
+    specificContext.libraries.forEach(lib => {
+      const libLower = lib.toLowerCase();
+      if (techHashtags[libLower]) {
+        hashtags.add(techHashtags[libLower]);
+      }
+    });
+  }
   
-  const signalHashtags = {
-    async_change: ['#AsyncJS', '#JavaScript', '#Promises', '#NodeJS'],
-    promise_change: ['#Promises', '#JavaScript', '#AsyncAwait'],
-    networking_change: ['#API', '#Networking', '#HTTP', '#Backend'],
-    test_change: ['#Testing', '#QualityCode', '#TDD'],
-    error_handling_change: ['#ErrorHandling', '#Resilience', '#BestPractices'],
-    doc_image_change: ['#Documentation', '#TechnicalWriting', '#OpenSource'],
-    jsx_change: ['#React', '#JavaScript', '#Frontend'],
-    vue_change: ['#VueJS', '#JavaScript', '#Frontend']
-  };
+  // Add from keywords
+  if (specificContext && specificContext.keywords) {
+    const keywordHashtags = {
+      'auth': '#Authentication',
+      'authentication': '#Authentication',
+      'payment': '#Payments',
+      'stripe': '#Stripe',
+      'websocket': '#WebSockets',
+      'realtime': '#RealTime',
+      'api': '#API',
+      'testing': '#Testing'
+    };
+    
+    specificContext.keywords.forEach(kw => {
+      const kwLower = kw.toLowerCase();
+      if (keywordHashtags[kwLower]) {
+        hashtags.add(keywordHashtags[kwLower]);
+      }
+    });
+  }
   
-  const dominantSignal = Object.keys(signals).sort((a,b) => signals[b] - signals[a])[0];
-  
-  // Combine: 2 base + 2-3 feature-specific + 1 signal-specific
-  const selected = [
-    ...baseHashtags.slice(0, 2),
-    ...(featureHashtags[feature] || featureHashtags['API Development']).slice(0, 2),
-    ...(signalHashtags[dominantSignal] || []).slice(0, 1)
-  ];
-  
-  // Return max 5 hashtags
-  return selected.slice(0, 5).join(' ');
+  // Convert to array and limit to 5
+  return Array.from(hashtags).slice(0, 5).join(' ');
 }
 
 /**
@@ -574,17 +687,13 @@ function generateCTA(feature, idea) {
 // Helper functions
 
 function extractContext(problem) {
-  // Extract the core context from problem statement
-  // Handle patterns like "Processing X without Y" → "processing X"
   const match = problem.match(/^(.*?)\s+(without|while|when|during|in|with)\s+/i);
   if (match) {
     return match[1].trim();
   }
   
-  // If no match, take first meaningful phrase before comma or period
   const firstPart = problem.split(/[,.]|$/)[0].trim();
   
-  // Remove common prefixes to get to the meat
   const cleaned = firstPart
     .replace(/^(Managing|Handling|Processing|Ensuring|Preventing|Optimizing|Coordinating|Running|Sending|Testing|Building|Creating|Implementing)\s+/i, '')
     .toLowerCase();
@@ -593,7 +702,6 @@ function extractContext(problem) {
 }
 
 function extractTopic(feature) {
-  // Convert "Authentication System" to "authentication"
   return feature.split(' ')[0].toLowerCase();
 }
 
