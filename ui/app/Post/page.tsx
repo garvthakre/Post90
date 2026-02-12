@@ -9,18 +9,23 @@ import { useGeneratePosts } from '@/lib/hooks'
 
 type GenerateState = 'input' | 'loading' | 'results' | 'error'
 
+interface GenerateParams {
+  username: string
+  repo?: string
+  tones: string[]
+  useEmojis: boolean
+  statsStyle: string
+  seed?: number
+}
+
 export default function GeneratePage() {
   const [state, setState] = useState<GenerateState>('input')
+  const [lastParams, setLastParams] = useState<GenerateParams | null>(null)
   const generateMutation = useGeneratePosts()
 
-  const handleGenerate = async (formData: {
-    username: string
-    repo?: string
-    tones: string[]
-    useEmojis: boolean
-    statsStyle: string
-  }) => {
+  const handleGenerate = async (formData: GenerateParams) => {
     setState('loading')
+    setLastParams(formData) // Save for regenerate
 
     try {
       const result = await generateMutation.mutateAsync(formData)
@@ -29,6 +34,28 @@ export default function GeneratePage() {
         setState('results')
       } else {
         throw new Error(result.error || 'Failed to generate posts')
+      }
+    } catch (err) {
+      setState('error')
+    }
+  }
+
+  const handleRegenerate = async () => {
+    if (!lastParams) return
+
+    setState('loading')
+
+    try {
+      // Add seed to force new variation
+      const result = await generateMutation.mutateAsync({
+        ...lastParams,
+        seed: Date.now(), // Force new variation
+      })
+      
+      if (result.success) {
+        setState('results')
+      } else {
+        throw new Error(result.error || 'Failed to regenerate posts')
       }
     } catch (err) {
       setState('error')
@@ -69,12 +96,12 @@ export default function GeneratePage() {
             </a>
             
             {state === 'results' && (
-              <button
-                onClick={handleBack}
-                className="px-4 py-2 text-slate-600 hover:text-slate-900 transition-colors"
-              >
-                ← Generate New
-              </button>
+              <div className="flex items-center gap-2 text-sm text-slate-600">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <span>Posts generated successfully</span>
+              </div>
             )}
           </div>
         </div>
@@ -91,7 +118,12 @@ export default function GeneratePage() {
         )}
 
         {state === 'results' && generateMutation.data && (
-          <PostResults data={generateMutation.data.data} onBack={handleBack} />
+          <PostResults 
+            data={generateMutation.data.data} 
+            onBack={handleBack}
+            onRegenerate={handleRegenerate}
+            isRegenerating={generateMutation.isPending}
+          />
         )}
 
         {state === 'error' && (
@@ -101,6 +133,16 @@ export default function GeneratePage() {
           />
         )}
       </main>
+
+      {/* Footer hint */}
+      {state === 'input' && (
+        <div className="max-w-3xl mx-auto px-6 pb-12">
+          <div className="text-center text-sm text-slate-500">
+            <p className="mb-2">💡 <strong>Pro tip:</strong> Leave repository blank to analyze all your recent activity</p>
+            <p>Posts are generated from commits in the last 24 hours</p>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
