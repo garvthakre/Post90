@@ -11,8 +11,10 @@ Post90 analyzes your GitHub commit history and generates LinkedIn-ready posts th
 - **Commit Analysis**: Extracts technical signals from your commit diffs (async patterns, error handling, networking, tests, etc.)
 - **Smart Post Generation**: Creates context-aware posts based on what you actually built
 - **Multiple Tones**: Professional, dev-life, fun, concise, detailed, optimistic
+- **Three Length Options**: Quick (300-600), Standard (800-1200), Detailed (1500-2500 chars)
 - **Daily Summaries**: Aggregate last 24 hours of commits into a single post
 - **AI Polish** (optional): Uses Groq API to refine posts while keeping them authentic
+- **Web Interface**: Modern Next.js UI with real-time generation and comparison
 
 ## Installation
 
@@ -25,38 +27,56 @@ npm install
 Create a `.env` file:
 
 ```env
+# Required
+GROQ_API_KEY=your_groq_api_key
+
+# Optional
 GITHUB_TOKEN=your_github_token
-GROQ_API_KEY=your_groq_api_key  # Optional, for AI rewrite
+NODE_ENV=development
+PORT=3001
+CORS_ORIGINS=http://localhost:3000
+```
+
+Frontend config in `ui/.env.local`:
+```env
+NEXT_PUBLIC_API_URL=http://localhost:3001
 ```
 
 ## Usage
 
-### Single Commit
+### Web Interface
+
+Start backend:
 ```bash
-npm start -- --repo owner/repo --sha abc123 --mode single
+npm run dev
 ```
 
-### Daily Summary (Last 24 Hours)
+Start frontend (in another terminal):
 ```bash
-npm start -- --repo owner/repo --mode daily
+cd ui
+npm run dev
 ```
 
-### Filter by Author
-```bash
-npm start -- --repo owner/repo --author username --mode daily
-```
+Open `http://localhost:3000` and enter your GitHub username.
 
-### Skip AI Rewrite (Faster)
-```bash
-npm start -- --repo owner/repo --mode daily --skip-ai
-```
+### Command Line
 
-### Custom Tone
 ```bash
-npm start -- --repo owner/repo --mode daily --tone devlife
-```
+# Analyze all repos with activity in last 24h
+npm start -- --author garvthakre
 
-Available tones: `pro`, `devlife`, `fun`, `concise`, `detailed`, `optimistic`
+# Analyze specific repository
+npm start -- --repo garvthakre/post90 --author garvthakre --mode daily
+
+# Generate with specific tone
+npm start -- --author garvthakre --tone fun
+
+# Generate multiple variations
+npm start -- --author garvthakre --variations 5 --tones "pro,fun,concise"
+
+# Skip AI rewrite (faster)
+npm start -- --author garvthakre --skip-ai
+```
 
 ## How It Works
 
@@ -67,8 +87,54 @@ Available tones: `pro`, `devlife`, `fun`, `concise`, `detailed`, `optimistic`
 5. **Compose**: Builds LinkedIn-ready posts with hooks, insights, and CTAs
 6. **Polish** (optional): AI refinement while maintaining authenticity
 
+## Project Structure
+
+```
+src/
+├── ai/           # AI providers and post rewriting
+├── analyze/      # Commit analysis and feature extraction
+├── extract/      # Diff parsing and signal classification
+├── fetch/        # GitHub API integration
+├── post/         # Post generation and composition
+└── utils/        # Emoji mapping and stats widgets
+
+server/
+├── config/       # Environment and CORS setup
+├── controllers/  # API route handlers
+├── middleware/   # Security and rate limiting
+└── routes/       # Express routes
+
+ui/
+└── app/
+    ├── components/   # React components
+    ├── Post/         # Generation page
+    └── lib/          # API client and hooks
+```
+
+## API
+
+### POST `/api/generate`
+
+```json
+{
+  "username": "garvthakre",
+  "repo": "garvthakre/post90",
+  "tones": ["pro", "fun"],
+  "postLength": "standard",
+  "useEmojis": true,
+  "statsStyle": "compact"
+}
+```
+
+### GET `/api/health`
+Check server status.
+
+### GET `/api/validate-username?username=garvthakre`
+Validate GitHub username.
+
 ## Example Output
 
+**Professional Tone:**
 ```
 Built authentication system that handles concurrent login sessions without race conditions.
 
@@ -86,17 +152,6 @@ How do you handle session management in your apps?
 #WebDev #Auth #Security #JWT #OAuth
 ```
 
-## Project Structure
-
-```
-src/
-├── ai/           # AI providers and post rewriting
-├── analyze/      # Commit analysis and feature extraction
-├── extract/      # Diff parsing and signal classification
-├── fetch/        # GitHub API integration
-└── post/         # Post generation and composition
-```
-
 ## License
 
 MIT
@@ -104,3 +159,13 @@ MIT
 ## Contributing
 
 Issues and PRs welcome. Keep it simple and authentic.
+
+## Contact
+
+- Twitter: [@garvthakre](https://twitter.com/garvthakre)
+- GitHub: [@garvthakre](https://github.com/garvthakre)
+- Email: garvthakre0@gmail.com
+
+
+
+
