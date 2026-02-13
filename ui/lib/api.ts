@@ -66,7 +66,7 @@ async function fetchWithTimeout(url: string, options: RequestInit = {}) {
     return response;
   } catch (error) {
     clearTimeout(timeout);
-    if (error.name === 'AbortError') {
+    if (error instanceof Error && error.name === 'AbortError') {
       throw new Error('Request timeout - please try again');
     }
     throw error;
