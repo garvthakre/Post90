@@ -3,7 +3,7 @@ import {   extractSpecificContext, formatSpecificContext, getPrimaryTech } from 
 import { extractCommitSignals } from '../../src/extract/index.js';
 import { analyzeCommit, analyzeMultipleCommits, extractFeatureFromCommits } from '../../src/analyze/commitAnalyzer.js';
 import { generatePostIdeas } from '../../src/post/ideaGenerator.js';
-import { composePost } from '../../src/post/Composer.js';
+import { composePost } from '../../src/post/composer.js';
 import { rewritePost } from '../../src/ai/rewrite.js';
 import { enrichPostWithEmojis } from '../../src/utils/emojiMapper.js';
 import { generateInlineStats } from '../../src/utils/statsWidget.js';
