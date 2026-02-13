@@ -22,7 +22,9 @@ export async function generate(req, res) {
   if (!username) {
     return res.status(400).json({ success: false, error: 'GitHub username is required' });
   }
-
+  if (!Array.isArray(tones) || tones.length === 0 || tones.length > 10) {
+  return res.status(400).json({ success: false, error: 'Invalid tones' });
+}
   // Map postLength to character limits
   const lengthLimits = {
     quick: { min: 300, max: 600 },
