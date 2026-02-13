@@ -59,7 +59,7 @@ export default function UsernameForm({ onGenerate }: UsernameFormProps) {
     }
   ]
 
-  const exampleUsernames = ['garvthakre', 'torvalds', 'defunkt']
+  const exampleUsernames = ['garvthakre']
 
   const validateForm = () => {
     const newErrors: { username?: string; repo?: string } = {}
