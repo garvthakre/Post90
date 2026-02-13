@@ -7,7 +7,8 @@ dotenv.config();
 const requiredEnvVars = [
   'GROQ_API_KEY',
   'NODE_ENV',
-  'PORT'
+  'PORT',
+  'CORS_ORIGINS',
 ];
 
 const missingVars = requiredEnvVars.filter(varName => !process.env[varName]);
