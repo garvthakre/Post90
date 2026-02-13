@@ -6,10 +6,14 @@ export const PORT = config.port;
 
 export const corsMiddleware = cors({
   origin: (origin, callback) => {
-    // Allow requests with no origin (mobile apps, Postman, etc.)
+ 
      
-    if (!origin) return callback(null, true);
-    
+  if (!origin) {
+  if (config.env === 'production') {
+    return callback(new Error('Not allowed by CORS'));
+  }
+  return callback(null, true);
+}
     if (config.corsOrigins.includes(origin)) {
       callback(null, true);
     } else {
