@@ -5,9 +5,9 @@ import { fetchCommit, fetchCommitsLast24Hours, fetchUserRecentActivity } from '.
 import { extractCommitSignals } from './extract/index.js';
 import { analyzeCommit, analyzeMultipleCommits } from './analyze/commitAnalyzer.js';
 import { generatePostIdeas } from './post/ideaGenerator.js';
-import { composePost } from './post/Composer.js';
+import { composePost } from './post/composer.js';
 import { rewritePost } from './ai/rewrite.js';
-import { generateStatsWidget, generateInlineStats } from './utils/statsWidget.js';
+import { generateStatsWidget, generateInlineStats } from './utils/statswidget.js';
 import { getFeatureEmoji, enrichPostWithEmojis } from './utils/emojiMapper.js';
 
 dotenv.config();

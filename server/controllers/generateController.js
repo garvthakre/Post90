@@ -6,7 +6,7 @@ import { generatePostIdeas } from '../../src/post/ideaGenerator.js';
 import { composePost } from '../../src/post/composer.js';
 import { rewritePost } from '../../src/ai/rewrite.js';
 import { enrichPostWithEmojis } from '../../src/utils/emojiMapper.js';
-import { generateInlineStats } from '../../src/utils/statsWidget.js';
+import { generateInlineStats } from '../../src/utils/statswidget.js';
 
 export async function generate(req, res) {
   const {

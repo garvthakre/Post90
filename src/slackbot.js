@@ -4,7 +4,7 @@ import { fetchCommitsLast24Hours } from './fetch/github.js';
 import { extractCommitSignals } from './extract/index.js';
 import { analyzeCommit, analyzeMultipleCommits } from './analyze/commitAnalyzer.js';
 import { generatePostIdeas } from './post/ideaGenerator.js';
-import { composePost } from './post/Composer.js';
+import { composePost } from './post/composer.js';
 import { rewriteWithCache, needsRewrite } from './ai/rewrite-optimized.js';
 
 // ============================================================
