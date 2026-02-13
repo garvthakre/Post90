@@ -1,6 +1,7 @@
 import { logger } from '../utils/logger.js';
 import { config } from '../config/index.js';
 
+ 
 export function health(_req, res) {
   const healthData = {
     status: 'ok',
@@ -8,13 +9,15 @@ export function health(_req, res) {
     uptime: process.uptime(),
     environment: config.env,
     memory: process.memoryUsage(),
-    version: process.env.npm_package_version || '1.0.0'
+    version: process.env.npm_package_version || '1.0.0',
+    
+    groqApiConnected: !!process.env.GROQ_API_KEY,
+    githubTokenSet: !!process.env.GITHUB_TOKEN,
   };
   
   logger.info('Health check performed');
   res.json(healthData);
 }
-
 export async function validateUsername(req, res) {
   const { username } = req.query;
 
