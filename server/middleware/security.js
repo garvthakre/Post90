@@ -16,7 +16,7 @@ export const apiLimiter = rateLimit({
 // Stricter rate limiter for generation endpoint
 export const generateLimiter = rateLimit({
   windowMs: 60 * 1000, // 1 minute
-  max: 5, // 5 requests per minute
+  max: 10, // 5 requests per minute
   message: 'Too many generation requests, please try again later.',
   skipSuccessfulRequests: false
 });
