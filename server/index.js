@@ -10,6 +10,7 @@ import {
 } from './middleware/security.js';
 import healthRoutes from './routes/health.js';
 import generateRoutes from './routes/generate.js';
+import { initSentry  } from './config/sentry.js';
 
 const app = express();
 
@@ -19,7 +20,7 @@ const isDevelopment = process.env.NODE_ENV === 'development';
 if (isProduction) {
   app.set('trust proxy', 1);
 }
-
+initSentry(app);
 // Security middleware
 app.use(securityHeaders);
 app.use(sanitizeData);
@@ -52,7 +53,7 @@ app.use((req, res) => {
     error: 'Route not found' 
   });
 });
-
+ 
 // Global error handler
 app.use((err, req, res, next) => {
   logger.error('Unhandled error', {
