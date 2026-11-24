@@ -1,4 +1,4 @@
-import { fetchCommitsLast24Hours, fetchUserRecentActivity } from '../../src/fetch/github.js';
+import { fetchCommitsLast24Hours, fetchUserRecentActivity, fetchUserRecentPushRepos } from '../../src/fetch/github.js';
 import {   extractSpecificContext, formatSpecificContext, getPrimaryTech } from '../../src/extract/Specificextractor.js';
 import { extractCommitSignals } from '../../src/extract/index.js';
 import { analyzeCommit, analyzeMultipleCommits, extractFeatureFromCommits } from '../../src/analyze/commitAnalyzer.js';
@@ -43,6 +43,9 @@ export async function generate(req, res) {
     } else {
       // No repo specified → analyze ALL repos with activity (last 24h)
       repos = await fetchUserRecentActivity(username);
+      if (repos.length === 0) {
+        repos = await fetchUserRecentPushRepos(username);
+      }
       if (repos.length === 0) {
         return res.status(404).json({
           success: false,

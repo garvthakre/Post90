@@ -78,6 +78,31 @@ async function fetchUserRecentActivity(username) {
     return repos;
 }
 
+async function fetchUserRecentPushRepos(username) {
+    const url = `https://api.github.com/users/${username}/repos`;
+    const headers = {
+        'Accept': 'application/vnd.github.v3+json'
+    };
+
+    if (process.env.GITHUB_TOKEN) {
+        headers['Authorization'] = `Bearer ${process.env.GITHUB_TOKEN}`;
+    }
+
+    const res = await githubGet(url, {
+        headers,
+        params: {
+            type: 'owner',
+            sort: 'pushed',
+            per_page: 100
+        }
+    });
+
+    const oneDayAgo = Date.now() - (24 * 60 * 60 * 1000);
+    return res.data
+        .filter(repo => new Date(repo.pushed_at).getTime() > oneDayAgo)
+        .map(repo => repo.full_name);
+}
+
 async function fetchCommit(repo, sha) {
     const url = `https://api.github.com/repos/${repo}/commits/${sha}`;
 
@@ -199,5 +224,6 @@ export {
     fetchCommit,
     fetchCommitsLast24Hours,
     fetchUserRepos,
-    fetchUserRecentActivity
+    fetchUserRecentActivity,
+    fetchUserRecentPushRepos
 };
