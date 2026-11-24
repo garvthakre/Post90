@@ -1,10 +1,17 @@
 import process from 'process';
 
+const PRODUCTION_API_URL = 'https://post90.onrender.com/api';
+const configuredApiUrl = process.env.NEXT_PUBLIC_API_URL;
+const isLocalApiUrl = /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?(\/|$)/i.test(
+  configuredApiUrl || '',
+);
 const API_BASE_URL = (
-  process.env.NEXT_PUBLIC_API_URL ||
-  (process.env.NODE_ENV === 'production'
-    ? 'https://post90.onrender.com/api'
-    : 'http://localhost:3001/api')
+  process.env.NODE_ENV === 'production' && isLocalApiUrl
+    ? PRODUCTION_API_URL
+    : configuredApiUrl ||
+      (process.env.NODE_ENV === 'production'
+        ? PRODUCTION_API_URL
+        : 'http://localhost:3001/api')
 ).replace(/\/$/, '');
 
 const TIMEOUT_MS = 30000; 
