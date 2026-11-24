@@ -1,5 +1,3 @@
-import process from 'process';
-
 const PRODUCTION_API_URL = 'https://post90.onrender.com/api';
 const configuredApiUrl = process.env.NEXT_PUBLIC_API_URL;
 const isLocalApiUrl = /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?(\/|$)/i.test(
